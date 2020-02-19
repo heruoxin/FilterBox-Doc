@@ -27,9 +27,14 @@ Automatic binding+disposal of RxJava 2+ streams.
 
 Rebound is a java library that models spring dynamics.
 
+- [hsluv](https://github.com/hsluv)
+
+Human-friendly HSL, reference implementation.
+
 - [MMKV](https://github.com/Tencent/MMKV)
 
 An efficient, small mobile key-value storage framework developed by WeChat. Works on iOS, Android, macOS and Windows.
+
 - [AndroidX](https://developer.android.com/jetpack/androidx)
 
 Artifacts within the androidx namespace comprise the Android Jetpack libraries.
@@ -65,5 +70,6 @@ Use ViewPagers in Bottom Sheets and Bottom Sheet Dialogs!
 - [ToastCompat](https://github.com/PureWriter/ToastCompat)
 
 An Android hook library to fix Toast BadTokenException.
+
 
 
