@@ -12,7 +12,7 @@ Google Play purchases only support Lifetime purchases; subscriptions are not sup
 
 ### Alipay purchase
 
-For Alipay users you can choose to purchase the Subscription or Lifetime Edition. All of the orders only support one device.
+For Alipay users you can choose to purchase the Subscription or Lifetime Edition. Botn of the orders only support one device at the same time.
 
 ### Lifetime Edition
 
