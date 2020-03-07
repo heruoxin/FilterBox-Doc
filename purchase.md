@@ -2,9 +2,17 @@
 
 FilterBox is a paid software. The initial installation provides a trial period and you will need to pay to purchase it after the trial period ends.
 
-Currently, only Alipay purchases are supported. Other purchase channels are still under construction.
+It support Google Play and Alipay purchase.
 
-You can choose to purchase the Subscription or Lifetime Edition. All  of the orders support one device.
+The app installed from Google Play will use Google Play for purchase and verification. From other places will use Alipay as an alternative.
+
+### Google Play purchase
+
+Google Play purchases only support Lifetime purchases; subscriptions are not supported. Available on all devices with a Google account after purchase.
+
+### Alipay purchase
+
+For Alipay users you can choose to purchase the Subscription or Lifetime Edition. All of the orders only support one device.
 
 ### Lifetime Edition
 
@@ -18,7 +26,7 @@ During the validity period, there is no difference between the subscription vers
 
 ### Refund
 
-All orders can be refunded within 48 hours of purchase by sending an email using the in-app feedback. Be sure to attach a screenshot of your order number. The author will process it as soon as possible after receiving.
+All orders can be refunded within 48 hours of purchase by sending an email using the in-app feedback. Be sure to attach a screenshot of your order number. The author will process it after receiving.
 
 ### Other
 
