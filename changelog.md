@@ -1,6 +1,7 @@
 ### Official download
 
 Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
+
 CoolApk (ZH-rCN only): <https://coolapk.com/apk/com.catchingnow.np>
 
 
@@ -20,7 +21,7 @@ CoolApk (ZH-rCN only): <https://coolapk.com/apk/com.catchingnow.np>
 
 0.4.0
 - New feature: restore recent notifications（Android 8.0+）
-- New featrue: dismiss notify.
+- New featrue: dismiss notify
 
 0.1.0 -0.3.0
 - Bug fixes and UI improvements
