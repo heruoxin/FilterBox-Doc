@@ -5,7 +5,7 @@
 
 ### Official Download Link
 
-[Google Play](https://play.google.com/store/apps/details?id=com.catchingnow.np)   |   [酷安(zh-rCN Only)](https://coolapk.com/apk/com.catchingnow.np)
+[Google Play](https://play.google.com/store/apps/details?id=com.catchingnow.np)   |   [酷安(zh-rCN only)](https://coolapk.com/apk/com.catchingnow.np)
 
 ![Banner](https://i.v2ex.co/44U9iyK8.png)
 
@@ -21,4 +21,4 @@
 
 [更新记录.md](/更新记录)
 
-[licenses.md)(/licenses.md)
+[licenses.md](/licenses.md)
