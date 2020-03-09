@@ -1,3 +1,6 @@
+### Licenses & credits
+
+#### Licenses
 
 - [streamsupport](https://github.com/stefan-zobel/streamsupport)
 
@@ -75,7 +78,9 @@ An Android hook library to fix Toast BadTokenException.
 
 A powerful 🚀 Android chart view / graph view library, supporting line- bar- pie- radar- bubble- and candlestick charts as well as scaling, dragging and animations.
 
+#### Credits
 
+The empty file icon made by [Freepik](https://www.flaticon.com/authors/freepik) from <www.flaticon.com>.
 
 
 
