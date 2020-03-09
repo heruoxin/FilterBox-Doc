@@ -7,6 +7,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 CoolApk (zh-rCN only): <https://coolapk.com/apk/com.catchingnow.np>
 
 
+0.9.7-fix
+- Fix: "Dismiss notify" not work
+- Small UI tweak
+
 0.9.7
 - New featrue: Timeline mode
 - First version on Google Play, support Play purchase
