@@ -78,6 +78,11 @@ An Android hook library to fix Toast BadTokenException.
 
 A powerful 🚀 Android chart view / graph view library, supporting line- bar- pie- radar- bubble- and candlestick charts as well as scaling, dragging and animations.
 
+- [CacheFunctionUtil](https://github.com/heruoxin/CacheFunctionUtil)
+
+Tiny helper class to provide cache for the result of repeated functions.
+
+
 #### Credits
 
 The empty file icon made by [Freepik](https://www.flaticon.com/authors/freepik) from <www.flaticon.com>.
