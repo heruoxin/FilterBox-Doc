@@ -82,5 +82,5 @@ A powerful 🚀 Android chart view / graph view library, supporting line- bar- p
 
 The empty file icon made by [Freepik](https://www.flaticon.com/authors/freepik) from <www.flaticon.com>.
 
-
+Thanks for [@NovaDNG](https://twitter.com/NovaDNG)'s many suggestions on design.
 
