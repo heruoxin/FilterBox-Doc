@@ -6,6 +6,11 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (zh-rCN only): <https://coolapk.com/apk/com.catchingnow.np>
 
+0.9.9
+- New feature: Filter by time
+- New feature: Widget
+- Support bigText (Gmail can now store full text of messages)
+
 0.9.8
 - Fix some detail bugs
 - Adjust UI and add some animations
