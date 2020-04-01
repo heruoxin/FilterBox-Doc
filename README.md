@@ -28,6 +28,6 @@
 
 [Licenses](/licenses)
 
-Any other questions or feedback please email: <napp+doc@catchingnow.com>
+Any other questions or feedback please email: [napp+doc@catchingnow.com](mailto:napp+doc@catchingnow.com)
 
-任何其他问题或反馈请发邮件: <napp+doc@catchingnow.com>
+任何其他问题或反馈请发邮件: [napp+doc@catchingnow.com](mailto:napp+doc@catchingnow.com)
