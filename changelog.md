@@ -4,7 +4,12 @@
 
 Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
-CoolApk (zh-rCN only): <https://coolapk.com/apk/com.catchingnow.np>
+CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
+
+1.0.0
+- New feature: Advanced filter
+- New feature: Notification preview
+- bug fixes and UI improvements
 
 0.9.9
 - New feature: Filter by time
