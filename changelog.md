@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+1.2.0
+- Rewrite splash screen
+- Bug fixes and performance improvements
+
 1.1.0
 - New feature: Postpone notifications
 - Bug fixes
