@@ -54,7 +54,7 @@ CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 - New feature: restore recent notifications（Android 8.0+）
 - New featrue: dismiss notify
 
-0.1.0 -0.3.0
+0.1.0 - 0.3.0
 - Bug fixes and UI improvements
 
 0.0.1
