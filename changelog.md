@@ -6,10 +6,14 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+1.3.0
+- New feature: "Undo" on system notification bar
+- Bug fixes and performance improvements
+
 1.2.5
 - UI tweak
 - Postpone notification now supports multiple times
-- Long press to share image in media and big picture style notification previews.
+- Long press to share image in media and big picture style notification previews
 
 1.2.0
 - Rewrite splash screen
