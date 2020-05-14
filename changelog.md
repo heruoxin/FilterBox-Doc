@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+1.4.0
+- Support some notification actions
+- Bug fixes and performance improvements
+
 1.3.0
 - New feature: "Undo" on system notification bar
 - Bug fixes and performance improvements
