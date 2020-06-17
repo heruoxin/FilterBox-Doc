@@ -6,8 +6,13 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+1.6.0
+- Update target API to Android 11
+- Redesign edit rule page
+- New feature: Rule test
+
 1.5.0
-- New feature: Support notification actions such as "mark as read" of SMS, "archive" of Gmail.
+- New feature: Support notification actions such as "mark as read" of SMS, "archive" of Gmail
 - New feature: Online rule suggestions. It is still empty. Welcome to share your rules: https://github.com/heruoxin/FilterBox-Share-Rules/issues/new?template=submit-a-new-rule.md
 
 1.4.5
