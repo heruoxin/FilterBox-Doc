@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+1.7.0
+- Filter rule support weekday and screen on/off settings
+- Some UI tweak
+
 1.6.0
 - Update target API to Android 11
 - Redesign edit rule page
