@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+1.8.0
+- New App picker
+- Some UI tweak
+
 1.7.0
 - Filter rule support weekday and screen on/off settings
 - Some UI tweak
