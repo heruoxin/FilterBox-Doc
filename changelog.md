@@ -6,6 +6,9 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+1.8.1
+- Fix the problem caused by the compilation tool in version 1.8.0
+
 1.8.0
 - New App picker
 - Some UI tweak
