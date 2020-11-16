@@ -82,6 +82,10 @@ A powerful 🚀 Android chart view / graph view library, supporting line- bar- p
 
 Tiny helper class to provide cache for the result of repeated functions.
 
+- [drag-select-recyclerview](https://github.com/afollestad/drag-select-recyclerview)
+
+Allows you to implement Google Photos style multi-selection in your apps.
+
 
 #### Credits
 
