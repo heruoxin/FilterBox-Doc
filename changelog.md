@@ -6,11 +6,15 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+1.9.1
+- Fix: merge rules do not work
+- UI tweak
+
 1.9.0
 - New text filter: "Contains A and not contains B"
 - New action replace notification content
-- Swipe to dissmissed notification history can be recovered from settings.
-- Support drag to select in app-picker.
+- Swipe to dissmissed notification history can be recovered from settings
+- Support drag to select in app-picker
 
 1.8.1
 - Fix the problem caused by the compilation tool in version 1.8.0
