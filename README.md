@@ -4,7 +4,7 @@
 
 ### Official Download Link 官方下载链接
 
-[Google Play](https://play.google.com/store/apps/details?id=com.catchingnow.np)   |   [酷安(Chinese only)](https://coolapk.com/apk/com.catchingnow.np)
+[Google Play](https://play.google.com/store/apps/details?id=com.catchingnow.np)   |   [酷安(Chinese market)](https://coolapk.com/apk/com.catchingnow.np)
 
 ![Banner](/img/banner.png)
 
@@ -21,6 +21,10 @@
 [Advanced Filter Rule Guide](/advanced_filter_rule_guide)
 
 [高级过滤规则指南](/高级过滤规则指南)
+
+[Webhook Guide](/webhook_rule_guide)
+
+[Webhook 功能指南](/Webhook_功能指南)
 
 [Changelog](/changelog)
 
