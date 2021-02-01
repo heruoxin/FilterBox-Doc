@@ -10,15 +10,11 @@ The custom URL supports the use of various attribute fields of notifications. Fo
 
 The following are some commonly used fields:
 
--`{android.title}` Notification title
-
--`{android.text}` Notification content
-
--`{filterbox.field.APP_NAME}` App name
-
--`{filterbox.field.PACKAGE_NAME}` App package name
-
--`{filterbox.field.WHEN}` Notification sending time
+- `{android.title}` Notification title
+- `{android.text}` Notification content
+- `{filterbox.field.APP_NAME}` App name
+- `{filterbox.field.PACKAGE_NAME}` App package name
+- `{filterbox.field.WHEN}` Notification sending time
 
 The final URL may look like:
 ```
