@@ -6,6 +6,18 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+2.0.0-Beta (Comming soon)
+- Settings page UI change
+- New notification operation: modify ringtone
+- Notification content matching now supports: \[include/exclude\]+\[any/all\] text
+- Add new recommendation rules page
+- Add notification enhancers:
+
+1. Notification dismissal recall: A recall button will be displayed for a few seconds after swipe to dismiss notifications on the system notification bar
+2. Smart mute: When an App plays multiple notification sounds in a short time the phone will be temporarily muted
+3. SMS captcha code extraction: If your device does not have this function
+4. Webhook: Create rules to send specific notification content to the web server
+
 1.9.1
 - Fix: merge rules do not work
 - UI tweak
