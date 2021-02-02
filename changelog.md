@@ -8,7 +8,7 @@ CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
 2.0.0-Beta (Comming soon)
 - Settings page UI change
-- New notification operation: modify ringtone
+- New notification operation: modify ringtone (Android 10+)
 - Notification content matching now supports: \[include/exclude\]+\[any/all\] text
 - Add new recommendation rules page
 - Add notification enhancers:
