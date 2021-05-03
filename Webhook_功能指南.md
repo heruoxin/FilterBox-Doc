@@ -32,9 +32,9 @@ https://example.com/notification?title={android.title}&message={android.text}&ap
 如有疑问或更多功能需求，欢迎使用 App 内反馈功能邮件联系作者。
 
 
-## 用法举例：转发备用机短信验证码到各类聊天软件
+### 用法举例：转发备用机短信验证码到各类聊天软件
 
-### 到微信（使用 Server 酱）
+#### 到微信（使用 Server 酱）
 
 1. 在 Server 酱官网注册并配置 https://sct.ftqq.com/
 2. 在通知滤盒中开启并创建 Webhook 规则，方法为 `GET`，URL 为 
@@ -42,7 +42,7 @@ https://example.com/notification?title={android.title}&message={android.text}&ap
 https://sctapi.ftqq.com/#Server酱SendKey#.send?title={android.title}&desp={android.message}
 ```
 
-### 到 telegram
+#### 到 telegram
 
 1. 确保您的设备可以顺利访问 telegram
 2. 在 https://t.me/botfather 中输入指令 `/newbot` 并跟随提示创建机器人，获得 token
