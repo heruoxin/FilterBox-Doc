@@ -30,3 +30,24 @@ https://example.com/notification?title={android.title}&message={android.text}&ap
 选择 `POST` 方法时，body 为 JSON 格式，内容与「调试信息」相同。
 
 如有疑问或更多功能需求，欢迎使用 App 内反馈功能邮件联系作者。
+
+
+## 用法举例：转发备用机短信验证码
+
+### 到微信（使用 Server 酱）
+
+1. 在 Server 酱官网注册并配置 https://sct.ftqq.com/
+2. 在通知滤盒中开启并创建 Webhook 规则，方法为 `GET`，URL 为 
+```
+https://sctapi.ftqq.com/#Server酱SendKey#.send?title={android.title}&desp={android.message}
+```
+
+### 到 telegram
+
+1. 确保您的设备可以顺利访问 telegram
+2. 在 t.me/botfather 中输入指令 `/newbot` 并跟随提示创建机器人，获得 token
+3. 从 t.me/userinfobot 获取你的 ID
+4. 在通知滤盒中开启并创建 Webhook 规则，方法为 `GET`，URL 为 
+```
+https://api.telegram.org/bot#机器人token#/sendmessage?text=%7Bandroid.title%7D%0A%7Bandroid.text%7D&chat_id=#你的ID
+```
