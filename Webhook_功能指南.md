@@ -32,7 +32,7 @@ https://example.com/notification?title={android.title}&message={android.text}&ap
 如有疑问或更多功能需求，欢迎使用 App 内反馈功能邮件联系作者。
 
 
-## 用法举例：转发备用机短信验证码
+## 用法举例：转发备用机短信验证码到各类聊天软件
 
 ### 到微信（使用 Server 酱）
 
