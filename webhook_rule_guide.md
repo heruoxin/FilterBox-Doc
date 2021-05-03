@@ -29,4 +29,16 @@ For the `GET` method the request body is empty;
 
 For the `POST` method the request body is in JSON format and its content will be the same as the "debugging information".
 
+### Example: Foward notifications to Telegram Bot
+
+1. Visit https://t.me/botfather type `/newbot` and follow the instruction to create your own bot. Get the `token`.
+2. Get your telegram ID from https://t.me/userinfobot .
+3. Create Webhook rule in FilterBox and set the URL as below:
+```
+https://api.telegram.org/bot[your_token]/sendmessage?text=%7Bandroid.title%7D%0A%7Bandroid.text%7D&chat_id=[your_id]
+```
+Replace `[your_token]` and `[your_id]` to the info you got above.
+
+
 If any questions or more functional requirements please use the in-app feedback to contact us.
+
