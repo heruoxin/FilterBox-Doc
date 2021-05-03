@@ -35,7 +35,7 @@ For the `POST` method the request body is in JSON format and its content will be
 2. Get your telegram ID from https://t.me/userinfobot .
 3. Create Webhook rule in FilterBox and set the URL as below:
 ```
-https://api.telegram.org/bot[your_token]/sendmessage?text=%7Bandroid.title%7D%0A%7Bandroid.text%7D&chat_id=[your_id]
+https://api.telegram.org/bot[your_token]/sendmessage?text={android.title}%0A{android.text}&chat_id=[your_id]
 ```
 Replace `[your_token]` and `[your_id]` to the info you got above.
 
