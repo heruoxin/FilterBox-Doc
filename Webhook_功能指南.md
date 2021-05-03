@@ -49,5 +49,5 @@ https://sctapi.ftqq.com/#Server酱SendKey#.send?title={android.title}&desp={andr
 3. 从 https://t.me/userinfobot 获取你的 ID
 4. 在通知滤盒中开启并创建 Webhook 规则，方法为 `GET`，URL 为 
 ```
-https://api.telegram.org/bot#机器人token#/sendmessage?text=%7Bandroid.title%7D%0A%7Bandroid.text%7D&chat_id=#你的ID
+https://api.telegram.org/bot#机器人token#/sendmessage?text={android.title}%0A{android.text}&chat_id=#你的ID#
 ```
