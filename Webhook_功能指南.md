@@ -45,8 +45,8 @@ https://sctapi.ftqq.com/#Server酱SendKey#.send?title={android.title}&desp={andr
 ### 到 telegram
 
 1. 确保您的设备可以顺利访问 telegram
-2. 在 <t.me/botfather> 中输入指令 `/newbot` 并跟随提示创建机器人，获得 token
-3. 从 <t.me/userinfobot> 获取你的 ID
+2. 在 https://t.me/botfather 中输入指令 `/newbot` 并跟随提示创建机器人，获得 token
+3. 从 https://t.me/userinfobot 获取你的 ID
 4. 在通知滤盒中开启并创建 Webhook 规则，方法为 `GET`，URL 为 
 ```
 https://api.telegram.org/bot#机器人token#/sendmessage?text=%7Bandroid.title%7D%0A%7Bandroid.text%7D&chat_id=#你的ID
