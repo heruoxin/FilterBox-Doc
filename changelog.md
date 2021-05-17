@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+2.0.1
+- Bug fixes and performance improvements
+- Notification history can be kept for 60 days
+
 2.0.0
 - Settings page UI change
 - New notification operation: modify ringtone (Android 10+)
