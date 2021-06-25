@@ -6,8 +6,11 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
-2.0.2
+2.0.3
 - Bug fixes and performance improvements
+- Support MessagingStyle notification
+
+2.0.2
 - Notification history can be kept for 60 days
 
 2.0.0
