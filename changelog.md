@@ -6,6 +6,12 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+2.1.1
+- Support storing notification images
+- Search interface revamp
+- Support Android 11 keyboard animation, Android 12 dynamic theme
+- Other bug fixes and performance improvements
+
 2.0.3
 - Bug fixes and performance improvements
 - Support MessagingStyle notification
