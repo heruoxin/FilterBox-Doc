@@ -6,6 +6,11 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+2.3.0
+- New feature: Incoming call style notify: Repost the important notifcations as incoming call so you won't miss it
+- Adapt to Android 13 notification permissions
+- Bug fixes
+
 2.1.2
 - UI improvements
 - Bug fixes and performance improvements
