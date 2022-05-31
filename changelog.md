@@ -6,6 +6,12 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+2.4.0
+- Supports showing media album on notification list
+- Supports custom the Webhook POST Body content
+- Charging rules can now be set separately for wired and wireless charging
+- Other bug fixes and performance optimizations
+
 2.3.0
 - New feature: Incoming call style notify: Repost the important notifcations as incoming call so you won't miss it
 - Adapt to Android 13 notification permissions
