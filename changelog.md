@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+2.5.0
+- Redesign with Material Design 3
+- New search page
+
 2.4.0
 - Supports showing media album on notification list
 - Supports custom the Webhook POST Body content
