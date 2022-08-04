@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+2.6.0
+- Supports Android 13 features: Themed icon, preditive back gesture.
+- New widges
+
 2.5.0
 - Redesign with Material Design 3
 - New search page
