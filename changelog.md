@@ -8,7 +8,7 @@ CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
 2.6.0
 - Supports Android 13 features: Themed icon, preditive back gesture.
-- New widges
+- New widgets
 
 2.5.0
 - Redesign with Material Design 3
