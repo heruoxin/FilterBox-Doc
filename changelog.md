@@ -6,6 +6,11 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+3.1.4
+- New feature: Offline AI filter: Use machine learning AI to intelligently filter spam notifications
+- The AI is completely offline and works only on your phone
+- According to your feeding, it will continue to learn your usage habits and evolve. The more you use it, the better it gets
+
 3.1.0
 - Bug fixes and performance improvements
 
