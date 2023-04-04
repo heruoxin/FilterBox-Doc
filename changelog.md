@@ -6,6 +6,11 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+3.1.5
+- Updated AI model data and added multi-language support.
+- Added an option for automatically hiding the captcha code when the device is locked.
+- Added a new custom rule operation: Open notifications directly.
+
 3.1.4
 - New feature: Offline AI filter: Use machine learning AI to intelligently filter spam notifications
 - The AI is completely offline and works only on your phone
