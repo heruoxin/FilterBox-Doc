@@ -6,6 +6,9 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+3.2.0
+- Bug fixes and performance improvements
+
 3.1.5
 - Updated AI model data and added multi-language support.
 - Added an option for automatically hiding the captcha code when the device is locked.
