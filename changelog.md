@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+3.2.7
+- Support Android 14 back gesture animation.
+- Bug fixes and performance improvements
+
 3.2.1
 - Bug fixes and performance improvements
 
