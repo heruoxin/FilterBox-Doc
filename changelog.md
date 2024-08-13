@@ -6,6 +6,9 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+3.3.2
+- Now, notification history can be stored for up to 90 days (8GB RAM device) or 120 days (12GB RAM device).
+
 3.2.7
 - Support Android 14 back gesture animation.
 - Bug fixes and performance improvements
