@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+3.3.5
+- Captcha extraction support user specific apps.
+- Free access to the key features like notification history, even after your free trial ends.
+
 3.3.2
 - Now, notification history can be stored for up to 90 days (8GB RAM device) or 120 days (12GB RAM device).
 
