@@ -6,6 +6,10 @@ Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
 
 CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
 
+3.3.6
+- Switch from Microsoft AppCenter to Google Firebase
+- Enable AAB format for Google Play flavor
+
 3.3.5
 - Captcha extraction support user specific apps.
 - Free access to the key features like notification history, even after your free trial ends.
