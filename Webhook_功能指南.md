@@ -26,9 +26,9 @@ body 语法举例：
 ```
 {
 	"title": "{android.title}",
- 	"text": "{android.text}",
- 	"app": "{filterbox.field.PACKAGE_NAME}",
-  "some_other_field": "some other field here"
+	"text": "{android.text}",
+	"app": "{filterbox.field.PACKAGE_NAME}",
+	"some_other_field": "some other field here"
 }
 ```
 当 body 格式为 JSON 时，header 建议填写为 `Content-Type: application/json`
