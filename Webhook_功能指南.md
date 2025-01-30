@@ -1,12 +1,14 @@
-## 通知滤盒 Filter Box Webhook 功能指南
+## 通知滤盒 FilterBox Webhook 功能指南
 
 通知滤盒从 2.0.0 版开始新增 Webhook 功能，可以创建规则，将您需要的通知内容发送到指定的 URL。
 
 注意：通知内容可能包含隐私信息，请务必选择您信赖的服务端。
 
-### URL
+### 自定义内容
 
-自定义 URL 中支持使用通知的各项属性字段，完整支持字段请点开通知列表中最近的 20 条通知，并选择「调试信息」以查看。
+- Request method: 目前支持 `GET` 和 `POST`
+- 可以自定义 URL、body、和 header。
+自定义 URL 和 body 中支持使用通知的各项属性字段，完整支持字段请点开通知列表中最近的 20 条通知，并选择「调试信息」以查看。
 
 以下为部分常用字段：
 
@@ -16,18 +18,20 @@
 - `{filterbox.field.PACKAGE_NAME}` App 包名
 - `{filterbox.field.WHEN}` 通知的发送时间
 
-最后拼出来的 URL 可能看起来像：
+URL 语法举例：
 ```
 https://example.com/notification?title={android.title}&message={android.text}&app={filterbox.field.APP_NAME}
 ```
-
-### Request method
-
-目前仅支持 `GET` 和 `POST` 两种方法。
-
-选择 `GET` 方法时，请求的 body 为空；
-
-选择 `POST` 方法时，body 为 JSON 格式，内容与「调试信息」相同。
+body 语法举例：
+```
+{
+	"title": "{android.title}",
+ 	"text": "{android.text}",
+ 	"app": "{filterbox.field.PACKAGE_NAME}",
+  "some_other_field": "some other field here"
+}
+```
+当 body 格式为 JSON 时，header 建议填写为 `Content-Type: application/json`
 
 如有疑问或更多功能需求，欢迎使用 App 内反馈功能邮件联系作者。
 
