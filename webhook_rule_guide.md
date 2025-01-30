@@ -1,44 +1,49 @@
-## Filter Box Webhook Function Guide
+## FilterBox Webhook Functionality Guide
 
-Webhook function requires Filter Box 2.0.0+. You can create rules to send the notification content you need to the specified URL.
+Starting from version 2.0.0, Filter Box has added Webhook functionality, allowing you to create rules to send notification content to specified URLs.
 
-Note: The notification content may contain your private information. Please be sure to use your trusted server.
+Note: Notification content may contain private information. Please ensure you choose a server you trust.
 
-### URL
+### Custom Content
 
-The custom URL supports the use of various attribute fields of notifications. For complete support fields, please click on the 20 most recent notifications in the list and select "Debug Info" to view.
+- Request method: Currently supports `GET` and `POST`
+- You can customize URL, body, and headers.
 
-The following are some commonly used fields:
+The custom URL and body support various notification attribute fields. For a complete list of supported fields, check the "Debug Info" option in any of your 20 most recent notifications in the notification list.
+
+Here are some commonly used fields:
 
 - `{android.title}` Notification title
 - `{android.text}` Notification content
 - `{filterbox.field.APP_NAME}` App name
 - `{filterbox.field.PACKAGE_NAME}` App package name
-- `{filterbox.field.WHEN}` Notification sending time
+- `{filterbox.field.WHEN}` Notification send time
 
-The final URL may look like:
+URL syntax example:
 ```
 https://example.com/notification?title={android.title}&message={android.text}&app={filterbox.field.APP_NAME}
 ```
-
-### Request method
-
-Currently, only two methods `GET` and `POST` are supported.
-
-For the `GET` method the request body is empty;
-
-For the `POST` method the request body is in JSON format and its content will be the same as the "debugging information".
-
-### Example: Foward notifications to Telegram Bot
-
-1. Visit https://t.me/botfather type `/newbot` and follow the instruction to create your own bot. Get the `token`.
-2. Get your telegram ID from https://t.me/userinfobot .
-3. Create Webhook rule in FilterBox and set the URL as below:
+Body syntax example:
 ```
-https://api.telegram.org/bot[your_token]/sendmessage?text={android.title}%0A{android.text}&chat_id=[your_id]
+{
+"title": "{android.title}",
+"text": "{android.text}",
+"app": "{filterbox.field.PACKAGE_NAME}",
+"some_other_field1": "some other field here",
+"some_other_field2": "some other field here",
+"some_other_field3": "some other field here"
+}
 ```
-Replace `[your_token]` and `[your_id]` to the info you got above.
+When using JSON format for the body, it's recommended to set the header as `Content-Type: application/json`
 
+If you have questions or feature requests, please contact us using the feedback function within the App.
 
-If any questions or more functional requirements please use the in-app feedback to contact us.
+### Usage Example: Forward SMS Verification Codes to Telegram from Backup Device
 
+1. Ensure your device can access Telegram successfully
+2. Go to https://t.me/botfather, enter the command `/newbot` and follow the prompts to create a bot, obtaining its token
+3. Get your ID from https://t.me/userinfobot
+4. Enable and create a Webhook rule in Filter Box, with method `GET`, and URL as:
+```
+https://api.telegram.org/bot#YOUR_BOT_TOKEN#/sendmessage?text={android.title}%0A{android.text}&chat_id=#YOUR_ID#
+```
