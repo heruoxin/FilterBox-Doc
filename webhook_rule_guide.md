@@ -26,12 +26,12 @@ https://example.com/notification?title={android.title}&message={android.text}&ap
 Body syntax example:
 ```
 {
-"title": "{android.title}",
-"text": "{android.text}",
-"app": "{filterbox.field.PACKAGE_NAME}",
-"some_other_field1": "some other field here",
-"some_other_field2": "some other field here",
-"some_other_field3": "some other field here"
+  "title": "{android.title}",
+  "text": "{android.text}",
+  "app": "{filterbox.field.PACKAGE_NAME}",
+  "some_other_field1": "some other field here",
+  "some_other_field2": "some other field here",
+  "some_other_field3": "some other field here"
 }
 ```
 When using JSON format for the body, it's recommended to set the header as `Content-Type: application/json`
