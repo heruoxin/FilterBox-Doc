@@ -2,9 +2,42 @@
 
 ### Official download
 
-Google Play: <https://play.google.com/store/apps/details?id=com.catchingnow.np>
+[Google Play](https://play.google.com/store/apps/details?id=com.catchingnow.np)
 
-CoolApk (Chinese): <https://coolapk.com/apk/com.catchingnow.np>
+[Direct APK Download](https://filterbox.catchingnow.com/latest.apk)
+
+3.4.4
+- Fixed an issue that could cause data loss for some users.
+- Updated machine learning support libraries.
+
+3.4.3
+- Upgraded target API to Android 16.
+- Minor bug fixes.
+
+3.4.2
+- Added support for exporting notification history as a CSV file, making it easier to process data in apps like Excel, WPS, etc.
+
+3.4.0
+- Optimized the "Restore Notifications" feature.
+- Switched the main interface to a bottom navigation layout.
+- Added support for automatic daylight saving time adjustments.
+
+3.3.10
+- Optimized app startup speed and stability.
+- After providing data, model training will now run while the phone is charging to save battery. You can also start the training manually by tapping the button.
+- Webhook now automatically sets the header to `Content-Type: application/json` when the request body is in JSON format.
+
+3.3.7
+- **Attention for users upgrading to Android 15:**
+Starting with Android 15, Google restricts reading notifications that contain verification codes. However, the implementation is quite crude. SMS messages from your carrier (e.g., 10086) and various push notifications with monetary values (e.g., a discount of 9998) may be incorrectly identified as verification codes.
+If you see a message saying "Sensitive content hidden," it means the notification was hidden by the Android system, not by FilterBox.
+
+**Solutions:**
+1.  (Easiest) Go to **System Settings -> Notifications -> Enhanced notifications** and turn it off.
+2.  Execute the ADB command: `adb shell appops set com.catchingnow.np RECEIVE_SENSITIVE_NOTIFICATIONS allow`
+3.  Use an AppOps tool to grant the `RECEIVE_SENSITIVE_NOTIFICATIONS` permission to FilterBox.
+
+You only need to choose one of the three options.
 
 3.3.6
 - Switch from Microsoft AppCenter to Google Firebase

@@ -4,7 +4,9 @@
 
 ### Official Download Link 官方下载链接
 
-[Google Play](https://play.google.com/store/apps/details?id=com.catchingnow.np)   |   [酷安(Chinese market)](https://coolapk.com/apk/com.catchingnow.np)
+[Google Play](https://play.google.com/store/apps/details?id=com.catchingnow.np)   |   [直接下载 Download APK](https://filterbox.catchingnow.com/latest.apk)
+
+(另可从酷安、小米应用商店内搜索下载 Chinese users can also download from Coolapk and Mi market)
 
 ![Banner](/img/banner.png)
 
