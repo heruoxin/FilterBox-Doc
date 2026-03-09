@@ -6,6 +6,10 @@
 
 [Direct APK Download](https://filterbox.catchingnow.com/latest.apk)
 
+3.4.5
+- Added home screen widget content filtering: All notifications / Filtered notifications / Unfiltered notifications
+- Custom rules now support sorting by name
+
 3.4.4
 - Fixed an issue that could cause data loss for some users.
 - Updated machine learning support libraries.
