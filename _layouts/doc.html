@@ -11,10 +11,13 @@
 {%- for l in site.data.site.langs -%}{%- if l.code == lang -%}{%- assign L = l -%}{%- endif -%}{%- endfor -%}
 {%- assign page_kind = 'doc' -%}
 {%- assign dk = doc_item.key -%}
-{%- assign doc_title = t.docs[dk].title | default: page.title | default: site.title -%}
-{%- assign doc_desc = t.docs[dk].desc | default: t.meta.description -%}
-{%- assign seo_title = doc_title | append: ' · ' | append: t.brand -%}
-{%- assign seo_desc = doc_desc -%}
+{%- assign doc_title = page.title | default: t.docs[dk].title | default: site.title -%}
+{%- if doc_title contains 'FilterBox' or doc_title contains 'Filter Box' or doc_title contains t.brand -%}
+  {%- assign seo_title = doc_title -%}
+{%- else -%}
+  {%- assign seo_title = doc_title | append: ' · ' | append: t.brand -%}
+{%- endif -%}
+{%- assign seo_desc = t.docs[dk].desc | default: t.meta.description -%}
 {%- assign canonical = site.url | append: page.url | replace: '.html', '' -%}
 {%- assign alts = '' -%}{%- assign x_default = nil -%}{%- assign alt_count = 0 -%}
 {%- if doc_item -%}
@@ -34,7 +37,7 @@
 <script>document.documentElement.classList.replace('no-js','js')</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"{% if doc_item.group == 'guides' or doc_item.group == 'rules' %}TechArticle{% else %}WebPage{% endif %}","@id":"{{ canonical }}#page","url":"{{ canonical }}","name":{{ doc_title | jsonify }},"headline":{{ doc_title | jsonify }},"description":{{ doc_desc | jsonify }},"inLanguage":"{{ lang }}","isPartOf":{"@type":"WebSite","@id":"{{ site.url }}/#website","url":"{{ site.url }}/","name":"FilterBox"},"about":{"@type":"MobileApplication","@id":"{{ site.url }}/#app","name":"FilterBox","operatingSystem":"Android","applicationCategory":"UtilitiesApplication"},"author":{"@type":"Person","name":"{{ site.data.site.author }}"},"publisher":{"@type":"Person","name":"{{ site.data.site.author }}"},"image":"{{ site.url }}/assets/img/share-{{ lang }}.png"},
+{"@type":"WebPage","@id":"{{ canonical }}#page","url":"{{ canonical }}","name":{{ doc_title | jsonify }},"description":{{ seo_desc | jsonify }},"inLanguage":"{{ lang }}","isPartOf":{"@type":"WebSite","@id":"{{ site.url }}/#website","url":"{{ site.url }}/","name":"FilterBox"},"about":{"@type":"MobileApplication","@id":"{{ site.url }}/#app","name":"FilterBox","operatingSystem":"Android","applicationCategory":"UtilitiesApplication"}},
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":{{ t.ui.doc.home | jsonify }},"item":"{{ site.url }}{{ L.home }}"},{"@type":"ListItem","position":2,"name":{{ t.help.title | jsonify }},"item":"{{ site.url }}{{ L.help }}"},{"@type":"ListItem","position":3,"name":{{ doc_title | jsonify }},"item":"{{ canonical }}"}]}
 ]}
 </script>
@@ -43,53 +46,28 @@
 {% include sprite.svg %}
 <a class="skip" href="#main">{{ t.ui.skip }}</a>
 {% include header.html %}
-<main id="main" class="wrap">
-  <div class="doc-hero">
+<main id="main" class="wrap doc-layout{% if doc_item.hidden %} doc-layout--plain{% endif %}">
+  {%- unless doc_item.hidden %}
+  <nav class="doc-nav" aria-label="{{ t.help.title }}">
+    <a class="doc-nav-home" href="{{ L.help }}">{{ t.help.title }}</a>
+    {%- for it in site.data.docs.items -%}{%- unless it.hidden -%}
+      {%- assign ip = it.paths[lang] -%}{%- assign tag = '' -%}
+      {%- unless ip -%}{%- assign ip = it.paths.en -%}{%- assign tag = t.help.english -%}{%- endunless -%}
+      {%- unless ip -%}{%- for pp in it.paths -%}{%- assign ip = pp[1] -%}{%- break -%}{%- endfor -%}{%- assign tag = t.help.chinese -%}{%- endunless %}
+    <a href="{{ ip | prepend: '/' | remove: '.md' }}"{% if ip == page.path %} aria-current="page"{% endif %}>{{ t.docs[it.key].title }}{% if tag != '' %}<small>{{ tag }}</small>{% endif %}</a>
+    {%- endunless -%}{%- endfor %}
+  </nav>
+  {%- endunless %}
+  <article class="doc-main">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ L.home }}">{{ t.ui.doc.home }}</a><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg><a href="{{ L.help }}">{{ t.help.title }}</a></nav>
-    <h1 class="doc-title">{{ doc_title }}</h1>
-    {%- if t.docs[dk].desc %}<p class="doc-desc">{{ doc_desc }}</p>{% endif %}
-    <div class="doc-meta">
-      {%- if alt_count > 1 %}
-      <span>{{ t.ui.doc.read_in }}</span>
-      <span class="chips">
-        {%- for l in site.data.site.langs -%}{%- assign p = doc_item.paths[l.code] -%}{%- if p and l.code != lang %}
-        <a href="{{ p | prepend: '/' | remove: '.md' }}" lang="{{ l.code }}" hreflang="{{ l.code }}" data-lang="{{ l.code }}">{{ l.name }}</a>
-        {%- endif -%}{%- endfor %}
-      </span>
-      {%- endif %}
-      <a class="md-link" href="{{ page.path | prepend: '/' | uri_escape }}"><svg class="i" aria-hidden="true"><use href="#g-newsdrop"/></svg>{{ t.ui.doc.markdown }}</a>
-    </div>
-  </div>
-  <div class="doc-layout">
-    {%- unless doc_item.hidden %}
-    <nav class="doc-nav" aria-label="{{ t.help.title }}">
-      {%- for g in site.data.docs.groups %}
-      <h2>{{ t.groups[g] }}</h2>
-        {%- for it in site.data.docs.items -%}{%- if it.group == g and it.hidden != true -%}
-          {%- assign ip = it.paths[lang] -%}{%- assign tag = '' -%}
-          {%- unless ip -%}{%- assign ip = it.paths.en -%}{%- assign tag = t.help.english -%}{%- endunless -%}
-          {%- unless ip -%}{%- for pp in it.paths -%}{%- assign ip = pp[1] -%}{%- break -%}{%- endfor -%}{%- assign tag = t.help.chinese -%}{%- endunless %}
-      <a href="{{ ip | prepend: '/' | remove: '.md' }}"{% if ip == page.path %} aria-current="page"{% endif %}>{{ t.docs[it.key].title }}{% if tag != '' %}<small>{{ tag }}</small>{% endif %}</a>
-        {%- endif -%}{%- endfor -%}
-      {%- endfor %}
-    </nav>
-    {%- endunless %}
-    <div class="doc-main">
-      <article class="doc-card">
-        <div class="prose">
+    {%- if page.title %}
+    <h1 class="doc-title">{{ page.title }}</h1>
+    {%- endif %}
+    <div class="prose">
 {{ content }}
-        </div>
-      </article>
-      {%- unless doc_item.hidden %}
-      <aside class="doc-foot">
-        <div><h2>{{ t.ui.doc.cta_title }}</h2><p>{{ t.ui.doc.cta_text }}</p></div>
-        {% include store-buttons.html placement='doc' %}
-      </aside>
-      {%- endunless %}
-      <p class="doc-feedback">{{ t.ui.doc.feedback }} <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a> {{ t.ui.doc.feedback_tail }}</p>
     </div>
-    <nav class="doc-toc" data-toc hidden aria-label="{{ t.ui.doc.toc }}"><h2>{{ t.ui.doc.toc }}</h2><ol></ol></nav>
-  </div>
+  </article>
+  <nav class="doc-toc" data-toc hidden aria-label="{{ t.ui.doc.toc }}"><h2>{{ t.ui.doc.toc }}</h2><ol></ol></nav>
 </main>
 {% include footer.html %}
 <div class="lang-suggest" data-suggest hidden></div>

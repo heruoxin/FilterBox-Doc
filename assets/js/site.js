@@ -162,26 +162,5 @@
     }
   }
 
-  const search = document.querySelector('[data-help-search]');
-  if (search) {
-    const items = [...document.querySelectorAll('[data-search-item]')];
-    const empty = document.querySelector('[data-help-empty]');
-    const fold = s => s.toLowerCase().normalize('NFKC');
-    search.addEventListener('input', () => {
-      const q = fold(search.value.trim());
-      let shown = 0;
-      for (const item of items) {
-        const hit = !q || fold(item.textContent).includes(q);
-        item.hidden = !hit;
-        if (hit) shown++;
-        if (hit && q && item.matches('details')) item.open = true;
-      }
-      document.querySelectorAll('[data-search-group]').forEach(group => {
-        group.hidden = ![...group.querySelectorAll('[data-search-item]')].some(item => !item.hidden);
-      });
-      if (empty) empty.hidden = shown > 0;
-    });
-  }
-
   root.classList.toggle('reduced-motion', reduced.matches);
 })();

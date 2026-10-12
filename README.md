@@ -9,9 +9,10 @@
 - 首页：`index.html`（英文，默认语言）、`zh-Hans/`、`zh-Hant/`、`ja/` 下的 `index.html`，共用 `_layouts/home.html`。
 - 帮助中心：`help/index.html` 及各语言目录下的 `help/index.html`，共用 `_layouts/help.html`。
 - 文档：所有 `.md` 文件（不写 front matter）由 `_layouts/doc.html` 渲染成页面，同时原样发布为 `.md`，供 AI 抓取。旧链接（`/FAQ`、`/帮助`、`/购买说明`、`/高级过滤规则指南`、`/Webhook_功能指南`、`/更新记录`、`/隐私政策` 等）App 内写死跳转，文件名不要改。
-- 文案：`_data/i18n/<语言>.yml` 是网站界面、首页与帮助中心的全部文案；`_data/demo/<语言>.yml` 是首页交互演示的数据，App 名、人物和消息全部虚构，不要放真实品牌或个人信息。
+- 文案：`_data/i18n/<语言>.yml` 是网站界面、首页与帮助中心的全部文案；`_data/demo/<语言>.yml` 是首页动画演示的数据，App 名、人物和消息全部虚构，不要放真实品牌或个人信息。
 - 文档注册表：`_data/docs.yml` 记录每篇文档在各语言下的文件，用于侧栏、语言切换、hreflang、sitemap 和 `llms.txt`。
-- 样式与脚本：`assets/css/site.css`（全站）、`assets/css/home.css`（首页与演示）、`assets/js/site.js`（全站）、`assets/js/home.js`（首页交互演示）。无外部字体、无第三方脚本、无统计代码。
+- 样式与脚本：`assets/css/site.css`（全站）、`assets/css/home.css`（首页与演示）、`assets/js/site.js`（全站）、`assets/js/home.js`（首页动画演示）。无外部字体、无第三方脚本、无统计代码。
+- 文档内容：帮助文档只放原有的帮助内容。中文原文保持不变，繁体中文与日文版本严格对照原文翻译，不额外增补；面向 AI 的产品介绍只写在 `llms.txt` 与 `llms-full.txt` 里。
 - SEO / AI：`sitemap.xml`、`llms.txt`、`llms-full.txt` 由 Liquid 根据注册表自动生成；`robots.txt` 允许所有抓取；各页面带 canonical、hreflang、Open Graph 与 JSON-LD 结构化数据。
 
 ## 日常维护

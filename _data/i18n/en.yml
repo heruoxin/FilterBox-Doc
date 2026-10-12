@@ -3,9 +3,16 @@ store_name: FilterBox Notification Manager
 
 meta:
   title: FilterBox – Notification History & AI Spam Filter for Android
-  description: Keep a searchable history of every Android notification, recover dismissed notifications and recalled messages, and block spam and ads with offline AI. Free to download.
+  description: Keep a searchable history of every Android notification, recover dismissed notifications and recalled messages, and quiet spam and ads with an offline AI filter and your own rules.
   image_alt: "FilterBox – Filter the noise. Never miss a thing."
-  keywords: notification history, notification filter, notification blocker, block spam notifications, recover deleted notifications, recalled messages, Android notification manager
+  keywords: notification history, notification filter, notification blocker, block spam notifications, recover dismissed notifications, recalled messages, Android notification manager
+  features:
+    - Searchable notification history
+    - Restore dismissed notifications and read recalled messages
+    - Offline AI spam notification filter
+    - Rules that dismiss, mute, snooze, replace, read out or forward notifications
+    - Dismissal Recall, Smart Shh, verification code copy and webhook
+    - Notification analytics and CSV export
 
 ui:
   skip: Skip to content
@@ -14,7 +21,6 @@ ui:
   nav:
     features: Features
     ai: AI filter
-    pricing: Pricing
     help: Help
   play:
     small: GET IT ON
@@ -25,73 +31,45 @@ ui:
     big: APK file
     label: Download the latest FilterBox APK
   stores: ""
-  proof: 100K+ downloads · 4.4★ on Google Play · Android 6.0+
   suggest:
     text: This page is available in English.
     action: Switch to English
     close: Dismiss
   footer:
-    tagline: Notification history and offline AI spam filter for Android.
-    product: Product
-    help: Help
-    about: About
-    contact: Contact us
+    contact: Contact
     copyright: © 2026 Ruoxin He
   doc:
     home: Home
     help: Help Center
     toc: On this page
-    read_in: Read in
-    markdown: View as Markdown
-    fallback: This page is available in English only.
-    feedback: Still have a question? Email
-    feedback_tail: or use Feedback inside the app.
-    cta_title: Get FilterBox
-    cta_text: Notification history and offline AI spam filter for Android.
     copy: Copy
     copied: Copied
   not_found:
     title: Page not found
     text: The page you were looking for has moved or never existed.
 
-groups:
-  start: Getting started
-  guides: Guides
-  rules: Rules & automation
-  account: Purchase
-  updates: Updates & legal
-
 docs:
-  about:
-    title: About FilterBox
-    desc: What FilterBox does, its key features, requirements, pricing and privacy, at a glance.
   faq:
     title: FAQ
-    desc: Answers to common questions about FilterBox, from background running to privacy.
-  block:
-    title: How to block spam & annoying notifications on Android
-    desc: Stop ads and spam notifications on Android with system settings, keyword rules and an offline AI filter.
-  history:
-    title: How to see notification history on Android
-    desc: Open Android's built-in notification history, and keep a searchable, long-term history that also shows dismissed and recalled messages.
+    desc: FilterBox FAQ — background running, privacy, persistent notifications and buying.
+  purchase:
+    title: Buying instructions
+    desc: How to buy FilterBox on Google Play or with Alipay, lifetime and subscription editions, and refunds.
   advanced:
-    title: Advanced filter rules (JSON)
-    desc: Match any notification field with regular expressions using FilterBox advanced rules.
+    title: Advanced filter guide
+    desc: Filter notifications by any field with FilterBox advanced rules written in JSON and regular expressions.
   webhook:
     title: Webhook guide
-    desc: Forward notifications as JSON to your own server, Telegram bot or automation with FilterBox webhooks.
-  purchase:
-    title: Purchase & refunds
-    desc: Free trial, Google Play lifetime purchase, Alipay and WeChat Pay options, and refunds.
+    desc: Send notification content to your own URL with FilterBox webhook rules.
   changelog:
     title: Changelog
     desc: What's new in each version of FilterBox.
   privacy:
-    title: Privacy policy (Chinese)
+    title: Privacy policy
     desc: FilterBox privacy policy.
   licenses:
-    title: Open-source licenses
-    desc: Open-source libraries used by FilterBox.
+    title: Licenses
+    desc: Open-source libraries and credits of FilterBox.
   reseller:
     title: Authorized reseller
     desc: Authorized reseller of FilterBox in China.
@@ -101,13 +79,9 @@ docs:
 
 help:
   title: Help Center
-  meta_title: FilterBox Help Center – Guides, FAQ & Troubleshooting
-  intro: Setup tips, guides and answers for FilterBox, the notification manager for Android.
-  search: Search help articles and questions…
-  no_results: No matches. Try another word, or email us.
-  faq: Frequently asked questions
-  contact_title: Still need help?
-  contact_text: Use Feedback inside the app so we get your device details, or email us directly.
+  meta_title: FilterBox Help Center – FAQ, Guides & Changelog
+  meta_desc: FilterBox help documents — FAQ, buying instructions, advanced filter and webhook guides, and changelog.
+  contact: Questions or feedback? Write to
   english: English
   chinese: Chinese
 
@@ -116,7 +90,6 @@ home:
     badge: Notification manager for Android
     title: ["Filter the noise.", "Never miss a thing."]
     intro: FilterBox keeps every notification in a searchable history, quiets spam and ads with on-device AI, and lets your own rules handle the rest.
-    hint: Try it — swipe a notification away
   history:
     eyebrow: Notification history
     title: ["Swiped it away?", "It's still here."]
@@ -126,22 +99,17 @@ home:
       - Scrub through days on the timeline
       - Restore dismissed notifications
       - Export to CSV for Excel or Sheets
-    hint: Drag the timeline or tap a card
   rules:
     eyebrow: Custom rules
     title: ["Your rules.", "Your notifications."]
     intro: Pick apps, keywords, times or phone states, then decide what happens. Dismiss promos, mute work chats after hours, ring like a call when family texts, or have deliveries read aloud.
-    pick: Pick an action
-    community: Need ideas? Browse rules shared by the community
   ai:
     eyebrow: Offline AI filter
     title: ["Learns what spam", "means to you."]
-    intro: FilterBox scores every notification right on your phone — nothing is uploaded. Mark one as spam or normal and it learns, quietly retraining while your phone is idle or charging. One slider sets how strict it is.
+    intro: FilterBox scores every notification right on your phone — nothing is uploaded. Mark one as spam or normal and it learns, quietly retraining while your phone is idle or charging.
     points:
       - Runs fully offline, on your phone
       - Learns from every notification you mark
-      - You set the threshold and the apps it covers
-    note: The AI filter requires Android 10 or later and a phone with more than 6 GB of RAM.
   enhancers:
     eyebrow: Enhancers
     title: ["Small extras.", "Everyday wins."]
@@ -176,55 +144,5 @@ home:
         text: Keep your notification history to yourself.
       - title: Minimal network use
         text: Only purchase verification and optional crash reports, which you can turn off.
-  pricing:
-    eyebrow: Pricing
-    title: ["Free to start.", "Pro when you're ready."]
-    intro: Try every Pro feature free when you first install FilterBox.
-    free:
-      name: Free
-      price: $0
-      note: The essentials, forever
-      features:
-        - Notification history
-        - Search, timeline and restore
-        - Free trial of every Pro feature
-    pro:
-      name: Pro
-      price: One-time purchase
-      note: Everything, for good
-      badge: Best value
-      features:
-        - Custom rules with every action
-        - Offline AI spam filter
-        - Dismissal Recall, Smart Shh and Webhook
-        - Analytics and CSV export
-        - Longer history storage
-        - All future features included
-    notes:
-      - Google Play — lifetime purchase, on every device signed in to your Google account.
-      - Mainland China — Alipay or WeChat Pay, subscription or lifetime.
-      - Refunds within 48 hours of purchase.
-    more: Purchase details
-  faq:
-    title: ["Questions,", "answered."]
-    more: Visit the Help Center
-    items:
-      - q: Is FilterBox free?
-        a: Yes. FilterBox is free to download and its notification history stays free forever. You can try every Pro feature free after installing; afterwards, custom rules, the AI filter and enhancers need a one-time Pro purchase.
-      - q: Does FilterBox upload my notifications?
-        a: No. Your notification history is stored encrypted on your phone and the AI filter runs fully offline. FilterBox only goes online to verify purchases and, if you allow it, to send crash reports, which you can turn off in Settings.
-      - q: Can I see notifications I dismissed, or messages that were recalled?
-        a: Yes. FilterBox saves each notification as it arrives, so the original stays in your history even after you swipe it away or the sender deletes or recalls the message. It can only show what was in the notification itself.
-      - q: How does the AI spam filter learn?
-        a: Each notification gets a spam score on your device. Open any notification and tap “It is spam” or “It is normal” to teach it; FilterBox learns from your feedback while the phone is idle or charging. You choose the threshold (80% by default) and which apps it covers. The AI filter needs Android 10 or later and more than 6 GB of RAM.
-      - q: Why does FilterBox stop working after a while?
-        a: Your phone's battery management is most likely stopping it in the background. Allow FilterBox to run in the background and start automatically, and turn off battery optimization for it. dontkillmyapp.com has steps for each phone brand.
-      - q: Why do some notifications say “Sensitive notification content hidden”?
-        a: "Since Android 15, the system hides notifications that may contain one-time codes from third-party apps. Turn off Settings → Notifications → Enhanced notifications, or run: adb shell appops set com.catchingnow.np RECEIVE_SENSITIVE_NOTIFICATIONS allow"
-      - q: Can FilterBox remove persistent notifications?
-        a: Yes, on Android 8.0 and later. Turn on “Include fixed notifications” in a rule's Dismiss action. On some phones you also need to allow notification snoozing in system settings.
-      - q: I installed the APK but can't turn on notification access.
-        a: Android 13 and later restricts sideloaded apps. Go to Settings → Apps → FilterBox, tap ⋮ in the top-right corner, choose “Allow restricted settings”, then turn on notification access again.
   closing:
     title: ["Make every", "notification count."]
-    intro: Free to download for Android 6.0 and later.

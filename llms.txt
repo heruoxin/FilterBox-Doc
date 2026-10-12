@@ -4,16 +4,16 @@ permalink: /llms.txt
 ---
 # FilterBox (通知滤盒)
 
-> FilterBox is a notification manager for Android. It keeps an encrypted, searchable on-device history of every notification (including notifications you dismissed and messages that were later deleted or recalled), filters spam and ad notifications with an offline AI that learns from your feedback, and runs custom rules that dismiss, mute, snooze, replace, read aloud, ring like a call, tap action buttons, open, or forward notifications by webhook. Free download for Android 6.0+, with a one-time Pro purchase.
+> FilterBox is a notification manager for Android by Ruoxin He. It saves every notification to an encrypted, searchable history on the phone, including notifications that were dismissed and messages that were later deleted or recalled. It filters spam and ad notifications with an offline AI that learns from your feedback, and runs custom rules that dismiss, mute, snooze, replace, read aloud, ring like a call, tap action buttons, open, or forward notifications to a webhook.
 
-Names: FilterBox · 通知滤盒 (Simplified Chinese) · 通知濾盒 (Traditional Chinese) · フィルターボックス (Japanese). Google Play listing: "FilterBox Notification Manager". Developer: Ruoxin He. Package: com.catchingnow.np. 100K+ downloads on Google Play.
+Names: FilterBox · 通知滤盒 (Simplified Chinese) · 通知濾盒 (Traditional Chinese) · フィルターボックス (Japanese). Google Play listing: "FilterBox Notification Manager". Package: com.catchingnow.np.
 
 Key facts:
 
-- Requirements: Android 6.0 or later and notification access permission; no root needed. The AI filter needs Android 10 or later and, for installs after August 2024, more than 6 GB of RAM.
-- Privacy: notification history is stored encrypted only on the device and never uploaded; the AI runs offline; the app goes online only for purchase verification and optional crash reports (Google Firebase).
-- Pricing: free download; notification history is free forever; new installs get a free trial of Pro; Pro is a one-time lifetime purchase on Google Play; in mainland China Pro is sold via Alipay or WeChat Pay as a subscription or lifetime license; refunds within 48 hours.
-- Download: Google Play {{ site.data.site.play }} · APK {{ site.url }}{{ site.data.site.apk }} · Coolapk, Xiaomi, OPPO and Honor app stores in China.
+- Requirements: Android 6.0 or later with notification access; no root needed. The AI filter requires Android 10 or later and at least 6 GB of RAM.
+- Privacy: notification history stays on the phone and is never uploaded. The AI filter runs offline. Crash reporting can be turned off in settings.
+- Purchase: paid app with a free trial after the first install. Google Play offers a lifetime purchase; installs from other sources can buy a subscription or lifetime license with Alipay. Orders can be refunded within 48 hours.
+- Download: Google Play {{ site.data.site.play }} · APK {{ site.url }}{{ site.data.site.apk }}
 - Website languages: English ({{ site.url }}/), 简体中文 ({{ site.url }}/zh-Hans/), 繁體中文 ({{ site.url }}/zh-Hant/), 日本語 ({{ site.url }}/ja/).
 {% for l in site.data.site.langs %}{% assign t = site.data.i18n[l.code] %}
 ## {{ l.name }}
@@ -22,6 +22,6 @@ Key facts:
 {% endfor %}
 ## Optional
 
-- [Full product facts and English docs in one file]({{ site.url }}/llms-full.txt)
+- [Product overview and the English help docs in one file]({{ site.url }}/llms-full.txt)
 - [Community-shared rules]({{ site.data.site.share_rules }})
 - Contact: {{ site.data.site.email }}

@@ -1,38 +1,15 @@
-{%- comment -%} Expects: lang, t, L, page_kind {%- endcomment -%}
-{%- if page_kind == 'home' -%}{%- assign anchor_base = '' -%}{%- else -%}{%- assign anchor_base = L.home -%}{%- endif -%}
+{%- comment -%} Expects: lang, t, L, page_kind, doc_item {%- endcomment -%}
 <footer class="footer">
-  <div class="wrap footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="{{ L.home }}"><img class="brand-icon" src="/assets/img/icon.svg" width="30" height="30" alt=""><span class="brand-name">{{ t.brand }}</span></a>
-      <p>{{ t.ui.footer.tagline }}</p>
-      <a class="footer-play" href="{{ site.data.site.play }}&amp;utm_source=website&amp;utm_medium=footer" rel="noopener"><svg class="i-play" aria-hidden="true"><use href="#i-play"/></svg>{{ t.ui.play.big }}</a>
-    </div>
-    <nav class="footer-col" aria-label="{{ t.ui.footer.product }}">
-      <h2>{{ t.ui.footer.product }}</h2>
-      <a href="{{ anchor_base }}#history">{{ t.ui.nav.features }}</a>
-      <a href="{{ anchor_base }}#ai">{{ t.ui.nav.ai }}</a>
-      <a href="{{ anchor_base }}#pricing">{{ t.ui.nav.pricing }}</a>
-      <a href="{{ site.data.site.apk }}">{{ t.ui.apk.label }}</a>
-    </nav>
-    <nav class="footer-col" aria-label="{{ t.ui.footer.help }}">
-      <h2>{{ t.ui.footer.help }}</h2>
+  <div class="wrap footer-row">
+    <a class="brand footer-brand" href="{{ L.home }}"><img class="brand-icon" src="/assets/img/icon.svg" width="26" height="26" alt=""><span class="brand-name">{{ t.brand }}</span></a>
+    <nav class="footer-links" aria-label="{{ t.help.title }}">
       <a href="{{ L.help }}">{{ t.help.title }}</a>
-      {%- assign list_faq = "faq,block,history,advanced,webhook" | split: "," -%}{%- for k in list_faq -%}
-      {%- include doc-url.html key=k %}
-      <a href="{{ doc_url }}">{{ t.docs[k].title }}</a>
-      {%- endfor %}
-    </nav>
-    <nav class="footer-col" aria-label="{{ t.ui.footer.about }}">
-      <h2>{{ t.ui.footer.about }}</h2>
-      {%- assign list_about = "about,purchase,changelog,privacy,licenses" | split: "," -%}{%- for k in list_about -%}
-      {%- include doc-url.html key=k %}
-      <a href="{{ doc_url }}">{{ t.docs[k].title }}</a>
-      {%- endfor %}
+      {%- include doc-url.html key='changelog' %}
+      <a href="{{ doc_url }}">{{ t.docs.changelog.title }}</a>
+      {%- include doc-url.html key='privacy' %}
+      <a href="{{ doc_url }}">{{ t.docs.privacy.title }}</a>
       <a href="mailto:{{ site.data.site.email }}">{{ t.ui.footer.contact }}</a>
     </nav>
-  </div>
-  <div class="wrap footer-base">
-    <span>{{ t.ui.footer.copyright }}</span>
     <nav class="footer-langs" aria-label="{{ t.ui.language }}">
       {%- for l in site.data.site.langs -%}
         {%- case page_kind -%}
@@ -43,5 +20,6 @@
       <a href="{{ href }}" lang="{{ l.code }}" hreflang="{{ l.code }}" data-lang="{{ l.code }}"{% if l.code == lang %} aria-current="true"{% endif %}>{{ l.name }}</a>
       {%- endfor %}
     </nav>
+    <span class="footer-copy">{{ t.ui.footer.copyright }}</span>
   </div>
 </footer>

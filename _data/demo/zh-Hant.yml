@@ -27,11 +27,9 @@ ui:
   yesterday: 昨天
   showing: 顯示中
   history: 紀錄
-  more: "展開更多 ({n})"
   undo: 復原
   dismissed: "已清除{app}通知"
   filtered: "最近已過濾 {n} 則通知"
-  filtered_text: 輕觸查看詳細資訊
   restore: 還原
   restored: 已還原
   silent: 靜音通知
@@ -41,13 +39,11 @@ ui:
   copied: "已複製 {code}"
   ai: "AI 指數 {s}%"
   spam: 垃圾
-  normal: 正常
   marked_spam: 已標記為垃圾
   marked_normal: 已標記為正常
   is_spam: 是垃圾通知
   is_normal: 是正常通知
   search: 搜尋…
-  search_hint: 試試
   open_app: "開啟{app} App"
   dismiss: 清除
   rule: 建立規則
@@ -56,7 +52,6 @@ ui:
   posted: "{t} 送達"
   updated: "更新了 {n} 次"
   earlier: 原始訊息
-  recalled: 對方已收回訊息
   intelligence: 智慧
   analytics: 分析
   settings: 設定
@@ -65,26 +60,23 @@ ui:
   by_rule: 規則已清除
   qs: [家裡 Wi-Fi, 藍牙, 勿擾模式, 手電筒]
   chips: [AI, App, 類型, 清除原因]
-  swipe: 滑掉
   no_results: 找不到通知
 
 hero:
-  start:
-    - { app: calendar, title: 設計審查, text: "11:00 – 11:30 · 4B 會議室" }
-    - { app: chirp, title: 小林, text: 我晚十分鐘到，你們先幫我占位？ }
   stream:
     - { app: shoploop, title: "⚡ 限時快閃：全館 3 折", text: 今晚 12 點結束，點我領取折價券！, s: 97 }
-    - { app: parcelo, title: 配送中, text: 你的包裹再 3 站就送達。, s: 4 }
     - { app: kingdom, title: 體力已補滿！, text: 快回來領取 500 顆鑽石 💎, s: 98 }
-    - { app: messages, title: 雲朵, text: 你的驗證碼是 482913，5 分鐘內有效。, code: "482913", s: 2 }
     - { app: newsdrop, title: 你絕對想不到接下來發生什麼事, text: 為你精選今日熱門新聞, s: 91 }
-    - { app: crew, title: 阿傑（設計組）, text: 新圖示上傳了，大家看一下 👀, s: 3 }
     - { app: cliptv, title: 🔴 直播中, text: 你追蹤的實況主開台了, s: 88 }
-    - { app: bank, title: 刷卡通知, text: 末四碼 0134 的卡片於街角咖啡消費 NT$120, s: 1 }
+    - { app: postbox, title: 你有 3 張折價券今天到期, text: 別錯過你的專屬優惠, s: 93 }
+    - { app: yumm, title: 肚子餓了嗎？, text: 接下來一小時免外送費 🍜, s: 86 }
+    - { app: shoploop, title: 你看過的 4 件商品降價了, text: 好價不等人，手刀下單, s: 84 }
+    - { app: kingdom, title: 每日獎勵待領取, text: 轉盤抽獎，驚喜等你！, s: 95 }
+    - { app: cliptv, title: 為你推薦, text: 5 部你可能會喜歡的影片, s: 82 }
   filtered:
-    - { app: postbox, title: 你有 3 張折價券今天到期, text: 別錯過你的專屬優惠 }
-    - { app: yumm, title: 肚子餓了嗎？, text: 接下來一小時免外送費 🍜 }
-    - { app: cliptv, title: 為你推薦, text: 5 部你可能會喜歡的影片 }
+    - { app: newsdrop, title: 你的每週精選已送達, text: 10 篇你錯過的熱門文章 }
+    - { app: melodia, title: 為你打造的新歌單來了, text: 依你的喜好精選 }
+    - { app: shoploop, title: 購物車裡的商品在等你, text: 現在結帳立減 10% }
 
 timeline:
   showing:
@@ -116,21 +108,9 @@ timeline:
     - { app: calendar, title: 看牙醫, text: 明天上午 9:30, m: 2700 }
     - { app: newsdrop, title: 早安新聞, text: 財經、天氣與今日 5 大頭條, m: 2900 }
     - { app: parcelo, title: 已出貨, text: 你的訂單正在路上。, m: 3300 }
-  suggest: [驗證碼, 包裹, 小林]
+  query: 驗證碼
 
 rules:
-  labels:
-    name: 規則
-    apps: 來自
-    keywords: 包含任一
-    time: 時段
-    all_day: 全天
-    then: 規則效果
-    test: 模擬測試
-    result: "在你的通知紀錄中符合 {n} 則"
-    sound: 聲音
-    sound_on: 開
-    sound_off: 關
   actions:
     dismiss: 清除
     mute: 靜音
@@ -142,94 +122,54 @@ rules:
     tap: 點按按鈕
     open: 開啟通知
     webhook: Webhook
+  descs:
+    dismiss: 直接從通知列清除
+    mute: 自動靜音 5 秒鐘
+    snooze: 延後到指定時間
+    replace: 取代通知的內容
+    sound: 更改通知的鈴聲
+    tts: 語音朗讀通知內容
+    call: 以來電提醒的方式持續顯示
+    tap: 點按通知上的按鈕，如「已讀」
+    open: 直接開啟通知內容
+    webhook: 將通知內容以 JSON 傳送到你的網址
   scenarios:
     dismiss:
-      name: 封鎖促銷推播
-      apps: [shoploop]
-      keywords: [快閃, 折價券, 折]
       n: { app: shoploop, title: "⚡ 限時快閃：全館 3 折", text: 今晚 12 點結束，點我領取折價券！ }
-      result: 已由規則「封鎖促銷推播」清除
-      hits: 126
     mute:
-      name: 下班後工作群組靜音
-      apps: [crew]
-      time: "19:00 – 09:00"
       n: { app: crew, title: 阿傑（大群組）, text: 現在有人方便開個短會嗎？ }
-      result: 已靜音：不響鈴、不震動
-      hits: 58
     snooze:
-      name: 新聞下班再看
-      apps: [newsdrop]
-      time: "09:00 – 18:00"
       n: { app: newsdrop, title: 早安新聞, text: 財經、天氣與今日 5 大頭條 }
-      result: 已延後到 18:00
-      hits: 214
+      until: "18:00"
     replace:
-      name: 公共場合隱藏金額
-      apps: [bank]
       n: { app: bank, title: 轉帳入帳, text: 小周轉帳給你 NT$12,500 }
       replaced: { title: 藍鯨銀行, text: 收到一則新通知 }
-      result: 內容已取代
-      hits: 37
     sound:
-      name: 媽媽的專屬鈴聲
-      apps: [chirp]
-      keywords: [媽媽]
       n: { app: chirp, title: 媽媽, text: 有空回我電話 ❤️ }
-      result: 正在播放鈴聲：馬林巴
-      hits: 41
     tts:
-      name: 包裹通知語音播報
-      apps: [parcelo]
       n: { app: parcelo, title: 即將送達, text: 你的包裹再 2 站就送達。 }
       speech: 來自包裹俠的通知：即將送達。你的包裹再 2 站就送達。
-      result: 正在朗讀…
-      hits: 23
     call:
-      name: 主管訊息不錯過
-      apps: [crew]
-      keywords: [緊急]
       n: { app: crew, title: 王經理, text: 緊急：可以加入客戶電話會議嗎？ }
       answer: 開啟
       decline: 關閉
-      result: 像來電一樣持續響鈴
-      hits: 6
     tap:
-      name: 促銷簡訊自動已讀
-      apps: [messages]
-      keywords: [退訂]
       button: 標示為已讀
       buttons: [回覆, 標示為已讀]
       n: { app: messages, title: 促銷簡訊, text: 週末全館免運，回覆 N 退訂 }
-      result: 已點按「標示為已讀」
-      hits: 88
     open:
-      name: 外送員抵達自動開啟
-      apps: [yumm]
-      keywords: [已抵達]
       n: { app: yumm, title: 外送員已抵達, text: 小陳在大廳等你 · 取餐碼 2846 }
       screen: { title: 餐點已送達, text: 小陳在大廳等你, code: "2846" }
-      result: 已自動開啟
-      hits: 12
     webhook:
-      name: 驗證碼轉寄到我的伺服器
-      keywords: [驗證碼]
       n: { app: messages, title: 雲朵, text: 你的驗證碼是 482913。 }
-      url: https://example.com/hook
-      result: 已送出 POST · 200 OK
-      hits: 64
+      host: example.com
 
 ai:
   labels:
     normal: 正常
     spam: 垃圾
     threshold: "過濾 ≥ {n}%"
-    filtered: 已過濾
-    kept: 已保留
-    learned: 已學習
-    hint: 點任一則通知，教 AI 認識它
-    offline: 離線 · 在你的手機上執行
-    score: 垃圾指數
+    stats: "已保留 {k} · 已過濾 {f} · 已學習 {l}"
     teach_spam: 學會了：類似的通知會被過濾
     teach_normal: 學會了：類似的通知會被保留
   samples:
@@ -259,23 +199,21 @@ ai:
 enhancers:
   recall:
     n: { app: chirp, title: 小林, text: 晚上 7 點老地方見！ }
-    hint: 把這則通知滑掉試試
   shh:
-    group: 小組 · 週末出遊群組
-    messages: ["阿森：誰開車？", "小李：我來！🚗", "安安：我帶零食", "阿森：8 點出發", "小李：👍👍", "安安：明天見"]
-    rule: 手機解鎖時 · 1 分鐘內 3 則
-    muted: 已由智慧靜音處理
-    try: 開始群組聊天
+    messages:
+      - { app: crew, title: 阿森, text: 明天誰開車？ }
+      - { app: crew, title: 小李, text: 我來！🚗 }
+      - { app: crew, title: 安安, text: 我帶零食 }
+      - { app: crew, title: 阿森, text: 那 8 點出發 }
+      - { app: crew, title: 小李, text: 👍👍 }
+    muting: { title: 正在將通知靜音…, text: 智慧靜音 · 1 分鐘內 3 則 }
   captcha:
     n: { app: messages, title: 雲朵, text: 你的驗證碼是 482913，請勿告訴任何人。 }
     code: "482913"
-    hide: 鎖定畫面時隱藏
   webhook:
-    rule: 銀行通知 → 我的伺服器
-    url: https://example.com/hook
     n: { app: bank, title: 刷卡通知, text: 街角咖啡消費 NT$120 }
-    send: 傳送測試
-    ok: "200 OK · 182 毫秒"
+    host: example.com
+    ok: 200 OK
 
 analytics:
   title: 近期總覽

@@ -16,19 +16,14 @@
 <head>
 {% include head.html %}
 <meta name="keywords" content="{{ t.meta.keywords }}">
-<link rel="alternate" type="text/markdown" href="{% include doc-url.html key='about' %}{{ doc_url }}.md" title="{{ t.docs.about.title }}">
 <link rel="stylesheet" href="/assets/css/home.css?v={{ v }}">
 <script>document.documentElement.classList.replace('no-js','js')</script>
-{%- capture faq_json -%}
-{%- for it in h.faq.items -%}{"@type":"Question","name":{{ it.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ it.a | strip_html | jsonify }}}}{% unless forloop.last %},{% endunless %}{%- endfor -%}
-{%- endcapture %}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"{{ site.url }}/#website","url":"{{ site.url }}/","name":"FilterBox","alternateName":["通知滤盒","通知濾盒","フィルターボックス","FilterBox Notification Manager"],"inLanguage":["en","zh-Hans","zh-Hant","ja"],"publisher":{"@id":"{{ site.url }}/#author"}},
 {"@type":"Person","@id":"{{ site.url }}/#author","name":"{{ site.data.site.author }}","url":"{{ site.data.site.play_dev }}"},
-{"@type":"MobileApplication","@id":"{{ site.url }}/#app","name":{{ t.brand | jsonify }},"alternateName":{{ t.store_name | jsonify }},"description":{{ t.meta.description | jsonify }},"url":"{{ canonical }}","image":"{{ site.url }}/assets/img/icon-512.png","screenshot":"{{ site.url }}/assets/img/share-{{ lang }}.png","operatingSystem":"Android 6.0+","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Notification manager","inLanguage":["en","zh-Hans","zh-Hant","ja"],"installUrl":"{{ site.data.site.play }}","downloadUrl":["{{ site.data.site.play }}","{{ site.url }}{{ site.data.site.apk }}"],"sameAs":"{{ site.data.site.play }}","author":{"@id":"{{ site.url }}/#author"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"free"},"featureList":{{ h.history.points | concat: h.ai.points | jsonify }}},
-{"@type":"WebPage","@id":"{{ canonical }}#webpage","url":"{{ canonical }}","name":{{ t.meta.title | jsonify }},"description":{{ t.meta.description | jsonify }},"inLanguage":"{{ lang }}","isPartOf":{"@id":"{{ site.url }}/#website"},"about":{"@id":"{{ site.url }}/#app"},"primaryImageOfPage":{"@type":"ImageObject","url":"{{ site.url }}/assets/img/share-{{ lang }}.png","width":1200,"height":630}},
-{"@type":"FAQPage","@id":"{{ canonical }}#faq","inLanguage":"{{ lang }}","isPartOf":{"@id":"{{ canonical }}#webpage"},"mainEntity":[{{ faq_json }}]}
+{"@type":"MobileApplication","@id":"{{ site.url }}/#app","name":{{ t.brand | jsonify }},"alternateName":{{ t.store_name | jsonify }},"description":{{ t.meta.description | jsonify }},"url":"{{ canonical }}","image":"{{ site.url }}/assets/img/icon-512.png","screenshot":"{{ site.url }}/assets/img/share-{{ lang }}.png","operatingSystem":"Android","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Notification manager","inLanguage":["en","zh-Hans","zh-Hant","ja"],"installUrl":"{{ site.data.site.play }}","downloadUrl":["{{ site.data.site.play }}","{{ site.url }}{{ site.data.site.apk }}"],"sameAs":"{{ site.data.site.play }}","author":{"@id":"{{ site.url }}/#author"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":{{ t.meta.features | jsonify }}},
+{"@type":"WebPage","@id":"{{ canonical }}#webpage","url":"{{ canonical }}","name":{{ t.meta.title | jsonify }},"description":{{ t.meta.description | jsonify }},"inLanguage":"{{ lang }}","isPartOf":{"@id":"{{ site.url }}/#website"},"about":{"@id":"{{ site.url }}/#app"},"primaryImageOfPage":{"@type":"ImageObject","url":"{{ site.url }}/assets/img/share-{{ lang }}.png","width":1200,"height":630}}
 ]}
 </script>
 </head>
@@ -46,13 +41,12 @@
       <h1 id="hero-title" class="display reveal">{% for line in h.hero.title %}<span>{{ line }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</h1>
       <p class="lead reveal">{{ h.hero.intro }}</p>
       <div class="reveal">{% include store-buttons.html placement='hero' %}</div>
-      <p class="proof reveal">{{ t.ui.proof }}</p>
     </div>
     <div class="hero-art">
       <figure class="device device--light hero-device" data-device>
         <div class="device-body"><div class="device-screen screen-shade" data-shade aria-hidden="true"></div></div>
       </figure>
-      <p class="art-hint" data-hint><svg class="i" aria-hidden="true"><use href="#i-hand"/></svg>{{ h.hero.hint }}</p>
+      <div class="scores" data-scores aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -69,7 +63,6 @@
       <figure class="device device--dark" data-device>
         <div class="device-body"><div class="device-screen screen-app" data-timeline aria-hidden="true"></div></div>
       </figure>
-      <p class="art-hint"><svg class="i" aria-hidden="true"><use href="#i-hand"/></svg>{{ h.history.hint }}</p>
     </div>
   </div>
 </section>
@@ -81,24 +74,19 @@
       <h2 id="rules-title" class="reveal">{% for line in h.rules.title %}<span>{{ line }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</h2>
       <p class="lead reveal">{{ h.rules.intro }}</p>
     </div>
-    <div class="playground reveal" data-rules>
-      <div class="pg-panel">
-        <p class="pg-pick">{{ h.rules.pick }}</p>
-        <div class="pg-actions" role="radiogroup" aria-label="{{ h.rules.pick }}">
-          {%- for a in d.rules.actions %}
-          <button type="button" class="pg-action" role="radio" aria-checked="false" data-action="{{ a[0] }}"><svg class="i" aria-hidden="true"><use href="#i-{% case a[0] %}{% when 'dismiss' %}dismiss{% when 'mute' %}mute{% when 'snooze' %}snooze{% when 'replace' %}replace{% when 'sound' %}note{% when 'tts' %}speak{% when 'call' %}call{% when 'tap' %}tap{% when 'open' %}open{% else %}webhook{% endcase %}"/></svg><span>{{ a[1] }}</span></button>
-          {%- endfor %}
-        </div>
-        <div class="rule-card" data-rule-card aria-live="polite"></div>
-      </div>
-      <div class="pg-stage">
+    <div class="fx reveal" data-rules>
+      <ol class="fx-list">
+        {%- for a in d.rules.actions %}{% assign fx_key = a[0] %}
+        <li><button type="button" class="fx-item" data-action="{{ fx_key }}" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-{% case fx_key %}{% when 'dismiss' %}dismiss{% when 'mute' %}mute{% when 'snooze' %}snooze{% when 'replace' %}replace{% when 'sound' %}note{% when 'tts' %}speak{% when 'call' %}call{% when 'tap' %}tap{% when 'open' %}open{% else %}webhook{% endcase %}"/></svg><span><b>{{ a[1] }}</b><small>{{ d.rules.descs[fx_key] }}</small></span><i class="fx-progress" aria-hidden="true"><i></i></i></button></li>
+        {%- endfor %}
+      </ol>
+      <div class="fx-stage">
         <figure class="device device--dark" data-device>
           <div class="device-body"><div class="device-screen screen-lock" data-lock aria-hidden="true"></div></div>
         </figure>
-        <button type="button" class="sound-toggle" data-sound aria-pressed="true"><svg class="i" aria-hidden="true"><use href="#i-speak"/></svg><span data-on>{{ d.rules.labels.sound }}: {{ d.rules.labels.sound_on }}</span><span data-off>{{ d.rules.labels.sound }}: {{ d.rules.labels.sound_off }}</span></button>
+        <div class="fx-side" data-side aria-hidden="true"></div>
       </div>
     </div>
-    <p class="more-link-row reveal"><a class="more-link" href="{{ site.data.site.share_rules }}" rel="noopener">{{ h.rules.community }}<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
   </div>
 </section>
 
@@ -109,28 +97,19 @@
       <h2 id="ai-title" class="reveal">{% for line in h.ai.title %}<span>{{ line }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</h2>
       <p class="lead reveal">{{ h.ai.intro }}</p>
       <ul class="ticks reveal">{% for p in h.ai.points %}<li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>{{ p }}</li>{% endfor %}</ul>
-      <p class="fine reveal">{{ h.ai.note }}</p>
     </div>
     <figure class="sieve reveal" data-sieve>
-      <div class="sieve-top"><span class="sieve-badge"><svg class="i" aria-hidden="true"><use href="#i-cloudoff"/></svg>{{ d.ai.labels.offline }}</span></div>
       <div class="sieve-stage" data-stage>
         <canvas class="sieve-canvas" aria-hidden="true"></canvas>
         <div class="sieve-cloud" data-cloud></div>
         <div class="sieve-scale" data-scale>
           <div class="sieve-dots" data-dots></div>
-          <div class="sieve-line" data-line><span class="sieve-tag" data-tag></span></div>
-          <div class="sieve-rail"><span class="sieve-zone" data-zone></span></div>
-          <label class="sieve-thumb"><input type="range" min="50" max="95" step="1" value="80" data-threshold aria-label="{{ d.ai.labels.score }}"></label>
+          <div class="sieve-line" data-line aria-hidden="true"><span class="sieve-tag" data-tag></span></div>
+          <div class="sieve-rail" aria-hidden="true"><span class="sieve-zone" data-zone></span></div>
         </div>
-        <div class="sieve-pop" data-pop hidden></div>
       </div>
-      <div class="sieve-ends"><span>{{ d.ai.labels.normal }} · 0%</span><span>100% · {{ d.ai.labels.spam }}</span></div>
-      <div class="sieve-stats" aria-live="polite">
-        <span class="stat stat--kept"><b data-kept>0</b>{{ d.ai.labels.kept }}</span>
-        <span class="stat stat--filtered"><b data-filtered>0</b>{{ d.ai.labels.filtered }}</span>
-        <span class="stat stat--learned"><b data-learned>0</b>{{ d.ai.labels.learned }}</span>
-      </div>
-      <p class="sieve-hint"><svg class="i" aria-hidden="true"><use href="#i-hand"/></svg>{{ d.ai.labels.hint }}</p>
+      <div class="sieve-ends" aria-hidden="true"><span>{{ d.ai.labels.normal }} · 0%</span><span>100% · {{ d.ai.labels.spam }}</span></div>
+      <p class="sieve-stats" data-stats aria-live="polite"></p>
     </figure>
   </div>
 </section>
@@ -145,12 +124,9 @@
     <div class="enh-grid">
       {%- assign list_recall = "recall,shh,captcha,webhook" | split: "," -%}{%- for k in list_recall %}
       <article class="enh enh--{{ k }} reveal" data-enh="{{ k }}">
-        <div class="enh-head">
-          <h3>{{ h.enhancers.cards[k].title }}</h3>
-          <label class="switch"><input type="checkbox" checked data-switch aria-label="{{ h.enhancers.cards[k].title }}"><span></span></label>
-        </div>
+        <h3>{{ h.enhancers.cards[k].title }}</h3>
         <p class="enh-text">{{ h.enhancers.cards[k].text }}</p>
-        <div class="enh-stage" data-stage></div>
+        <div class="enh-stage" data-stage aria-hidden="true"></div>
       </article>
       {%- endfor %}
     </div>
@@ -173,57 +149,18 @@
   </div>
 </section>
 
-<section class="sec sec--compact tone" data-tone="paper" id="privacy" aria-labelledby="privacy-title">
+<section class="sec tone" data-tone="paper" id="privacy" aria-labelledby="privacy-title">
   <div class="wrap">
     <div class="sec-head sec-head--center">
       <p class="eyebrow reveal">{{ h.privacy.eyebrow }}</p>
       <h2 id="privacy-title" class="reveal">{% for line in h.privacy.title %}<span>{{ line }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</h2>
     </div>
     {%- assign pv_icons = "lock,cloudoff,finger,shield" | split: "," %}
-    <ul class="privacy-grid">
+    <ul class="pv">
       {%- for it in h.privacy.items %}
-      <li class="reveal"><span class="pv-icon"><svg class="i" aria-hidden="true"><use href="#i-{{ pv_icons[forloop.index0] }}"/></svg></span><h3>{{ it.title }}</h3><p>{{ it.text }}</p></li>
+      <li class="reveal"><svg class="i" aria-hidden="true"><use href="#i-{{ pv_icons[forloop.index0] }}"/></svg><h3>{{ it.title }}</h3><p>{{ it.text }}</p></li>
       {%- endfor %}
     </ul>
-  </div>
-</section>
-
-<section class="sec tone" data-tone="white" id="pricing" aria-labelledby="pricing-title">
-  <div class="wrap">
-    <div class="sec-head sec-head--center">
-      <p class="eyebrow reveal">{{ h.pricing.eyebrow }}</p>
-      <h2 id="pricing-title" class="reveal">{% for line in h.pricing.title %}<span>{{ line }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</h2>
-      <p class="lead reveal">{{ h.pricing.intro }}</p>
-    </div>
-    <div class="plans">
-      <article class="plan reveal">
-        <h3>{{ h.pricing.free.name }}</h3>
-        <p class="plan-price">{{ h.pricing.free.price }}</p>
-        <p class="plan-note">{{ h.pricing.free.note }}</p>
-        <ul>{% for f in h.pricing.free.features %}<li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>{{ f }}</li>{% endfor %}</ul>
-      </article>
-      <article class="plan plan--pro reveal">
-        <span class="plan-badge">{{ h.pricing.pro.badge }}</span>
-        <h3>{{ h.pricing.pro.name }}</h3>
-        <p class="plan-price">{{ h.pricing.pro.price }}</p>
-        <p class="plan-note">{{ h.pricing.pro.note }}</p>
-        <ul>{% for f in h.pricing.pro.features %}<li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>{{ f }}</li>{% endfor %}</ul>
-      </article>
-    </div>
-    <ul class="plan-notes reveal">{% for n in h.pricing.notes %}<li>{{ n }}</li>{% endfor %}</ul>
-    <p class="more-link-row reveal">{% include doc-url.html key='purchase' %}<a class="more-link" href="{{ doc_url }}">{{ h.pricing.more }}<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-  </div>
-</section>
-
-<section class="sec tone" data-tone="paper" id="faq" aria-labelledby="faq-title">
-  <div class="wrap faq-grid">
-    <h2 id="faq-title" class="reveal">{% for line in h.faq.title %}<span>{{ line }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</h2>
-    <div class="faq-list">
-      {%- for it in h.faq.items %}
-      <details class="faq-item reveal" name="faq"><summary>{{ it.q }}<span class="faq-toggle" aria-hidden="true"></span></summary><div class="faq-a"><p>{{ it.a }}</p></div></details>
-      {%- endfor %}
-      <p class="more-link-row"><a class="more-link" href="{{ L.help }}">{{ h.faq.more }}<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-    </div>
   </div>
 </section>
 
@@ -232,7 +169,6 @@
   <div class="wrap closing-inner">
     <button type="button" class="closing-bell reveal" data-bell aria-label="{{ t.brand }}"><img src="/assets/img/icon.svg" width="112" height="112" alt=""></button>
     <h2 id="closing-title" class="reveal">{% for line in h.closing.title %}<span>{{ line }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</h2>
-    <p class="lead reveal">{{ h.closing.intro }}</p>
     <div class="reveal">{% include store-buttons.html placement='closing' %}</div>
   </div>
 </section>
