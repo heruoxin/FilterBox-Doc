@@ -1,0 +1,33 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign kinds = "home,help" | split: "," -%}
+{%- for k in kinds -%}
+{%- for l in site.data.site.langs %}
+  <url>
+    <loc>{{ site.url }}{{ l[k] }}</loc>
+    {%- for a in site.data.site.langs %}
+    <xhtml:link rel="alternate" hreflang="{{ a.code }}" href="{{ site.url }}{{ a[k] }}"/>
+    {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.data.site.langs.first[k] }}"/>
+  </url>
+{%- endfor -%}
+{%- endfor -%}
+{%- for it in site.data.docs.items -%}{%- unless it.hidden -%}
+{%- for p in it.paths %}
+  <url>
+    <loc>{{ site.url }}{{ p[1] | prepend: '/' | remove: '.md' | uri_escape }}</loc>
+    {%- if it.paths.size > 1 -%}
+    {%- for q in it.paths %}
+    <xhtml:link rel="alternate" hreflang="{{ q[0] }}" href="{{ site.url }}{{ q[1] | prepend: '/' | remove: '.md' | uri_escape }}"/>
+    {%- endfor -%}
+    {%- assign xd = it.paths.en | default: p[1] %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ xd | prepend: '/' | remove: '.md' | uri_escape }}"/>
+    {%- endif %}
+  </url>
+{%- endfor -%}
+{%- endunless -%}{%- endfor %}
+</urlset>

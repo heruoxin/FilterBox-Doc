@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M18.84 10.5 21.13 10.85V13.15L18.84 13.5 17.9 15.77 19.27 17.64 17.64 19.27 15.77 17.9 13.5 18.84 13.15 21.13H10.85L10.5 18.84 8.23 17.9 6.36 19.27 4.73 17.64 6.1 15.77 5.16 13.5 2.87 13.15V10.85L5.16 10.5 6.1 8.23 4.73 6.36 6.36 4.73 8.23 6.1 10.5 5.16 10.85 2.87H13.15L13.5 5.16 15.77 6.1 17.64 4.73 19.27 6.36 17.9 8.23ZM15.2 12A3.2 3.2 0 1 0 8.8 12 3.2 3.2 0 1 0 15.2 12Z"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9.2 18h5.6M10.2 21h3.6M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24"><path stroke-width="3" d="M6 19.5v-5.5M12 19.5V5M18 19.5v-9"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M12.22,22.50C11.11,22.50 10.22,21.70 10.22,20.72L14.22,20.72C14.22,21.70 13.33,22.50 12.22,22.50ZM20.15,18.13C20.77,18.75 20.34,19.82 19.45,19.82L4.54,19.82C3.66,19.82 3.23,18.75 3.85,18.13L5.12,16.85L5.12,10.91C5.12,7.59 7.43,4.82 10.53,4.14L10.53,2.98C10.53,2.16 11.18,1.50 12.00,1.50C12.82,1.50 13.47,2.16 13.47,2.98L13.47,4.14C16.57,4.82 18.88,7.59 18.88,10.91L18.88,16.85L20.15,18.13ZM11.30,16.36L12.70,16.36C13.09,16.36 13.41,15.99 13.41,15.53C13.41,15.08 13.09,14.71 12.70,14.71L11.30,14.71C10.91,14.71 10.59,15.08 10.59,15.53C10.59,15.99 10.91,16.36 11.30,16.36ZM9.39,13.41L14.61,13.41C14.89,13.41 15.13,13.06 15.13,12.64C15.13,12.22 14.89,11.88 14.61,11.88L9.39,11.88C9.11,11.88 8.87,12.22 8.87,12.64C8.87,13.06 9.11,13.41 9.39,13.41ZM7.43,9.64C7.43,10.09 7.65,10.46 7.93,10.46L16.07,10.46C16.35,10.46 16.57,10.09 16.57,9.64C16.57,9.18 16.35,8.81 16.07,8.81L7.93,8.81C7.65,8.81 7.43,9.18 7.43,9.64Z"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 20.5 1.6 9.1a14.7 14.7 0 0 1 20.8 0z"/></symbol>
+  <symbol id="i-signal" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M21.5 3.5v17h-17z"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M9.5 2h5v1.6h1.6c.8 0 1.4.6 1.4 1.4v15.6c0 .8-.6 1.4-1.4 1.4H7.9c-.8 0-1.4-.6-1.4-1.4V5c0-.8.6-1.4 1.4-1.4h1.6z"/></symbol>
+  <symbol id="i-bluetooth" viewBox="0 0 24 24"><path d="m6.5 7 11 10-5.5 4.5V2.5L17.5 7l-11 10"/></symbol>
+  <symbol id="i-dnd" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8 12h8"/></symbol>
+  <symbol id="i-torch" viewBox="0 0 24 24"><path d="M8 3h8v3l-2 4v10.5h-4V10L8 6zM8 6h8M12 13.5v2"/></symbol>
+  <symbol id="i-dismiss" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M6 16.5h12l-1.6-2.2V10a4.4 4.4 0 0 0-8.8 0v4.3zM10.2 19.5a1.9 1.9 0 0 0 3.6 0M3.5 3.5l17 17"/></symbol>
+  <symbol id="i-snooze" viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5v3.8l2.4 1.8M4.5 4.5 2.5 6.5M19.5 4.5l2 2"/></symbol>
+  <symbol id="i-replace" viewBox="0 0 24 24"><path d="M4 7h10M4 11.5h7M4 16h5"/><path d="m13.5 20 .9-3.4 5.6-5.6a1.5 1.5 0 0 1 2.1 2.1l-5.6 5.6z"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 17.5V5.5l10.5-2v12"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17" cy="15.5" r="2.5"/></symbol>
+  <symbol id="i-speak" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18.3 6.3a8 8 0 0 1 0 11.4"/></symbol>
+  <symbol id="i-call" viewBox="0 0 24 24"><path d="M5.2 3.8h3.4l1.8 4.6-2.3 1.5a11.5 11.5 0 0 0 6 6l1.5-2.3 4.6 1.8v3.4a1.6 1.6 0 0 1-1.7 1.6A16.8 16.8 0 0 1 3.6 5.5a1.6 1.6 0 0 1 1.6-1.7z"/></symbol>
+  <symbol id="i-tap" viewBox="0 0 24 24"><path d="M9.5 12.5V6a1.75 1.75 0 0 1 3.5 0v5.5m0-1a1.75 1.75 0 0 1 3.5 0v1.5m0-.5a1.75 1.75 0 0 1 3.5 0v3.8a6.2 6.2 0 0 1-6.2 6.2h-1a6.2 6.2 0 0 1-5.2-2.8l-2.4-3.7a1.7 1.7 0 0 1 2.8-1.9l1.5 2.2M6.2 6.5a4.5 4.5 0 0 1 8.8-1.3"/></symbol>
+  <symbol id="i-open" viewBox="0 0 24 24"><path d="M13.5 4H20v6.5M20 4l-9 9M18 14v4.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></symbol>
+  <symbol id="i-webhook" viewBox="0 0 24 24"><circle cx="6.5" cy="17" r="2.5"/><circle cx="17.5" cy="17" r="2.5"/><circle cx="12" cy="6.5" r="2.5"/><path d="M10.7 8.7 7.7 14.8M9 17h6M13.3 8.7l3 6.1"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2.5"/><path d="M15.5 5.5V5A1.5 1.5 0 0 0 14 3.5H6A2.5 2.5 0 0 0 3.5 6v8A1.5 1.5 0 0 0 5 15.5h.5"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 6.5 4.5 11 9 15.5"/><path d="M5 11h9.5a5 5 0 0 1 0 10H12"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+  <symbol id="i-finger" viewBox="0 0 24 24"><path d="M12 11.2v3.4a6 6 0 0 1-1.6 4.1M8.6 9.8A3.8 3.8 0 0 1 15.8 11.6v2.2a10 10 0 0 1-.9 4.2M5.6 8.2a7.4 7.4 0 0 1 13.2 2.6M5.1 13.4a12.6 12.6 0 0 0 .5-3.6M18.9 15.3a14 14 0 0 0 .2-2.6M9 20.2a9 9 0 0 0 1.6-4.4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 2.9 8.2 7 9.5 4.1-1.3 7-5.2 7-9.5V6z"/><path d="m9 12 2.1 2.1L15.2 10"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.2"/><path d="M9.5 3v3.5M14.5 3v3.5M9.5 17.5V21M14.5 17.5V21M3 9.5h3.5M3 14.5h3.5M17.5 9.5H21M17.5 14.5H21M10 10h4v4h-4z"/></symbol>
+  <symbol id="i-cloudoff" viewBox="0 0 24 24"><path d="M3.5 3.5l17 17M7.3 7.6A5 5 0 0 0 6.8 17.5H16.5M19.6 15.9A3.5 3.5 0 0 0 17.2 10h-.4a5.5 5.5 0 0 0-6.4-4.3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M9.5 11V5.2a1.7 1.7 0 0 1 3.4 0V10m0-.6a1.7 1.7 0 0 1 3.4 0V11m0-.4a1.7 1.7 0 0 1 3.4 0v4.2a6.2 6.2 0 0 1-6.2 6.2h-.7a6.2 6.2 0 0 1-5.1-2.7L4.3 15a1.7 1.7 0 0 1 2.8-1.9l2.4 3"/></symbol>
+  <symbol id="i-play" viewBox="0 0 26 28"><path fill="#00a0ff" stroke="none" d="M1.2 1.2c-.3.3-.4.8-.4 1.4v22.8c0 .6.1 1.1.4 1.4L13.6 14z"/><path fill="#ffbc00" stroke="none" d="m17.7 18.2-4.1-4.2 4.1-4.2 5 2.8c1.4.8 1.4 2.1 0 2.9z"/><path fill="#ff3a44" stroke="none" d="M17.7 18.2 13.6 14 1.2 26.8c.5.5 1.2.5 2.1.1z"/><path fill="#00f076" stroke="none" d="M17.7 9.8 3.3 1.1C2.4.6 1.7.7 1.2 1.2L13.6 14z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2.3l1.4-2h5.6l1.4 2h2.3A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/><circle cx="12" cy="12.5" r="3.5"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><path stroke-width="3" d="M6 12h.01M12 12h.01M18 12h.01"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4"/></symbol>
+  <symbol id="i-playtri" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M7 4.5v15l12-7.5z"/></symbol>
+  <!-- app glyphs -->
+  <symbol id="g-chirp" viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-4.5 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="g-postbox" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></symbol>
+  <symbol id="g-shoploop" viewBox="0 0 24 24"><path d="M5 8.5h14L18 20H6z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></symbol>
+  <symbol id="g-newsdrop" viewBox="0 0 24 24"><rect x="4" y="4.5" width="16" height="15" rx="2.2"/><path d="M8 9h8M8 12.5h8M8 16h5"/></symbol>
+  <symbol id="g-parcelo" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="m4 7 8 4 8-4M12 11v10"/></symbol>
+  <symbol id="g-bank" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></symbol>
+  <symbol id="g-messages" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01"/></symbol>
+  <symbol id="g-melodia" viewBox="0 0 24 24"><path d="M9 17.5V5.5l10.5-2v12"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17" cy="15.5" r="2.5"/></symbol>
+  <symbol id="g-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M8.5 3v4M15.5 3v4"/></symbol>
+  <symbol id="g-crew" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.5"/><path d="M15.6 14.3A4.5 4.5 0 0 1 21 18.5"/></symbol>
+  <symbol id="g-kingdom" viewBox="0 0 24 24"><path d="M4 18h16l1-10-5 4-4-7-4 7-5-4z"/></symbol>
+  <symbol id="g-cliptv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></symbol>
+  <symbol id="g-yumm" viewBox="0 0 24 24"><path d="M3.5 11h17a8.5 8.5 0 0 1-17 0z"/><path d="M8.5 7.5c0-1.6 1.5-1.6 1.5-3.2M13 7.5c0-1.6 1.5-1.6 1.5-3.2"/></symbol>
+  <symbol id="g-weather" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+  <symbol id="g-system" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></symbol>
+  <symbol id="g-others" viewBox="0 0 24 24"><path d="M6 12h.01M12 12h.01M18 12h.01" stroke-width="3"/></symbol>
+</svg>

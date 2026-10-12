@@ -1,0 +1,40 @@
+---
+layout: null
+permalink: /404.html
+---
+{%- assign v = site.time | date: '%s' -%}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found · FilterBox</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffd600">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/site.css?v={{ v }}">
+<style>
+  body { --bg: var(--yellow); padding-top: 0; min-height: 100svh; display: grid; place-items: center; }
+  .nf { width: min(720px, calc(100% - 40px)); padding-block: 64px; text-align: center; }
+  .nf img { width: 96px; height: 96px; margin: 0 auto 28px; filter: drop-shadow(0 14px 18px rgba(150, 82, 0, .3)); animation: swing 1.6s cubic-bezier(.2,.8,.2,1) both; transform-origin: 50% 10%; }
+  .nf h1 { font-size: clamp(64px, 14vw, 128px); line-height: 1; font-weight: 800; letter-spacing: -.04em; }
+  .nf ul { display: grid; gap: 10px; margin-top: 36px; }
+  .nf li { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 14px; padding: 14px 18px; border-radius: 20px; background: rgba(255, 255, 255, .55); }
+  .nf li p { color: #3d3720; }
+  .nf li a { font-weight: 650; border-bottom: 1.5px solid rgba(20, 20, 19, .3); }
+  .nf li a:hover { border-color: currentColor; }
+  @keyframes swing { 0% { transform: rotate(-24deg) scale(.6); opacity: 0; } 30% { transform: rotate(14deg); opacity: 1; } 55% { transform: rotate(-8deg); } 80% { transform: rotate(3deg); } 100% { transform: none; } }
+</style>
+</head>
+<body>
+<main class="nf">
+  <img src="/assets/img/icon.svg" alt="FilterBox">
+  <h1>404</h1>
+  <ul>
+    {%- for l in site.data.site.langs -%}{%- assign t = site.data.i18n[l.code] %}
+    <li lang="{{ l.code }}"><p>{{ t.ui.not_found.title }} · {{ t.ui.not_found.text }}</p><a href="{{ l.home }}">{{ t.ui.doc.home }}</a><a href="{{ l.help }}">{{ t.help.title }}</a></li>
+    {%- endfor %}
+  </ul>
+</main>
+</body>
+</html>

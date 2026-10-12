@@ -1,0 +1,230 @@
+brand: 通知濾盒
+store_name: 通知濾盒 FilterBox Notification Manager
+
+meta:
+  title: 通知濾盒 · Android 通知紀錄與 AI 垃圾通知過濾
+  description: 通知濾盒（FilterBox）是 Android 通知管理 App：完整保存通知紀錄，不小心滑掉的通知、被收回的訊息都找得回來；離線 AI 自動過濾垃圾與廣告通知；自訂規則自動靜音、延後、朗讀或轉寄通知。免費下載。
+  image_alt: 通知濾盒 · 濾掉打擾，一則不漏。
+  keywords: 通知濾盒, FilterBox, 通知紀錄, Android 通知管理, 封鎖廣告通知, 垃圾通知過濾, 查看收回訊息, 還原通知, 驗證碼, 通知轉寄
+
+ui:
+  skip: 跳到主要內容
+  language: 語言
+  download: 下載
+  nav:
+    features: 功能
+    ai: AI 過濾
+    pricing: 價格
+    help: 說明
+  play:
+    small: 立即下載
+    big: Google Play
+    label: 在 Google Play 下載通知濾盒
+  apk:
+    small: 直接下載
+    big: APK 安裝檔
+    label: 下載通知濾盒最新安裝檔
+  stores: ""
+  proof: 10 萬+ 次下載 · Google Play 4.4 顆星 · 支援 Android 6.0 以上
+  suggest:
+    text: 本頁提供繁體中文版
+    action: 切換到繁體中文
+    close: 關閉
+  footer:
+    tagline: Android 通知紀錄與離線 AI 垃圾通知過濾。
+    product: 產品
+    help: 說明
+    about: 關於
+    contact: 聯絡我們
+    copyright: © 2026 Ruoxin He
+  doc:
+    home: 首頁
+    help: 說明中心
+    toc: 本頁目錄
+    read_in: 其他語言
+    markdown: 檢視 Markdown 原文
+    fallback: 本頁目前僅提供英文版。
+    feedback: 還有疑問嗎？寄信至
+    feedback_tail: 或在 App 內使用「意見回饋」。
+    cta_title: 下載通知濾盒
+    cta_text: Android 通知紀錄與離線 AI 垃圾通知過濾。
+    copy: 複製
+    copied: 已複製
+  not_found:
+    title: 找不到頁面
+    text: 你要找的頁面可能已經移動，或從未存在。
+
+groups:
+  start: 入門
+  guides: 使用指南
+  rules: 規則與自動化
+  account: 購買
+  updates: 更新與條款
+
+docs:
+  about:
+    title: 通知濾盒是什麼
+    desc: 一頁看懂通知濾盒：核心功能、系統需求、價格與隱私。
+  faq:
+    title: 常見問題
+    desc: 背景被關閉、隱私安全、常駐通知、購買等常見問題解答。
+  block:
+    title: Android 手機如何封鎖垃圾與廣告通知
+    desc: 用系統設定、關鍵字規則和離線 AI 三種方法，封鎖 Android 手機上的廣告推播與垃圾通知。
+  history:
+    title: Android 手機如何查看通知紀錄
+    desc: 開啟 Android 內建的通知紀錄，並用通知濾盒長期保存、搜尋通知，找回滑掉的通知與被收回的訊息。
+  advanced:
+    title: 進階過濾規則指南（JSON）
+    desc: 用 JSON 與規則運算式比對通知的任意欄位，做到更精細的過濾。
+  webhook:
+    title: Webhook 功能指南
+    desc: 把通知以 JSON 轉寄到你的伺服器、Telegram 機器人或自動化服務。
+  purchase:
+    title: 購買說明
+    desc: 免費試用、Google Play 終身版、退款與更換裝置說明。
+  changelog:
+    title: 更新紀錄
+    desc: 通知濾盒各版本的新功能與改進（英文）。
+  privacy:
+    title: 隱私權政策（簡體中文）
+    desc: 通知濾盒隱私權政策。
+  licenses:
+    title: 開放原始碼授權
+    desc: 通知濾盒使用的開放原始碼程式庫。
+  reseller:
+    title: 授權經銷商
+    desc: 通知濾盒中國授權經銷商。
+  bubble:
+    title: AI Bubble 隱私說明
+    desc: AI Bubble 隱私說明。
+
+help:
+  title: 說明中心
+  meta_title: 通知濾盒說明中心 · 使用指南、常見問題與疑難排解
+  intro: 通知濾盒的設定技巧、使用指南與常見問題解答。
+  search: 搜尋說明文章與問題…
+  no_results: 找不到相關內容。換個關鍵字試試，或寄信給我們。
+  faq: 常見問題
+  contact_title: 還需要協助嗎？
+  contact_text: 建議在 App 內使用「意見回饋」，方便附上裝置資訊；也可以直接寄信。
+  english: 英文
+  chinese: 簡體中文
+
+home:
+  hero:
+    badge: Android 通知管家
+    title: ["濾掉打擾，", "一則不漏。"]
+    intro: 通知濾盒把每一則通知存進可搜尋的紀錄，用離線 AI 擋下垃圾與廣告通知，其餘交給你自己的規則。
+    hint: 試試看：把一則通知滑掉
+  history:
+    eyebrow: 通知紀錄
+    title: ["不小心滑掉了？", "紀錄裡都還在。"]
+    intro: 每一則通知都加密保存在手機裡。依 App 或關鍵字搜尋，沿著時間軸回顧，需要時一鍵還原——事後被刪除、被收回的訊息也看得到。
+    points:
+      - 依 App、關鍵字、類型或規則搜尋
+      - 沿著時間軸回到任何一天
+      - 還原不小心滑掉的通知
+      - 匯出 CSV，用 Excel 或試算表分析
+    hint: 拖曳右側時間軸，或點開一則通知
+  rules:
+    eyebrow: 自訂規則
+    title: ["你的規則，", "你的通知。"]
+    intro: 選好 App、關鍵字、時段或手機狀態，再決定怎麼處理：清除促銷推播、下班後把工作群組靜音、家人的訊息像來電一樣響鈴、包裹通知自動朗讀。
+    pick: 選擇一種規則效果
+    community: 沒有靈感？看看大家分享的規則
+  ai:
+    eyebrow: 離線 AI 過濾
+    title: ["什麼算垃圾通知，", "你說了算。"]
+    intro: 每則通知都在手機上即時評分，不上傳任何內容。告訴它「是垃圾」還是「是正常」，它會在手機閒置或充電時默默學習，越用越懂你。過濾要多嚴格，一個滑桿就能調整。
+    points:
+      - 完全離線，在手機上執行
+      - 從你標記的每一則通知學習
+      - 過濾門檻與適用 App 由你決定
+    note: AI 過濾需要 Android 10 以上，且手機記憶體大於 6 GB。
+  enhancers:
+    eyebrow: 通知強化
+    title: ["小功能，", "天天用得到。"]
+    intro: 依需要開啟，每一個都解決一件日常小煩惱。
+    cards:
+      recall:
+        title: 清除後復原
+        text: 不小心把通知滑掉了？通知列會出現一個 5 秒鐘的復原按鈕。
+      shh:
+        title: 智慧靜音
+        text: 某個 App 短時間內通知太頻繁，就自動靜音一陣子。熱鬧的群組再也吵不到你。
+      captcha:
+        title: 驗證碼複製
+        text: 為簡訊和其他 App 的驗證碼通知加上「複製」按鈕，就算手機沒有內建也沒關係。
+      webhook:
+        title: Webhook
+        text: 把符合規則的通知以 JSON 格式轉寄到你的伺服器、聊天機器人或智慧家庭。
+    more: 還有：桌面小工具 · 指紋／臉部解鎖 · 多款主題 · 規則匯入匯出 · 排除 App
+  analytics:
+    eyebrow: 通知分析
+    title: ["誰最常打擾你，", "一目了然。"]
+    intro: 近期總覽與每日圖表告訴你哪些 App 通知最多、通知濾盒幫你過濾了多少。下一個該管住誰，一清二楚。
+  privacy:
+    eyebrow: 隱私
+    title: ["你的通知，", "只留在你的手機。"]
+    items:
+      - title: 本機加密儲存
+        text: 通知紀錄只存在你的裝置上，從不上傳。
+      - title: 完全離線的 AI
+        text: 評分與學習全部在手機上完成。
+      - title: 指紋與臉部解鎖
+        text: 你的通知紀錄，只有你看得到。
+      - title: 極少連網
+        text: 僅用於購買驗證，以及可以關閉的當機回報。
+  pricing:
+    eyebrow: 價格
+    title: ["免費開始，", "需要時再升級。"]
+    intro: 首次安裝即可免費試用所有進階功能。
+    free:
+      name: 免費版
+      price: 免費
+      note: 核心功能，永久免費
+      features:
+        - 通知紀錄
+        - 搜尋、時間軸與還原
+        - 免費試用所有進階功能
+    pro:
+      name: 進階版
+      price: 一次購買
+      note: 完整功能，長期擁有
+      badge: 推薦
+      features:
+        - 自訂規則與所有規則效果
+        - 離線 AI 垃圾通知過濾
+        - 清除後復原、智慧靜音與 Webhook
+        - 通知分析與 CSV 匯出
+        - 更長的紀錄保存時間
+        - 之後的新功能不需再付費
+    notes:
+      - Google Play：終身版一次購買，同一個 Google 帳戶的裝置都能使用。
+      - 中國大陸版：支援支付寶、微信支付購買訂閱版或終身版。
+      - 購買後 48 小時內可申請退款。
+    more: 查看購買說明
+  faq:
+    title: ["有疑問嗎？", "這裡有答案。"]
+    more: 前往說明中心
+    items:
+      - q: 通知濾盒免費嗎？
+        a: 免費下載，通知紀錄永久免費。首次安裝可以免費試用所有進階功能；試用結束後，自訂規則、AI 過濾與通知強化等進階功能需要購買進階版。
+      - q: 通知濾盒會上傳我的通知嗎？
+        a: 不會。通知紀錄只在手機上加密儲存，AI 過濾也完全離線執行。通知濾盒連網僅用於購買驗證，以及在你同意時傳送當機回報，可以在設定中關閉。
+      - q: 不小心滑掉的通知、被收回的訊息找得回來嗎？
+        a: 可以。通知濾盒會在通知送達時保存一份，就算你把它滑掉，或對方刪除、收回了訊息，原始通知依然留在紀錄裡。它只看得到通知裡顯示過的內容。
+      - q: AI 垃圾通知過濾是怎麼學習的？
+        a: 每則通知都會在手機上得到一個垃圾指數。點開任一則通知，選擇「是垃圾通知」或「是正常通知」來教它，通知濾盒會在手機閒置或充電時學習。過濾門檻（預設 80%）和適用的 App 都能自己設定。AI 過濾需要 Android 10 以上、記憶體大於 6 GB 的手機。
+      - q: 為什麼用一陣子就失效了？
+        a: 多半是手機系統把通知濾盒在背景關閉了。請在系統設定與多工畫面中允許它在背景執行、開機自動啟動，並關閉電池最佳化。各品牌手機的設定方式可以參考 dontkillmyapp.com。
+      - q: 為什麼有些通知顯示「已隱藏敏感通知內容」？
+        a: "從 Android 15 開始，系統會對第三方 App 隱藏可能含有驗證碼的通知。關閉「設定 → 通知 → 加強型通知」即可；也可以執行 ADB 指令：adb shell appops set com.catchingnow.np RECEIVE_SENSITIVE_NOTIFICATIONS allow"
+      - q: 能清除滑不掉的常駐通知嗎？
+        a: 可以，需要 Android 8.0 以上版本。在規則的「清除」效果中開啟「包含常駐通知」；部分原生系統還需要在系統設定中允許延後通知。
+      - q: 直接安裝 APK 後，無法開啟通知存取權？
+        a: Android 13 以上會限制不是從應用程式商店安裝的 App。請前往「設定 → 應用程式 → 通知濾盒」，點右上角選單並選擇「允許受限制的設定」，再重新開啟通知存取權。
+  closing:
+    title: ["讓每一則通知，", "都恰到好處。"]
+    intro: 免費下載，支援 Android 6.0 以上版本。

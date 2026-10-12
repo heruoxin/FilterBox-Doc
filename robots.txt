@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://filterbox.catchingnow.com/sitemap.xml

@@ -1,0 +1,34 @@
+{%- comment -%} Expects: lang, t, L, page_kind (home|help|doc), doc_item {%- endcomment -%}
+{%- if page_kind == 'home' -%}{%- assign anchor_base = '' -%}{%- else -%}{%- assign anchor_base = L.home -%}{%- endif -%}
+<header class="masthead" data-masthead>
+  <div class="wrap masthead-bar">
+    <a class="brand" href="{{ L.home }}">
+      <img class="brand-icon" src="/assets/img/icon.svg" width="30" height="30" alt="">
+      <span class="brand-name">{{ t.brand }}</span>
+    </a>
+    <nav class="masthead-nav" aria-label="{{ t.brand }}">
+      <a href="{{ anchor_base }}#history">{{ t.ui.nav.features }}</a>
+      <a href="{{ anchor_base }}#ai">{{ t.ui.nav.ai }}</a>
+      <a href="{{ anchor_base }}#pricing">{{ t.ui.nav.pricing }}</a>
+      <a href="{{ L.help }}"{% if page_kind != 'home' %} aria-current="page"{% endif %}>{{ t.ui.nav.help }}</a>
+    </nav>
+    <div class="masthead-actions">
+      <a class="masthead-download" href="{{ anchor_base }}#download" data-download>{{ t.ui.download }}</a>
+      <details class="lang-picker" data-lang-picker>
+        <summary aria-label="{{ t.ui.language }}"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span>{{ L.name }}</span><svg class="i i-sm" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+        <div class="lang-menu">
+          {%- for l in site.data.site.langs -%}
+            {%- case page_kind -%}
+              {%- when 'home' -%}{%- assign href = l.home -%}
+              {%- when 'help' -%}{%- assign href = l.help -%}
+              {%- else -%}
+                {%- assign p = doc_item.paths[l.code] -%}
+                {%- if p -%}{%- assign href = p | prepend: '/' | remove: '.md' -%}{%- else -%}{%- assign href = l.help -%}{%- endif -%}
+            {%- endcase %}
+          <a href="{{ href }}" lang="{{ l.code }}" hreflang="{{ l.code }}" data-lang="{{ l.code }}"{% if l.code == lang %} aria-current="true"{% endif %}>{{ l.name }}</a>
+          {%- endfor %}
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

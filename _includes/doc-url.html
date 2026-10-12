@@ -1,0 +1,7 @@
+{%- comment -%} Sets doc_url for include.key in the current `lang`, falling back to English, then any language. {%- endcomment -%}
+{%- assign doc_url = nil -%}
+{%- for it in site.data.docs.items -%}{%- if it.key == include.key -%}
+  {%- assign dp = it.paths[lang] | default: it.paths.en -%}
+  {%- unless dp -%}{%- for pp in it.paths -%}{%- assign dp = pp[1] -%}{%- break -%}{%- endfor -%}{%- endunless -%}
+  {%- assign doc_url = dp | prepend: '/' | remove: '.md' -%}
+{%- endif -%}{%- endfor -%}

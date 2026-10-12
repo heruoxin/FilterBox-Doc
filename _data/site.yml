@@ -1,0 +1,29 @@
+langs:
+  - code: en
+    name: English
+    home: /
+    help: /help/
+    og: en_US
+  - code: zh-Hans
+    name: 简体中文
+    home: /zh-Hans/
+    help: /zh-Hans/help/
+    og: zh_CN
+  - code: zh-Hant
+    name: 繁體中文
+    home: /zh-Hant/
+    help: /zh-Hant/help/
+    og: zh_TW
+  - code: ja
+    name: 日本語
+    home: /ja/
+    help: /ja/help/
+    og: ja_JP
+
+play: https://play.google.com/store/apps/details?id=com.catchingnow.np
+play_dev: https://play.google.com/store/apps/dev?id=4678881964570346633
+apk: /latest.apk
+share_rules: https://github.com/heruoxin/FilterBox-Share-Rules
+email: napp+doc@catchingnow.com
+dontkillmyapp: https://dontkillmyapp.com/?app=FilterBox
+author: Ruoxin He

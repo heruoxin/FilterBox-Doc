@@ -1,0 +1,100 @@
+---
+---
+{%- assign doc_item = nil -%}{%- assign doc_lang = nil -%}
+{%- for it in site.data.docs.items -%}{%- for p in it.paths -%}{%- if p[1] == page.path -%}{%- assign doc_item = it -%}{%- assign doc_lang = p[0] -%}{%- endif -%}{%- endfor -%}{%- endfor -%}
+{%- assign lang = page.lang | default: doc_lang -%}
+{%- unless lang -%}
+  {%- assign name_a = page.name | slugify: 'default' -%}{%- assign name_b = page.name | slugify: 'ascii' -%}
+  {%- if name_a != name_b -%}{%- assign lang = 'zh-Hans' -%}{%- else -%}{%- assign lang = 'en' -%}{%- endif -%}
+{%- endunless -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- for l in site.data.site.langs -%}{%- if l.code == lang -%}{%- assign L = l -%}{%- endif -%}{%- endfor -%}
+{%- assign page_kind = 'doc' -%}
+{%- assign dk = doc_item.key -%}
+{%- assign doc_title = t.docs[dk].title | default: page.title | default: site.title -%}
+{%- assign doc_desc = t.docs[dk].desc | default: t.meta.description -%}
+{%- assign seo_title = doc_title | append: ' · ' | append: t.brand -%}
+{%- assign seo_desc = doc_desc -%}
+{%- assign canonical = site.url | append: page.url | replace: '.html', '' -%}
+{%- assign alts = '' -%}{%- assign x_default = nil -%}{%- assign alt_count = 0 -%}
+{%- if doc_item -%}
+  {%- for p in doc_item.paths -%}{%- assign alt_count = alt_count | plus: 1 -%}{%- endfor -%}
+  {%- if alt_count > 1 -%}
+    {%- capture alts -%}{%- for p in doc_item.paths -%}{{ p[0] }}|/{{ p[1] | remove: '.md' }};{%- endfor -%}{%- endcapture -%}
+    {%- assign xp = doc_item.paths.en | default: page.path -%}
+    {%- assign x_default = xp | prepend: '/' | remove: '.md' -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign og_type = 'article' -%}
+<!doctype html>
+<html lang="{{ lang }}" class="no-js">
+<head>
+{% include head.html %}
+<link rel="alternate" type="text/markdown" href="{{ page.path | prepend: '/' | uri_escape }}" title="{{ doc_title | escape }}">
+<script>document.documentElement.classList.replace('no-js','js')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"{% if doc_item.group == 'guides' or doc_item.group == 'rules' %}TechArticle{% else %}WebPage{% endif %}","@id":"{{ canonical }}#page","url":"{{ canonical }}","name":{{ doc_title | jsonify }},"headline":{{ doc_title | jsonify }},"description":{{ doc_desc | jsonify }},"inLanguage":"{{ lang }}","isPartOf":{"@type":"WebSite","@id":"{{ site.url }}/#website","url":"{{ site.url }}/","name":"FilterBox"},"about":{"@type":"MobileApplication","@id":"{{ site.url }}/#app","name":"FilterBox","operatingSystem":"Android","applicationCategory":"UtilitiesApplication"},"author":{"@type":"Person","name":"{{ site.data.site.author }}"},"publisher":{"@type":"Person","name":"{{ site.data.site.author }}"},"image":"{{ site.url }}/assets/img/share-{{ lang }}.png"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":{{ t.ui.doc.home | jsonify }},"item":"{{ site.url }}{{ L.home }}"},{"@type":"ListItem","position":2,"name":{{ t.help.title | jsonify }},"item":"{{ site.url }}{{ L.help }}"},{"@type":"ListItem","position":3,"name":{{ doc_title | jsonify }},"item":"{{ canonical }}"}]}
+]}
+</script>
+</head>
+<body class="page-doc{% if dk == 'changelog' %} doc-changelog{% endif %}">
+{% include sprite.svg %}
+<a class="skip" href="#main">{{ t.ui.skip }}</a>
+{% include header.html %}
+<main id="main" class="wrap">
+  <div class="doc-hero">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ L.home }}">{{ t.ui.doc.home }}</a><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg><a href="{{ L.help }}">{{ t.help.title }}</a></nav>
+    <h1 class="doc-title">{{ doc_title }}</h1>
+    {%- if t.docs[dk].desc %}<p class="doc-desc">{{ doc_desc }}</p>{% endif %}
+    <div class="doc-meta">
+      {%- if alt_count > 1 %}
+      <span>{{ t.ui.doc.read_in }}</span>
+      <span class="chips">
+        {%- for l in site.data.site.langs -%}{%- assign p = doc_item.paths[l.code] -%}{%- if p and l.code != lang %}
+        <a href="{{ p | prepend: '/' | remove: '.md' }}" lang="{{ l.code }}" hreflang="{{ l.code }}" data-lang="{{ l.code }}">{{ l.name }}</a>
+        {%- endif -%}{%- endfor %}
+      </span>
+      {%- endif %}
+      <a class="md-link" href="{{ page.path | prepend: '/' | uri_escape }}"><svg class="i" aria-hidden="true"><use href="#g-newsdrop"/></svg>{{ t.ui.doc.markdown }}</a>
+    </div>
+  </div>
+  <div class="doc-layout">
+    {%- unless doc_item.hidden %}
+    <nav class="doc-nav" aria-label="{{ t.help.title }}">
+      {%- for g in site.data.docs.groups %}
+      <h2>{{ t.groups[g] }}</h2>
+        {%- for it in site.data.docs.items -%}{%- if it.group == g and it.hidden != true -%}
+          {%- assign ip = it.paths[lang] -%}{%- assign tag = '' -%}
+          {%- unless ip -%}{%- assign ip = it.paths.en -%}{%- assign tag = t.help.english -%}{%- endunless -%}
+          {%- unless ip -%}{%- for pp in it.paths -%}{%- assign ip = pp[1] -%}{%- break -%}{%- endfor -%}{%- assign tag = t.help.chinese -%}{%- endunless %}
+      <a href="{{ ip | prepend: '/' | remove: '.md' }}"{% if ip == page.path %} aria-current="page"{% endif %}>{{ t.docs[it.key].title }}{% if tag != '' %}<small>{{ tag }}</small>{% endif %}</a>
+        {%- endif -%}{%- endfor -%}
+      {%- endfor %}
+    </nav>
+    {%- endunless %}
+    <div class="doc-main">
+      <article class="doc-card">
+        <div class="prose">
+{{ content }}
+        </div>
+      </article>
+      {%- unless doc_item.hidden %}
+      <aside class="doc-foot">
+        <div><h2>{{ t.ui.doc.cta_title }}</h2><p>{{ t.ui.doc.cta_text }}</p></div>
+        {% include store-buttons.html placement='doc' %}
+      </aside>
+      {%- endunless %}
+      <p class="doc-feedback">{{ t.ui.doc.feedback }} <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a> {{ t.ui.doc.feedback_tail }}</p>
+    </div>
+    <nav class="doc-toc" data-toc hidden aria-label="{{ t.ui.doc.toc }}"><h2>{{ t.ui.doc.toc }}</h2><ol></ol></nav>
+  </div>
+</main>
+{% include footer.html %}
+<div class="lang-suggest" data-suggest hidden></div>
+<script type="application/json" id="i18n-suggest">{"en":{{ site.data.i18n.en.ui.suggest | jsonify }},"zh-Hans":{{ site.data.i18n['zh-Hans'].ui.suggest | jsonify }},"zh-Hant":{{ site.data.i18n['zh-Hant'].ui.suggest | jsonify }},"ja":{{ site.data.i18n.ja.ui.suggest | jsonify }}}</script>
+<script type="application/json" id="doc-strings">{"copy":{{ t.ui.doc.copy | jsonify }},"copied":{{ t.ui.doc.copied | jsonify }}}</script>
+<script src="/assets/js/site.js?v={{ v }}" defer></script>
+</body>
+</html>

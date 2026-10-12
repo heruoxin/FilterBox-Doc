@@ -1,0 +1,39 @@
+# GitHub Pages builds this site with Jekyll (legacy build, master branch).
+# Markdown files without front matter are rendered with the `doc` layout and are
+# also published unchanged as raw `.md` files, which AI crawlers read directly.
+title: FilterBox
+url: https://filterbox.catchingnow.com
+baseurl: ""
+theme: null
+lang: en
+timezone: Asia/Shanghai
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+titles_from_headings:
+  strip_title: true
+
+exclude:
+  - README.md
+  - tools
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: doc
+  - scope:
+      path: "zh-Hans"
+    values:
+      lang: zh-Hans
+  - scope:
+      path: "zh-Hant"
+    values:
+      lang: zh-Hant
+  - scope:
+      path: "ja"
+    values:
+      lang: ja

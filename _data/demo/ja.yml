@@ -1,0 +1,296 @@
+# デモ用の架空のアプリ・人物・メッセージです。実在のブランドや個人情報は含みません。
+apps:
+  chirp: Chirp
+  postbox: メール
+  shoploop: ShopLoop
+  newsdrop: ニュースドロップ
+  parcelo: Parcelo
+  bank: ブルーホエール銀行
+  messages: メッセージ
+  melodia: Melodia
+  calendar: カレンダー
+  crew: Crew
+  kingdom: ちいさな王国
+  cliptv: ClipTV
+  yumm: Yumm
+  weather: 天気
+  system: システム
+  filterbox: FilterBox
+
+clock: "10:08"
+date: 10月12日（月）
+
+ui:
+  now: たった今
+  min: "{n}分前"
+  hour: "{n}時間前"
+  yesterday: 昨日
+  showing: 表示中
+  history: 履歴
+  more: "さらに表示 ({n})"
+  undo: 元に戻す
+  dismissed: "{app}の通知を消去しました"
+  filtered: "最近 {n} 件の通知をフィルタしました"
+  filtered_text: タップして詳細を表示
+  restore: 復元
+  restored: 復元しました
+  silent: サイレント
+  clear: すべて消去
+  manage: 管理
+  copy: "{code} をコピー"
+  copied: "{code} をコピーしました"
+  ai: "AI スコア {s}%"
+  spam: スパム
+  normal: 正常
+  marked_spam: スパムとしてマーク
+  marked_normal: 正常としてマーク
+  is_spam: スパムです
+  is_normal: 正常です
+  search: 検索…
+  search_hint: 例
+  open_app: "{app}アプリを開く"
+  dismiss: 消去
+  rule: ルールを作成
+  more_btn: その他
+  info: 詳細情報
+  posted: "{t} に受信"
+  updated: "{n} 回更新"
+  earlier: 元のメッセージ
+  recalled: メッセージの送信が取り消されました
+  intelligence: 知能
+  analytics: 分析
+  settings: 設定
+  window: "{n} 件の通知、{f} 件をフィルタ"
+  ai_filtered: AI がフィルタ
+  by_rule: ルールで消去
+  qs: [自宅 Wi-Fi, Bluetooth, サイレント, ライト]
+  chips: [AI, アプリ, タイプ, 取り消し理由]
+  swipe: スワイプ
+  no_results: 通知が見つかりません
+
+hero:
+  start:
+    - { app: calendar, title: デザインレビュー, text: "11:00〜11:30 · 会議室 4B" }
+    - { app: chirp, title: ミオ, text: 10分遅れる！先に席取っておいてくれる？ }
+  stream:
+    - { app: shoploop, title: "⚡ タイムセール：全品70%オフ", text: 今夜0時まで。タップしてクーポンをゲット！, s: 97 }
+    - { app: parcelo, title: 配達中, text: お荷物はあと3件でお届けします。, s: 4 }
+    - { app: kingdom, title: スタミナが満タンです！, text: 今すぐ戻って500ジェムを受け取ろう 💎, s: 98 }
+    - { app: messages, title: Nimbus, text: 認証コードは 482913 です。5分間有効です。, code: "482913", s: 2 }
+    - { app: newsdrop, title: このあと信じられない展開に…, text: あなたにおすすめのトップニュース, s: 91 }
+    - { app: crew, title: "ジュン（#design）", text: 新しいアイコンをアップしました 👀, s: 3 }
+    - { app: cliptv, title: 🔴 ライブ配信中, text: フォロー中の配信者がライブを始めました, s: 88 }
+    - { app: bank, title: カードご利用のお知らせ, text: コーナーカフェで ¥620 のご利用がありました, s: 1 }
+  filtered:
+    - { app: postbox, title: クーポン3枚が今日で期限切れ, text: 特典をお見逃しなく }
+    - { app: yumm, title: お腹すいてない？, text: 今から1時間、配達料が無料 🍜 }
+    - { app: cliptv, title: あなたへのおすすめ, text: 気に入りそうな動画が5本あります }
+
+timeline:
+  showing:
+    - { app: parcelo, title: 配達中, text: お荷物はあと3件でお届けします。, m: 2 }
+    - { app: melodia, title: Sunset Drive, text: ルーメン通り · ナイトテープ, m: 18, count: 2 }
+    - { app: system, title: 充電中, text: 11:40 に充電完了予定, m: 31 }
+  history:
+    - { app: chirp, title: アキラ, text: メッセージの送信が取り消されました, m: 9, recalled: 金曜のシフト、代わってもらえないかな？今度ごはんおごるから 🙏, count: 2 }
+    - { app: shoploop, title: "⚡ タイムセール：全品70%オフ", text: 今夜0時まで。タップしてクーポンをゲット！, m: 14, state: ai }
+    - { app: messages, title: Nimbus, text: 認証コードは 482913 です。5分間有効です。, m: 26 }
+    - { app: chirp, title: ミオ, text: 10分遅れる！先に席取っておいてくれる？, m: 40 }
+    - { app: kingdom, title: スタミナが満タンです！, text: 今すぐ戻って500ジェムを受け取ろう 💎, m: 75, state: ai }
+    - { app: calendar, title: デザインレビュー, text: "11:00〜11:30 · 会議室 4B", m: 96 }
+    - { app: crew, title: "ジュン（#design）", text: 新しいアイコンをアップしました 👀, m: 130, count: 3 }
+    - { app: bank, title: カードご利用のお知らせ, text: コーナーカフェで ¥620 のご利用がありました, m: 170 }
+    - { app: newsdrop, title: このあと信じられない展開に…, text: あなたにおすすめのトップニュース, m: 230, state: ai }
+    - { app: postbox, title: "Re: 契約書ドラフト v3", text: 確認しました。第4条に一点だけ…, m: 320 }
+    - { app: weather, title: 午後4時から雨, text: 傘を忘れずに ☔, m: 420 }
+    - { app: yumm, title: お腹すいてない？, text: 今から1時間、配達料が無料 🍜, m: 610, state: rule }
+    - { app: chirp, title: ママ, text: 無事に帰れた？❤️, m: 900 }
+    - { app: cliptv, title: 🔴 ライブ配信中, text: フォロー中の配信者がライブを始めました, m: 1010, state: ai }
+    - { app: parcelo, title: 配達完了, text: お荷物を玄関前にお届けしました。, m: 1180 }
+    - { app: crew, title: 田中部長, text: 15時のクライアント会議に参加できますか？, m: 1350 }
+    - { app: postbox, title: クーポン3枚が今日で期限切れ, text: 特典をお見逃しなく, m: 1500, state: ai }
+    - { app: bank, title: 振込入金のお知らせ, text: アキラ様より ¥18,000 のお振込み, m: 1720 }
+    - { app: messages, title: ブルーホエール銀行, text: 今月のご利用明細が確定しました。, m: 1980 }
+    - { app: chirp, title: ケン, text: 20時から映画どう？🍿, m: 2300 }
+    - { app: kingdom, title: デイリー報酬を受け取ろう, text: ルーレットを回してサプライズをゲット！, m: 2520, state: ai }
+    - { app: calendar, title: 歯医者, text: 明日 9:30, m: 2700 }
+    - { app: newsdrop, title: 朝のブリーフィング, text: 経済・天気・今日のトップ5, m: 2900 }
+    - { app: parcelo, title: 発送しました, text: ご注文の商品を発送しました。, m: 3300 }
+  suggest: [認証コード, 荷物, ミオ]
+
+rules:
+  labels:
+    name: ルール
+    apps: 対象アプリ
+    keywords: いずれかを含む
+    time: 時間帯
+    all_day: 終日
+    then: 動作
+    test: シミュレーション
+    result: "通知履歴のうち {n} 件にマッチ"
+    sound: サウンド
+    sound_on: オン
+    sound_off: オフ
+  actions:
+    dismiss: 消去
+    mute: ミュート
+    snooze: 延期
+    replace: 置き換え
+    sound: 着信音を変更
+    tts: 読み上げ
+    call: 着信通知
+    tap: ボタンを押す
+    open: 通知を開く
+    webhook: Webhook
+  scenarios:
+    dismiss:
+      name: 宣伝通知をブロック
+      apps: [shoploop]
+      keywords: [セール, クーポン, オフ]
+      n: { app: shoploop, title: "⚡ タイムセール：全品70%オフ", text: 今夜0時まで。タップしてクーポンをゲット！ }
+      result: ルール「宣伝通知をブロック」で消去しました
+      hits: 126
+    mute:
+      name: 19時以降は仕事のチャットをミュート
+      apps: [crew]
+      time: "19:00 – 09:00"
+      n: { app: crew, title: "ジュン（#general）", text: いまから少し通話できる人いますか？ }
+      result: ミュートしました（音もバイブもなし）
+      hits: 58
+    snooze:
+      name: ニュースは仕事のあとで
+      apps: [newsdrop]
+      time: "09:00 – 18:00"
+      n: { app: newsdrop, title: 朝のブリーフィング, text: 経済・天気・今日のトップ5 }
+      result: 18:00 まで延期しました
+      hits: 214
+    replace:
+      name: 人前では金額を隠す
+      apps: [bank]
+      n: { app: bank, title: 振込入金のお知らせ, text: アキラ様より ¥18,000 のお振込み }
+      replaced: { title: ブルーホエール銀行, text: 新しい通知があります }
+      result: 内容を置き換えました
+      hits: 37
+    sound:
+      name: ママ専用の着信音
+      apps: [chirp]
+      keywords: [ママ]
+      n: { app: chirp, title: ママ, text: 時間があるときに電話ちょうだい ❤️ }
+      result: 着信音「マリンバ」を再生中
+      hits: 41
+    tts:
+      name: 配達の通知を読み上げ
+      apps: [parcelo]
+      n: { app: parcelo, title: まもなくお届け, text: お荷物はあと2件でお届けします。 }
+      speech: Parcelo からの通知です。まもなくお届け。お荷物はあと2件でお届けします。
+      result: 読み上げ中…
+      hits: 23
+    call:
+      name: 上司からの連絡は見逃さない
+      apps: [crew]
+      keywords: [至急]
+      n: { app: crew, title: 田中部長, text: 至急：クライアントとの電話に入れますか？ }
+      answer: 開く
+      decline: 閉じる
+      result: 着信のように鳴り続けます
+      hits: 6
+    tap:
+      name: 宣伝 SMS を自動で既読に
+      apps: [messages]
+      keywords: [配信停止]
+      button: 既読にする
+      buttons: [返信, 既読にする]
+      n: { app: messages, title: お知らせ, text: 週末は全品送料無料！配信停止は STOP と返信 }
+      result: 「既読にする」を押しました
+      hits: 88
+    open:
+      name: 配達員が着いたら自動で開く
+      apps: [yumm]
+      keywords: [到着]
+      n: { app: yumm, title: 配達員が到着しました, text: ロビーでクリスがお待ちしています · 受取番号 2846 }
+      screen: { title: お届けしました, text: ロビーでクリスがお待ちしています, code: "2846" }
+      result: 自動で開きました
+      hits: 12
+    webhook:
+      name: 認証コードを自分のサーバーへ転送
+      keywords: [認証コード]
+      n: { app: messages, title: Nimbus, text: 認証コードは 482913 です。 }
+      url: https://example.com/hook
+      result: POST を送信 · 200 OK
+      hits: 64
+
+ai:
+  labels:
+    normal: 正常
+    spam: スパム
+    threshold: "{n}% 以上をフィルタ"
+    filtered: フィルタ済み
+    kept: 残した通知
+    learned: 学習済み
+    hint: 通知をタップして AI に教えてみよう
+    offline: オフライン · 端末内で動作
+    score: スパムスコア
+    teach_spam: 学習しました。似た通知はフィルタされます
+    teach_normal: 学習しました。似た通知は残ります
+  samples:
+    - { app: shoploop, text: "⚡ タイムセール：全品70%オフ、今夜限り", s: 96, t: [deal] }
+    - { app: chirp, text: ミオ：10分遅れる！先に席取っておいて, s: 3, t: [person] }
+    - { app: kingdom, text: スタミナが満タン！冒険を再開しよう, s: 94, t: [game] }
+    - { app: messages, text: 認証コードは 482913 です, s: 2, t: [code] }
+    - { app: newsdrop, text: 信じられない10枚の写真, s: 89, t: [clickbait] }
+    - { app: parcelo, text: お荷物を玄関前にお届けしました, s: 5, t: [delivery] }
+    - { app: shoploop, text: カートの商品が値下がりしました, s: 72, t: [deal, cart] }
+    - { app: bank, text: コーナーカフェで ¥620 のご利用, s: 4, t: [bank] }
+    - { app: newsdrop, text: 今週のダイジェストが届きました, s: 62, t: [digest] }
+    - { app: calendar, text: デザインレビューが10分後に始まります, s: 2, t: [work] }
+    - { app: yumm, text: お腹すいてない？1時間だけ配達料無料, s: 86, t: [deal, food] }
+    - { app: crew, text: ジュン：新しいアイコンをアップしました, s: 4, t: [person, work] }
+    - { app: cliptv, text: 🔴 フォロー中の配信者がライブ配信中, s: 83, t: [live] }
+    - { app: weather, text: 午後4時から雨の予報です, s: 12, t: [weather] }
+    - { app: postbox, text: まもなく期限切れのクーポンが3枚あります, s: 91, t: [deal] }
+    - { app: yumm, text: ご注文の料理を配達中です, s: 8, t: [food, delivery] }
+    - { app: melodia, text: あなたのための新しいプレイリスト, s: 58, t: [digest] }
+    - { app: postbox, text: "Re: 契約書ドラフト v3", s: 6, t: [person, work] }
+    - { app: kingdom, text: デイリー報酬：ルーレットを回そう！, s: 93, t: [game] }
+    - { app: shoploop, text: ご注文の商品を発送しました, s: 15, t: [delivery, cart] }
+    - { app: cliptv, text: おすすめ：気に入りそうな動画5本, s: 77, t: [digest, live] }
+    - { app: chirp, text: ママ：無事に帰れた？, s: 2, t: [person] }
+
+enhancers:
+  recall:
+    n: { app: chirp, title: ミオ, text: 19時にいつもの場所でね！ }
+    hint: 通知をスワイプして消してみよう
+  shh:
+    group: "Crew · #週末旅行"
+    messages: ["ケン：運転だれがする？", "リー：私がする！🚗", "アナ：おやつ持っていくね", "ケン：8時出発で", "リー：👍👍", "アナ：じゃあまた明日"]
+    rule: ロック解除中 · 1分間に3件
+    muted: スマートミュートで消音中
+    try: グループチャットを開始
+  captcha:
+    n: { app: messages, title: Nimbus, text: 認証コードは 482913 です。このコードは誰にも教えないでください。 }
+    code: "482913"
+    hide: ロック画面では隠す
+  webhook:
+    rule: 銀行の通知 → 自分のサーバー
+    url: https://example.com/hook
+    n: { app: bank, title: カードご利用のお知らせ, text: コーナーカフェで ¥620 }
+    send: テスト送信
+    ok: "200 OK · 182 ミリ秒"
+
+analytics:
+  title: 直近の概要
+  total: "合計: {n}"
+  summary: "{n} 件の通知、{f} 回フィルタ"
+  daily: 日報
+  apps:
+    - { app: shoploop, n: 579, f: 226 }
+    - { app: chirp, n: 412, f: 0 }
+    - { app: newsdrop, n: 267, f: 151 }
+    - { app: crew, n: 241, f: 18 }
+    - { app: kingdom, n: 198, f: 187 }
+    - { app: postbox, n: 156, f: 9 }
+    - { app: cliptv, n: 132, f: 120 }
+    - { app: messages, n: 118, f: 4 }
+    - { app: others, n: 235, f: 143 }
+  others: その他
+  week: [312, 355, 298, 402, 377, 268, 326]

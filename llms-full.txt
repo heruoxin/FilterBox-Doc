@@ -1,0 +1,33 @@
+---
+layout: null
+permalink: /llms-full.txt
+---
+# FilterBox (通知滤盒 / 通知濾盒 / フィルターボックス) — full product facts
+
+Source: {{ site.url }}/ · This file bundles the English help docs of FilterBox, an Android notification manager by Ruoxin He. Each section is also available as its own Markdown file listed in {{ site.url }}/llms.txt.
+
+{% include_relative about.md %}
+
+---
+
+{% include_relative FAQ.md %}
+
+---
+
+{% include_relative guide/block-notifications.md %}
+
+---
+
+{% include_relative guide/notification-history.md %}
+
+---
+
+{% include_relative advanced_filter_rule_guide.md %}
+
+---
+
+{% include_relative webhook_rule_guide.md %}
+
+---
+
+{% include_relative purchase.md %}

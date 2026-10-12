@@ -1,0 +1,42 @@
+# Help center registry. `paths` are source files; a doc's URL is its path without `.md`.
+# Titles and descriptions live in _data/i18n/<lang>.yml under `docs.<key>`.
+# A language missing from `paths` falls back to the English doc in that language's menu.
+groups: [start, guides, rules, account, updates]
+
+items:
+  - key: about
+    group: start
+    paths: { en: about.md, zh-Hans: zh-Hans/about.md, zh-Hant: zh-Hant/about.md, ja: ja/about.md }
+  - key: faq
+    group: start
+    paths: { en: FAQ.md, zh-Hans: 帮助.md, zh-Hant: zh-Hant/faq.md, ja: ja/faq.md }
+  - key: block
+    group: guides
+    paths: { en: guide/block-notifications.md, zh-Hans: zh-Hans/guide/block-notifications.md, zh-Hant: zh-Hant/guide/block-notifications.md, ja: ja/guide/block-notifications.md }
+  - key: history
+    group: guides
+    paths: { en: guide/notification-history.md, zh-Hans: zh-Hans/guide/notification-history.md, zh-Hant: zh-Hant/guide/notification-history.md, ja: ja/guide/notification-history.md }
+  - key: advanced
+    group: rules
+    paths: { en: advanced_filter_rule_guide.md, zh-Hans: 高级过滤规则指南.md, zh-Hant: zh-Hant/advanced-filter-rules.md, ja: ja/advanced-filter-rules.md }
+  - key: webhook
+    group: rules
+    paths: { en: webhook_rule_guide.md, zh-Hans: Webhook_功能指南.md, zh-Hant: zh-Hant/webhook.md, ja: ja/webhook.md }
+  - key: purchase
+    group: account
+    paths: { en: purchase.md, zh-Hans: 购买说明.md, zh-Hant: zh-Hant/purchase.md, ja: ja/purchase.md }
+  - key: changelog
+    group: updates
+    paths: { en: changelog.md, zh-Hans: 更新记录.md }
+  - key: privacy
+    group: updates
+    paths: { zh-Hans: 隐私政策.md }
+  - key: licenses
+    group: updates
+    paths: { en: licenses.md }
+  - key: reseller
+    hidden: true
+    paths: { zh-Hans: resellers/数码荔枝.md }
+  - key: bubble
+    hidden: true
+    paths: { en: ai_bubble_privacy.md }

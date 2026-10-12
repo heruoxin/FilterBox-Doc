@@ -1,0 +1,69 @@
+---
+---
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- for l in site.data.site.langs -%}{%- if l.code == lang -%}{%- assign L = l -%}{%- endif -%}{%- endfor -%}
+{%- assign page_kind = 'help' -%}
+{%- assign seo_title = t.help.meta_title -%}
+{%- assign seo_desc = t.help.intro -%}
+{%- assign canonical = site.url | append: L.help -%}
+{%- capture alts -%}{%- for l in site.data.site.langs -%}{{ l.code }}|{{ l.help }};{%- endfor -%}{%- endcapture -%}
+{%- assign x_default = '/help/' -%}
+{%- capture faq_json -%}
+{%- for it in t.home.faq.items -%}{"@type":"Question","name":{{ it.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ it.a | strip_html | jsonify }}}}{% unless forloop.last %},{% endunless %}{%- endfor -%}
+{%- endcapture -%}
+<!doctype html>
+<html lang="{{ lang }}" class="no-js">
+<head>
+{% include head.html %}
+<script>document.documentElement.classList.replace('no-js','js')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"CollectionPage","@id":"{{ canonical }}#page","url":"{{ canonical }}","name":{{ t.help.meta_title | jsonify }},"description":{{ t.help.intro | jsonify }},"inLanguage":"{{ lang }}","isPartOf":{"@type":"WebSite","@id":"{{ site.url }}/#website","url":"{{ site.url }}/","name":"FilterBox"}},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":{{ t.ui.doc.home | jsonify }},"item":"{{ site.url }}{{ L.home }}"},{"@type":"ListItem","position":2,"name":{{ t.help.title | jsonify }},"item":"{{ canonical }}"}]},
+{"@type":"FAQPage","@id":"{{ canonical }}#faq","inLanguage":"{{ lang }}","mainEntity":[{{ faq_json }}]}
+]}
+</script>
+</head>
+<body class="page-help">
+{% include sprite.svg %}
+<a class="skip" href="#main">{{ t.ui.skip }}</a>
+{% include header.html %}
+<main id="main" class="wrap">
+  <section class="help-hero">
+    <nav class="crumbs" aria-label="Breadcrumb" style="justify-content:center"><a href="{{ L.home }}">{{ t.ui.doc.home }}</a></nav>
+    <h1 class="doc-title">{{ t.help.title }}</h1>
+    <p class="doc-desc">{{ t.help.intro }}</p>
+    <label class="help-search"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><input type="search" data-help-search placeholder="{{ t.help.search }}" aria-label="{{ t.help.search }}"></label>
+  </section>
+  <div class="help-groups">
+    {%- for g in site.data.docs.groups %}
+    <section class="help-group" data-search-group>
+      <h2>{{ t.groups[g] }}</h2>
+      {%- for it in site.data.docs.items -%}{%- if it.group == g and it.hidden != true -%}
+        {%- assign ip = it.paths[lang] -%}{%- assign tag = '' -%}
+        {%- unless ip -%}{%- assign ip = it.paths.en -%}{%- assign tag = t.help.english -%}{%- endunless -%}
+        {%- unless ip -%}{%- for pp in it.paths -%}{%- assign ip = pp[1] -%}{%- break -%}{%- endfor -%}{%- assign tag = t.help.chinese -%}{%- endunless %}
+      <a href="{{ ip | prepend: '/' | remove: '.md' }}" data-search-item><span>{{ t.docs[it.key].title }}<small>{{ t.docs[it.key].desc }}</small></span>{% if tag != '' %}<span class="tag">{{ tag }}</span>{% else %}<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>{% endif %}</a>
+      {%- endif -%}{%- endfor %}
+    </section>
+    {%- endfor %}
+  </div>
+  <p class="help-empty" data-help-empty hidden>{{ t.help.no_results }}</p>
+  <section class="help-faq" id="faq" data-search-group>
+    <h2>{{ t.help.faq }}</h2>
+    {%- for it in t.home.faq.items %}
+    <details class="faq-item" data-search-item><summary>{{ it.q }}<span class="faq-toggle" aria-hidden="true"></span></summary><div class="faq-a"><p>{{ it.a }}</p></div></details>
+    {%- endfor %}
+  </section>
+  <section class="help-contact">
+    <div><h2>{{ t.help.contact_title }}</h2><p>{{ t.help.contact_text }}</p></div>
+    <a class="btn" href="mailto:{{ site.data.site.email }}"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>{{ site.data.site.email }}</a>
+  </section>
+</main>
+{% include footer.html %}
+<div class="lang-suggest" data-suggest hidden></div>
+<script type="application/json" id="i18n-suggest">{"en":{{ site.data.i18n.en.ui.suggest | jsonify }},"zh-Hans":{{ site.data.i18n['zh-Hans'].ui.suggest | jsonify }},"zh-Hant":{{ site.data.i18n['zh-Hant'].ui.suggest | jsonify }},"ja":{{ site.data.i18n.ja.ui.suggest | jsonify }}}</script>
+<script src="/assets/js/site.js?v={{ v }}" defer></script>
+</body>
+</html>

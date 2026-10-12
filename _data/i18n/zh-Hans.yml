@@ -1,0 +1,230 @@
+brand: 通知滤盒
+store_name: 通知滤盒：AI过滤+通知历史管理
+
+meta:
+  title: 通知滤盒 · 安卓通知历史记录与 AI 骚扰通知过滤
+  description: 通知滤盒（FilterBox）是一款安卓通知管理 App：完整保存通知历史，误删的通知、被撤回的消息都能找回；离线 AI 自动过滤骚扰和广告通知；自定义规则自动静音、推迟、朗读或转发通知。免费下载。
+  image_alt: 通知滤盒 · 滤掉打扰，一条不漏。
+  keywords: 通知滤盒, FilterBox, 通知历史记录, 安卓通知管理, 屏蔽广告通知, 骚扰通知过滤, 查看撤回消息, 恢复误删通知, 验证码提取, 通知转发
+
+ui:
+  skip: 跳到正文
+  language: 语言
+  download: 下载
+  nav:
+    features: 功能
+    ai: AI 过滤
+    pricing: 价格
+    help: 帮助
+  play:
+    small: 下载于
+    big: Google Play
+    label: 在 Google Play 下载通知滤盒
+  apk:
+    small: 直接下载
+    big: 安装包 APK
+    label: 下载通知滤盒最新安装包
+  stores: 也可以在酷安、小米、OPPO、荣耀等应用商店搜索「通知滤盒」下载。
+  proof: 10 万+ 次下载 · Google Play 4.4 分 · 支持 Android 6.0 及以上
+  suggest:
+    text: 本页面提供简体中文版
+    action: 切换到简体中文
+    close: 关闭
+  footer:
+    tagline: 安卓通知历史记录与离线 AI 骚扰通知过滤。
+    product: 产品
+    help: 帮助
+    about: 关于
+    contact: 联系我们
+    copyright: © 2026 Ruoxin He
+  doc:
+    home: 首页
+    help: 帮助中心
+    toc: 本页目录
+    read_in: 其他语言
+    markdown: 查看 Markdown 原文
+    fallback: 本页面目前仅提供英文版。
+    feedback: 还有疑问？发邮件至
+    feedback_tail: 或在 App 内使用「反馈」功能。
+    cta_title: 下载通知滤盒
+    cta_text: 安卓通知历史记录与离线 AI 骚扰通知过滤。
+    copy: 复制
+    copied: 已复制
+  not_found:
+    title: 页面不存在
+    text: 你要找的页面可能已经移动，或者从未存在。
+
+groups:
+  start: 入门
+  guides: 使用指南
+  rules: 规则与自动化
+  account: 购买
+  updates: 更新与条款
+
+docs:
+  about:
+    title: 通知滤盒是什么
+    desc: 一页看懂通知滤盒：核心功能、系统要求、价格与隐私。
+  faq:
+    title: 常见问题
+    desc: 后台被杀、隐私安全、固定通知、购买等常见问题解答。
+  block:
+    title: 安卓手机如何屏蔽骚扰和广告通知
+    desc: 用系统设置、关键字规则和离线 AI 三种方法，屏蔽安卓手机上的广告推送和骚扰通知。
+  history:
+    title: 安卓手机如何查看通知历史记录
+    desc: 打开安卓自带的通知记录，并用通知滤盒长期保存、搜索通知，找回误删的通知和被撤回的消息。
+  advanced:
+    title: 高级过滤规则指南（JSON）
+    desc: 用 JSON 和正则表达式匹配通知的任意字段，实现更复杂的过滤。
+  webhook:
+    title: Webhook 功能指南
+    desc: 把通知以 JSON 转发到你的服务器、Telegram 机器人或微信（Server 酱）。
+  purchase:
+    title: 购买说明
+    desc: 免费试用、Google Play 终身版、支付宝/微信订阅版与终身版，以及退款说明。
+  changelog:
+    title: 更新记录
+    desc: 通知滤盒各版本的新功能与改进。
+  privacy:
+    title: 隐私政策
+    desc: 通知滤盒隐私政策。
+  licenses:
+    title: 开源许可
+    desc: 通知滤盒使用的开源库。
+  reseller:
+    title: 授权经销商
+    desc: 通知滤盒中国区授权经销商。
+  bubble:
+    title: AI Bubble 隐私说明
+    desc: AI Bubble 隐私说明。
+
+help:
+  title: 帮助中心
+  meta_title: 通知滤盒帮助中心 · 使用指南、常见问题与故障排查
+  intro: 通知滤盒的设置技巧、使用指南和常见问题解答。
+  search: 搜索帮助文章和问题…
+  no_results: 没有找到相关内容。换个关键词试试，或者发邮件给我们。
+  faq: 常见问题
+  contact_title: 仍需要帮助？
+  contact_text: 建议在 App 内使用「反馈」功能，方便附带设备信息；也可以直接发邮件。
+  english: 英文
+  chinese: 中文
+
+home:
+  hero:
+    badge: 安卓通知管家
+    title: ["滤掉打扰，", "一条不漏。"]
+    intro: 通知滤盒把每一条通知存进可搜索的历史记录，用离线 AI 挡住骚扰和广告，其余的交给你自己的规则。
+    hint: 试试看：把一条通知划走
+  history:
+    eyebrow: 通知历史
+    title: ["手滑划掉了？", "历史里都在。"]
+    intro: 每一条通知都加密保存在手机本地。按 App 或关键字搜索，沿时间轴回溯，需要时一键恢复——事后被删除、被撤回的消息也能看到。
+    points:
+      - 按 App、关键字、类型或规则搜索
+      - 沿时间轴回溯到任意一天
+      - 恢复误删的通知
+      - 导出 CSV，用 Excel、WPS 分析
+    hint: 拖动右侧时间轴，或点开一条通知
+  rules:
+    eyebrow: 自定义规则
+    title: ["你的规则，", "你的通知。"]
+    intro: 选好 App、关键字、时间段或手机状态，再决定怎么处理：消除推广、下班后静音工作群、家人消息像来电一样响铃、快递通知自动朗读。
+    pick: 选择一种规则效果
+    community: 没有灵感？看看大家分享的规则
+  ai:
+    eyebrow: 离线 AI 过滤
+    title: ["什么算骚扰，", "你说了算。"]
+    intro: 每条通知都在手机上实时打分，不上传任何内容。告诉它「是骚扰」还是「是正常」，它会在手机闲置或充电时悄悄学习，越用越懂你。过滤多严格，一个滑块就能调。
+    points:
+      - 完全离线，在手机本地运行
+      - 从你标记的每一条通知中学习
+      - 过滤阈值和生效 App 由你决定
+    note: AI 过滤需要 Android 10 及以上系统，且手机内存大于 6 GB。
+  enhancers:
+    eyebrow: 通知增强
+    title: ["小功能，", "天天用得上。"]
+    intro: 按需开启，每一个都解决一件日常小烦恼。
+    cards:
+      recall:
+        title: 消除撤回
+        text: 手滑划掉了通知？通知栏会出现一个 5 秒钟的恢复按钮。
+      shh:
+        title: 智能静音
+        text: 某个 App 短时间内通知太频繁，就自动静音一会儿。热闹的群聊再也吵不到你。
+      captcha:
+        title: 验证码提取
+        text: 为短信和其他 App 的验证码通知加上「复制」按钮，手机没有自带这个功能也不怕。
+      webhook:
+        title: Webhook
+        text: 把符合规则的通知以 JSON 格式转发到你的服务器、聊天机器人或智能家居。
+    more: 还有：桌面小部件 · 指纹/面容锁 · 多款主题 · 规则导入导出 · 排除 App
+  analytics:
+    eyebrow: 通知分析
+    title: ["谁最爱打扰你，", "一目了然。"]
+    intro: 近期一览和日报图表告诉你哪些 App 通知最多、通知滤盒帮你过滤了多少。接下来该管住谁，心里有数。
+  privacy:
+    eyebrow: 隐私
+    title: ["你的通知，", "只留在你的手机里。"]
+    items:
+      - title: 本地加密存储
+        text: 通知历史只保存在你的设备上，从不上传。
+      - title: 完全离线的 AI
+        text: 打分和学习全部在手机本地完成。
+      - title: 指纹与面容锁
+        text: 你的通知记录，只有你能看。
+      - title: 极少联网
+        text: 仅用于购买验证，以及可以关闭的崩溃统计。
+  pricing:
+    eyebrow: 价格
+    title: ["免费开始，", "需要时再升级。"]
+    intro: 首次安装即可免费试用全部高级功能。
+    free:
+      name: 免费版
+      price: 0 元
+      note: 核心功能，永久免费
+      features:
+        - 通知历史记录
+        - 搜索、时间轴与恢复
+        - 免费试用全部高级功能
+    pro:
+      name: 高级版
+      price: 一次购买
+      note: 全部功能，长期拥有
+      badge: 推荐
+      features:
+        - 自定义规则与全部规则效果
+        - 离线 AI 骚扰过滤
+        - 消除撤回、智能静音与 Webhook
+        - 通知分析与 CSV 导出
+        - 更长的历史保存时间
+        - 后续新功能无需再付费
+    notes:
+      - Google Play：终身版一次购买，同一 Google 账号下的设备均可使用。
+      - 国内版：支持支付宝、微信购买订阅版或终身版。
+      - 购买 48 小时内可申请退款。
+    more: 查看购买说明
+  faq:
+    title: ["有疑问？", "这里有答案。"]
+    more: 进入帮助中心
+    items:
+      - q: 通知滤盒免费吗？
+        a: 免费下载，通知历史记录永久免费。首次安装可以免费试用全部高级功能；试用结束后，自定义规则、AI 过滤和通知增强等高级功能需要购买高级版。
+      - q: 通知滤盒会上传我的通知吗？
+        a: 不会。通知历史只在手机本地加密存储，AI 过滤也完全离线运行。通知滤盒联网仅用于购买验证，以及在你允许时发送崩溃统计，可以在设置中关闭。
+      - q: 误删的通知、被撤回的消息能找回吗？
+        a: 可以。通知滤盒会在通知到达时保存一份，即使你划掉了它，或者对方删除、撤回了消息，原始通知依然留在历史记录里。它只能看到通知里显示过的内容。
+      - q: AI 骚扰过滤是怎么学习的？
+        a: 每条通知都会在手机上得到一个骚扰指数。点开任意通知，选择「是骚扰通知」或「是正常通知」进行投喂，通知滤盒会在手机闲置或充电时学习。过滤阈值（默认 80%）和生效的 App 都可以自己设置。AI 过滤需要 Android 10 及以上、内存大于 6 GB 的手机。
+      - q: 为什么用着用着就失效了？
+        a: 多半是手机系统阻止了通知滤盒在后台运行。请在系统设置和多任务界面中允许它后台运行、开机自启，并加入电池优化白名单。各品牌手机的设置方法可以参考 dontkillmyapp.com。
+      - q: 为什么有些通知显示「已隐藏敏感通知内容」？
+        a: "从 Android 15 开始，系统会对第三方 App 隐藏可能包含验证码的通知。关闭「系统设置 → 通知 → 增强型通知」即可；也可以执行 ADB 命令：adb shell appops set com.catchingnow.np RECEIVE_SENSITIVE_NOTIFICATIONS allow"
+      - q: 能清除划不掉的「固定通知」吗？
+        a: 可以，需要 Android 8.0 及以上版本。在规则的「消除」效果中开启「包括固定通知」；部分原生系统还需要在系统设置中允许通知暂停。
+      - q: 直接安装 APK 后，无法开启通知使用权？
+        a: Android 13 及以上版本会限制非应用商店安装的 App。请进入「设置 → 应用 → 通知滤盒」，点右上角菜单选择「允许受限制的设置」，再重新开启通知使用权。
+  closing:
+    title: ["让每一条通知，", "都恰到好处。"]
+    intro: 免费下载，支持 Android 6.0 及以上版本。

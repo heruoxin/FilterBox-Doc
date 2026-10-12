@@ -1,0 +1,296 @@
+# Fictional apps, people and messages for the interactive demos. No real brands or personal data.
+apps:
+  chirp: Chirp
+  postbox: Postbox
+  shoploop: ShopLoop
+  newsdrop: Newsdrop
+  parcelo: Parcelo
+  bank: Bluewhale Bank
+  messages: Messages
+  melodia: Melodia
+  calendar: Calendar
+  crew: Crew
+  kingdom: Tiny Kingdom
+  cliptv: ClipTV
+  yumm: Yumm
+  weather: Weather
+  system: System
+  filterbox: FilterBox
+
+clock: "10:08"
+date: Mon, October 12
+
+ui:
+  now: now
+  min: "{n}m"
+  hour: "{n}h"
+  yesterday: Yesterday
+  showing: Showing
+  history: History
+  more: "{n} more"
+  undo: Undo
+  dismissed: "{app} notification dismissed"
+  filtered: "Filtered {n} notifications recently"
+  filtered_text: Tap for more info
+  restore: Restore
+  restored: Restored
+  silent: Silent
+  clear: Clear all
+  manage: Manage
+  copy: "Copy {code}"
+  copied: "{code} copied"
+  ai: "AI Score {s}%"
+  spam: Spam
+  normal: Normal
+  marked_spam: Marked as spam
+  marked_normal: Marked as normal
+  is_spam: It is spam
+  is_normal: It is normal
+  search: Search…
+  search_hint: Try
+  open_app: "Open {app} app"
+  dismiss: Dismiss
+  rule: Create rule
+  more_btn: More
+  info: Other info
+  posted: "Posted at {t}"
+  updated: "Updated {n} times"
+  earlier: Original message
+  recalled: This message was recalled
+  intelligence: Intelligence
+  analytics: Analytics
+  settings: Settings
+  window: "{n} notifications, {f} filtered"
+  ai_filtered: AI filtered
+  by_rule: Dismissed by rule
+  qs: [Home Wi-Fi, Bluetooth, Do Not Disturb, Flashlight]
+  chips: [AI, Apps, Types, Dismissed by]
+  swipe: Swipe
+  no_results: No notifications found
+
+hero:
+  start:
+    - { app: calendar, title: Design review, text: "11:00 – 11:30 · Room 4B" }
+    - { app: chirp, title: Mia, text: Running 10 min late, grab us a table? }
+  stream:
+    - { app: shoploop, title: "⚡ Flash sale: 70% off", text: Ends at midnight. Tap to claim your coupon!, s: 97 }
+    - { app: parcelo, title: Out for delivery, text: Your parcel is 3 stops away., s: 4 }
+    - { app: kingdom, title: Your energy is full!, text: Come back and claim 500 free gems 💎, s: 98 }
+    - { app: messages, title: "+1 650 555 0134", text: Your Nimbus verification code is 482913., code: "482913", s: 2 }
+    - { app: newsdrop, title: You won't believe what happened next, text: Top stories picked just for you, s: 91 }
+    - { app: crew, title: "Jordan in #design", text: Pushed the new icons, take a look 👀, s: 3 }
+    - { app: cliptv, title: "🔴 LIVE now", text: Your favorite streamer just went live, s: 88 }
+    - { app: bank, title: Card payment, text: "$42.18 at Corner Café", s: 1 }
+  filtered:
+    - { app: postbox, title: 3 coupons expire today, text: Don't miss out on your rewards }
+    - { app: yumm, title: Hungry?, text: Free delivery for the next hour 🍜 }
+    - { app: cliptv, title: Recommended for you, text: 5 videos you might like }
+
+timeline:
+  showing:
+    - { app: parcelo, title: Out for delivery, text: Your parcel is 3 stops away., m: 2 }
+    - { app: melodia, title: Sunset Drive, text: Lumen Avenue · Night Tapes, m: 18, count: 2 }
+    - { app: system, title: Charging, text: Fully charged by 11:40, m: 31 }
+  history:
+    - { app: chirp, title: Alex, text: This message was recalled, m: 9, recalled: Can you cover my shift on Friday? I'll owe you one 🙏, count: 2 }
+    - { app: shoploop, title: "⚡ Flash sale: 70% off", text: Ends at midnight. Tap to claim your coupon!, m: 14, state: ai }
+    - { app: messages, title: "+1 650 555 0134", text: Your Nimbus verification code is 482913., m: 26 }
+    - { app: chirp, title: Mia, text: Running 10 min late, grab us a table?, m: 40 }
+    - { app: kingdom, title: Your energy is full!, text: Come back and claim 500 free gems 💎, m: 75, state: ai }
+    - { app: calendar, title: Design review, text: "11:00 – 11:30 · Room 4B", m: 96 }
+    - { app: crew, title: "Jordan in #design", text: Pushed the new icons, take a look 👀, m: 130, count: 3 }
+    - { app: bank, title: Card payment, text: "$42.18 at Corner Café", m: 170 }
+    - { app: newsdrop, title: You won't believe what happened next, text: Top stories picked just for you, m: 230, state: ai }
+    - { app: postbox, title: "Re: Contract draft v3", text: "Looks good to me. One small note on section 4…", m: 320 }
+    - { app: weather, title: Rain at 4 pm, text: Take an umbrella today ☔, m: 420 }
+    - { app: yumm, title: Hungry?, text: Free delivery for the next hour 🍜, m: 610, state: rule }
+    - { app: chirp, title: Mom, text: Did you get home safe? ❤️, m: 900 }
+    - { app: cliptv, title: "🔴 LIVE now", text: Your favorite streamer just went live, m: 1010, state: ai }
+    - { app: parcelo, title: Delivered, text: Your parcel was left at the front door., m: 1180 }
+    - { app: crew, title: Dana, text: Can you join the client call at 3?, m: 1350 }
+    - { app: postbox, title: 3 coupons expire today, text: Don't miss out on your rewards, m: 1500, state: ai }
+    - { app: bank, title: Transfer received, text: "$1,250.00 from Alex Kim", m: 1720 }
+    - { app: messages, title: Bluewhale Bank, text: Your statement is ready to view., m: 1980 }
+    - { app: chirp, title: Sam, text: "Movie at 8? 🍿", m: 2300 }
+    - { app: kingdom, title: Daily reward waiting, text: Spin the wheel for a surprise!, m: 2520, state: ai }
+    - { app: calendar, title: Dentist, text: "Tomorrow 9:30 AM", m: 2700 }
+    - { app: newsdrop, title: Morning briefing, text: "Markets, weather and your top 5 stories", m: 2900 }
+    - { app: parcelo, title: Shipped, text: Your order is on its way., m: 3300 }
+  suggest: [code, parcel, Mia]
+
+rules:
+  labels:
+    name: Rule
+    apps: From
+    keywords: Contains any
+    time: Time
+    all_day: All day
+    then: Then
+    test: Run test
+    result: "Matches {n} notifications in your history"
+    sound: Sound
+    sound_on: "On"
+    sound_off: "Off"
+  actions:
+    dismiss: Dismiss
+    mute: Mute
+    snooze: Snooze
+    replace: Replace
+    sound: Change sound
+    tts: Read out
+    call: Call style
+    tap: Tap button
+    open: Open
+    webhook: Webhook
+  scenarios:
+    dismiss:
+      name: Silence promos
+      apps: [shoploop]
+      keywords: [sale, coupon, "% off"]
+      n: { app: shoploop, title: "⚡ Flash sale: 70% off", text: Ends at midnight. Tap to claim your coupon! }
+      result: Dismissed by rule “Silence promos”
+      hits: 126
+    mute:
+      name: Quiet work chat after 7 pm
+      apps: [crew]
+      time: "19:00 – 09:00"
+      n: { app: crew, title: "Jordan in #general", text: Anyone up for a quick call? }
+      result: Muted — no sound, no vibration
+      hits: 58
+    snooze:
+      name: News after work
+      apps: [newsdrop]
+      time: "09:00 – 18:00"
+      n: { app: newsdrop, title: Morning briefing, text: "Markets, weather and your top 5 stories" }
+      result: Snoozed until 18:00
+      hits: 214
+    replace:
+      name: Hide balances in public
+      apps: [bank]
+      n: { app: bank, title: Transfer received, text: "$1,250.00 from Alex Kim" }
+      replaced: { title: Bluewhale Bank, text: You have a new notification }
+      result: Content replaced
+      hits: 37
+    sound:
+      name: Mom's ringtone
+      apps: [chirp]
+      keywords: [Mom]
+      n: { app: chirp, title: Mom, text: "Call me when you're free ❤️" }
+      result: "Playing ringtone: Marimba"
+      hits: 41
+    tts:
+      name: Read deliveries aloud
+      apps: [parcelo]
+      n: { app: parcelo, title: Arriving soon, text: Your parcel is 2 stops away. }
+      speech: "Notification from Parcelo. Arriving soon. Your parcel is 2 stops away."
+      result: Reading aloud…
+      hits: 23
+    call:
+      name: Never miss the boss
+      apps: [crew]
+      keywords: [urgent]
+      n: { app: crew, title: Dana, text: "Urgent: can you join the client call?" }
+      answer: Open
+      decline: Dismiss
+      result: Ringing like an incoming call
+      hits: 6
+    tap:
+      name: Auto “Mark as read”
+      apps: [messages]
+      keywords: [STOP]
+      button: Mark as read
+      buttons: [Reply, Mark as read]
+      n: { app: messages, title: "72015", text: "Weekend promo: free delivery on all orders. Reply STOP to opt out" }
+      result: Tapped “Mark as read”
+      hits: 88
+    open:
+      name: Open when the rider arrives
+      apps: [yumm]
+      keywords: [arrived]
+      n: { app: yumm, title: Your rider has arrived, text: "Meet Chris at the lobby · Code 2846" }
+      screen: { title: Order arrived, text: "Meet Chris at the lobby", code: "2846" }
+      result: Opened automatically
+      hits: 12
+    webhook:
+      name: Forward codes to my server
+      keywords: [code]
+      n: { app: messages, title: "+1 650 555 0134", text: Your Nimbus code is 482913. }
+      url: https://example.com/hook
+      result: "POST sent · 200 OK"
+      hits: 64
+
+ai:
+  labels:
+    normal: Normal
+    spam: Spam
+    threshold: "Filter at ≥ {n}%"
+    filtered: Filtered
+    kept: Kept
+    learned: Learned
+    hint: Tap any notification to teach the AI
+    offline: Offline · on your phone
+    score: Spam score
+    teach_spam: Learned — similar notifications will be filtered
+    teach_normal: Learned — similar notifications will stay
+  samples:
+    - { app: shoploop, text: "⚡ Flash sale: 70% off everything, tonight only", s: 96, t: [deal] }
+    - { app: chirp, text: "Mia: Running 10 min late, grab us a table?", s: 3, t: [person] }
+    - { app: kingdom, text: Your energy is full! Come back and play, s: 94, t: [game] }
+    - { app: messages, text: Your Nimbus code is 482913, s: 2, t: [code] }
+    - { app: newsdrop, text: 10 photos you won't believe, s: 89, t: [clickbait] }
+    - { app: parcelo, text: Your parcel was delivered to the front door, s: 5, t: [delivery] }
+    - { app: shoploop, text: Price drop on an item in your cart, s: 72, t: [deal, cart] }
+    - { app: bank, text: "Card payment of $42.18 at Corner Café", s: 4, t: [bank] }
+    - { app: newsdrop, text: Your weekly digest is ready, s: 62, t: [digest] }
+    - { app: calendar, text: Design review starts in 10 minutes, s: 2, t: [work] }
+    - { app: yumm, text: Hungry? Free delivery for the next hour, s: 86, t: [deal, food] }
+    - { app: crew, text: "Jordan: Pushed the new icons, take a look", s: 4, t: [person, work] }
+    - { app: cliptv, text: "🔴 Your favorite streamer is live now", s: 83, t: [live] }
+    - { app: weather, text: Rain expected at 4 pm, s: 12, t: [weather] }
+    - { app: postbox, text: You have 3 coupons expiring soon, s: 91, t: [deal] }
+    - { app: yumm, text: Your order is on its way, s: 8, t: [food, delivery] }
+    - { app: melodia, text: A new playlist made just for you, s: 58, t: [digest] }
+    - { app: postbox, text: "Re: Contract draft v3", s: 6, t: [person, work] }
+    - { app: kingdom, text: "Daily reward waiting: spin the wheel!", s: 93, t: [game] }
+    - { app: shoploop, text: Your order has shipped, s: 15, t: [delivery, cart] }
+    - { app: cliptv, text: "Recommended: 5 videos you might like", s: 77, t: [digest, live] }
+    - { app: chirp, text: "Mom: Did you get home safe?", s: 2, t: [person] }
+
+enhancers:
+  recall:
+    n: { app: chirp, title: Mia, text: See you at 7 at the usual place! }
+    hint: Swipe the notification away
+  shh:
+    group: "Crew · #weekend-trip"
+    messages: ["Sam: who's driving?", "Lee: me! 🚗", "Ana: I'll bring snacks", "Sam: leaving at 8", "Lee: 👍👍", "Ana: see you all"]
+    rule: Phone unlocked · 3 notifications in 1 minute
+    muted: Muted by Smart Shh
+    try: Start the group chat
+  captcha:
+    n: { app: messages, title: "+1 650 555 0134", text: "Your Nimbus verification code is 482913. Don't share it with anyone." }
+    code: "482913"
+    hide: Hide on lock screen
+  webhook:
+    rule: Bank alerts → my server
+    url: https://example.com/hook
+    n: { app: bank, title: Card payment, text: "$42.18 at Corner Café" }
+    send: Send test
+    ok: "200 OK · 182 ms"
+
+analytics:
+  title: Recent overview
+  total: "Total: {n}"
+  summary: "{n} notifications, filtered {f} times"
+  daily: Daily
+  apps:
+    - { app: shoploop, n: 579, f: 226 }
+    - { app: chirp, n: 412, f: 0 }
+    - { app: newsdrop, n: 267, f: 151 }
+    - { app: crew, n: 241, f: 18 }
+    - { app: kingdom, n: 198, f: 187 }
+    - { app: postbox, n: 156, f: 9 }
+    - { app: cliptv, n: 132, f: 120 }
+    - { app: messages, n: 118, f: 4 }
+    - { app: others, n: 235, f: 143 }
+  others: Others
+  week: [312, 355, 298, 402, 377, 268, 326]

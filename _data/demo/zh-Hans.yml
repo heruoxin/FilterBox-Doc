@@ -1,0 +1,296 @@
+# 演示用的虚构 App、人物与消息，不包含任何真实品牌或个人信息。
+apps:
+  chirp: 叽喳
+  postbox: 邮箱
+  shoploop: 好物街
+  newsdrop: 新闻速递
+  parcelo: 包裹侠
+  bank: 蓝鲸银行
+  messages: 短信
+  melodia: 律动音乐
+  calendar: 日历
+  crew: 小组
+  kingdom: 小小王国
+  cliptv: 剪影视频
+  yumm: 饭点外卖
+  weather: 天气
+  system: 系统
+  filterbox: 通知滤盒
+
+clock: "10:08"
+date: 10月12日 星期一
+
+ui:
+  now: 刚刚
+  min: "{n}分钟前"
+  hour: "{n}小时前"
+  yesterday: 昨天
+  showing: 正显示
+  history: 历史
+  more: "展开更多 ({n})"
+  undo: 恢复
+  dismissed: "{app}通知已消除"
+  filtered: "最近 {n} 条通知已过滤"
+  filtered_text: 点按查看详情
+  restore: 恢复
+  restored: 已恢复
+  silent: 静默通知
+  clear: 全部清除
+  manage: 管理
+  copy: "复制 {code}"
+  copied: "{code} 已复制"
+  ai: "AI 指数 {s}%"
+  spam: 骚扰
+  normal: 正常
+  marked_spam: 已标记骚扰
+  marked_normal: 已标记正常
+  is_spam: 是骚扰通知
+  is_normal: 是正常通知
+  search: 搜索…
+  search_hint: 试试
+  open_app: "打开{app} App"
+  dismiss: 消除
+  rule: 创建规则
+  more_btn: 更多
+  info: 其他信息
+  posted: "发布于 {t}"
+  updated: "更新了 {n} 次"
+  earlier: 原始消息
+  recalled: 对方撤回了一条消息
+  intelligence: 智能
+  analytics: 分析
+  settings: 设置
+  window: "{n} 条通知，{f} 条已过滤"
+  ai_filtered: AI 已过滤
+  by_rule: 规则已消除
+  qs: [家里 Wi-Fi, 蓝牙, 勿扰模式, 手电筒]
+  chips: [AI, App, 类型, 取消原因]
+  swipe: 划走
+  no_results: 没有找到通知
+
+hero:
+  start:
+    - { app: calendar, title: 设计评审, text: "11:00 – 11:30 · 4B 会议室" }
+    - { app: chirp, title: 小林, text: 我晚到十分钟，你们先占个座？ }
+  stream:
+    - { app: shoploop, title: "⚡ 限时秒杀：全场 3 折", text: 今晚 12 点结束，点击立即领券！, s: 97 }
+    - { app: parcelo, title: 正在派送, text: 你的包裹还有 3 站送达。, s: 4 }
+    - { app: kingdom, title: 体力已回满！, text: 快回来领取 500 钻石 💎, s: 98 }
+    - { app: messages, title: 云朵, text: 你的验证码是 482913，5 分钟内有效。, code: "482913", s: 2 }
+    - { app: newsdrop, title: 震惊！接下来发生的事你绝对想不到, text: 为你精选今日热点, s: 91 }
+    - { app: crew, title: 阿杰（设计组）, text: 新图标传上去了，大家看看 👀, s: 3 }
+    - { app: cliptv, title: 🔴 正在直播, text: 你关注的主播开播啦, s: 88 }
+    - { app: bank, title: 消费提醒, text: 尾号 0134 的卡在街角咖啡消费 ¥42.18, s: 1 }
+  filtered:
+    - { app: postbox, title: 你有 3 张优惠券今天过期, text: 别错过你的专属福利 }
+    - { app: yumm, title: 肚子饿了？, text: 接下来一小时免配送费 🍜 }
+    - { app: cliptv, title: 为你推荐, text: 5 个你可能喜欢的视频 }
+
+timeline:
+  showing:
+    - { app: parcelo, title: 正在派送, text: 你的包裹还有 3 站送达。, m: 2 }
+    - { app: melodia, title: 日落兜风, text: 霓虹大道 · 夜色磁带, m: 18, count: 2 }
+    - { app: system, title: 正在充电, text: 预计 11:40 充满, m: 31 }
+  history:
+    - { app: chirp, title: 小周, text: 对方撤回了一条消息, m: 9, recalled: 周五能帮我代个班吗？请你喝奶茶 🙏, count: 2 }
+    - { app: shoploop, title: "⚡ 限时秒杀：全场 3 折", text: 今晚 12 点结束，点击立即领券！, m: 14, state: ai }
+    - { app: messages, title: 云朵, text: 你的验证码是 482913，5 分钟内有效。, m: 26 }
+    - { app: chirp, title: 小林, text: 我晚到十分钟，你们先占个座？, m: 40 }
+    - { app: kingdom, title: 体力已回满！, text: 快回来领取 500 钻石 💎, m: 75, state: ai }
+    - { app: calendar, title: 设计评审, text: "11:00 – 11:30 · 4B 会议室", m: 96 }
+    - { app: crew, title: 阿杰（设计组）, text: 新图标传上去了，大家看看 👀, m: 130, count: 3 }
+    - { app: bank, title: 消费提醒, text: 尾号 0134 的卡在街角咖啡消费 ¥42.18, m: 170 }
+    - { app: newsdrop, title: 震惊！接下来发生的事你绝对想不到, text: 为你精选今日热点, m: 230, state: ai }
+    - { app: postbox, title: 回复：合同第三版, text: 我看过了，第 4 条还有个小问题…, m: 320 }
+    - { app: weather, title: 下午 4 点有雨, text: 出门记得带伞 ☔, m: 420 }
+    - { app: yumm, title: 肚子饿了？, text: 接下来一小时免配送费 🍜, m: 610, state: rule }
+    - { app: chirp, title: 妈妈, text: 到家了吗？❤️, m: 900 }
+    - { app: cliptv, title: 🔴 正在直播, text: 你关注的主播开播啦, m: 1010, state: ai }
+    - { app: parcelo, title: 已签收, text: 你的包裹已放在门口。, m: 1180 }
+    - { app: crew, title: 王经理, text: 下午 3 点的客户会议你能参加吗？, m: 1350 }
+    - { app: postbox, title: 你有 3 张优惠券今天过期, text: 别错过你的专属福利, m: 1500, state: ai }
+    - { app: bank, title: 转账到账, text: 小周向你转账 ¥1,250.00, m: 1720 }
+    - { app: messages, title: 蓝鲸银行, text: 你的本月账单已出，请及时查看。, m: 1980 }
+    - { app: chirp, title: 阿森, text: 晚上 8 点看电影？🍿, m: 2300 }
+    - { app: kingdom, title: 每日奖励待领取, text: 转盘抽奖，惊喜等你！, m: 2520, state: ai }
+    - { app: calendar, title: 看牙医, text: 明天上午 9:30, m: 2700 }
+    - { app: newsdrop, title: 早间简报, text: 财经、天气和今日 5 大头条, m: 2900 }
+    - { app: parcelo, title: 已发货, text: 你的订单正在路上。, m: 3300 }
+  suggest: [验证码, 包裹, 小林]
+
+rules:
+  labels:
+    name: 规则
+    apps: 来自
+    keywords: 包含任一
+    time: 时间
+    all_day: 全天
+    then: 规则效果
+    test: 模拟测试
+    result: "在你的通知历史中命中 {n} 条"
+    sound: 声音
+    sound_on: 开
+    sound_off: 关
+  actions:
+    dismiss: 消除
+    mute: 静音
+    snooze: 推迟
+    replace: 替换
+    sound: 更改铃声
+    tts: 朗读
+    call: 来电提醒
+    tap: 点击按钮
+    open: 打开通知
+    webhook: Webhook
+  scenarios:
+    dismiss:
+      name: 屏蔽促销推送
+      apps: [shoploop]
+      keywords: [秒杀, 优惠券, 折]
+      n: { app: shoploop, title: "⚡ 限时秒杀：全场 3 折", text: 今晚 12 点结束，点击立即领券！ }
+      result: 已被规则「屏蔽促销推送」消除
+      hits: 126
+    mute:
+      name: 下班后工作群静音
+      apps: [crew]
+      time: "19:00 – 09:00"
+      n: { app: crew, title: 阿杰（大群）, text: 有人现在方便开个短会吗？ }
+      result: 已静音：不响铃、不振动
+      hits: 58
+    snooze:
+      name: 新闻下班再看
+      apps: [newsdrop]
+      time: "09:00 – 18:00"
+      n: { app: newsdrop, title: 早间简报, text: 财经、天气和今日 5 大头条 }
+      result: 已推迟到 18:00
+      hits: 214
+    replace:
+      name: 公共场合隐藏金额
+      apps: [bank]
+      n: { app: bank, title: 转账到账, text: 小周向你转账 ¥1,250.00 }
+      replaced: { title: 蓝鲸银行, text: 收到一条新通知 }
+      result: 内容已替换
+      hits: 37
+    sound:
+      name: 妈妈的专属铃声
+      apps: [chirp]
+      keywords: [妈妈]
+      n: { app: chirp, title: 妈妈, text: 有空给我回个电话 ❤️ }
+      result: 正在播放铃声：马林巴
+      hits: 41
+    tts:
+      name: 快递通知语音播报
+      apps: [parcelo]
+      n: { app: parcelo, title: 即将送达, text: 你的包裹还有 2 站送达。 }
+      speech: 来自包裹侠的通知：即将送达。你的包裹还有 2 站送达。
+      result: 正在朗读…
+      hits: 23
+    call:
+      name: 领导的消息不错过
+      apps: [crew]
+      keywords: [紧急]
+      n: { app: crew, title: 王经理, text: 紧急：能来参加客户电话会吗？ }
+      answer: 打开
+      decline: 关闭
+      result: 像来电一样持续响铃
+      hits: 6
+    tap:
+      name: 推广短信自动已读
+      apps: [messages]
+      keywords: [退订]
+      button: 标为已读
+      buttons: [回复, 标为已读]
+      n: { app: messages, title: 推广短信, text: 周末全场包邮，回复 TD 退订 }
+      result: 已点击「标为已读」
+      hits: 88
+    open:
+      name: 骑手到达自动打开
+      apps: [yumm]
+      keywords: [已送达]
+      n: { app: yumm, title: 骑手已送达, text: 小陈在大堂等你 · 取餐码 2846 }
+      screen: { title: 订单已送达, text: 小陈在大堂等你, code: "2846" }
+      result: 已自动打开
+      hits: 12
+    webhook:
+      name: 验证码转发到我的服务器
+      keywords: [验证码]
+      n: { app: messages, title: 云朵, text: 你的验证码是 482913。 }
+      url: https://example.com/hook
+      result: 已发送 POST · 200 OK
+      hits: 64
+
+ai:
+  labels:
+    normal: 正常
+    spam: 骚扰
+    threshold: "过滤 ≥ {n}%"
+    filtered: 已过滤
+    kept: 已保留
+    learned: 已学习
+    hint: 点任意一条通知，教 AI 认识它
+    offline: 离线 · 在你的手机上运行
+    score: 骚扰指数
+    teach_spam: 学会了：类似的通知会被过滤
+    teach_normal: 学会了：类似的通知会被保留
+  samples:
+    - { app: shoploop, text: "⚡ 限时秒杀：全场 3 折，仅限今晚", s: 96, t: [deal] }
+    - { app: chirp, text: 小林：我晚到十分钟，你们先占个座？, s: 3, t: [person] }
+    - { app: kingdom, text: 体力已回满！快回来继续闯关, s: 94, t: [game] }
+    - { app: messages, text: 你的验证码是 482913, s: 2, t: [code] }
+    - { app: newsdrop, text: 这 10 张照片让人不敢相信, s: 89, t: [clickbait] }
+    - { app: parcelo, text: 你的包裹已放在门口, s: 5, t: [delivery] }
+    - { app: shoploop, text: 你购物车里的商品降价了, s: 72, t: [deal, cart] }
+    - { app: bank, text: 尾号 0134 的卡消费 ¥42.18, s: 4, t: [bank] }
+    - { app: newsdrop, text: 你的每周精选已送达, s: 62, t: [digest] }
+    - { app: calendar, text: 设计评审 10 分钟后开始, s: 2, t: [work] }
+    - { app: yumm, text: 肚子饿了？一小时内免配送费, s: 86, t: [deal, food] }
+    - { app: crew, text: 阿杰：新图标传上去了，大家看看, s: 4, t: [person, work] }
+    - { app: cliptv, text: 🔴 你关注的主播正在直播, s: 83, t: [live] }
+    - { app: weather, text: 下午 4 点有雨, s: 12, t: [weather] }
+    - { app: postbox, text: 你有 3 张优惠券即将过期, s: 91, t: [deal] }
+    - { app: yumm, text: 你的外卖正在配送中, s: 8, t: [food, delivery] }
+    - { app: melodia, text: 为你定制的新歌单来了, s: 58, t: [digest] }
+    - { app: postbox, text: 回复：合同第三版, s: 6, t: [person, work] }
+    - { app: kingdom, text: 每日奖励待领取：快来转盘抽奖！, s: 93, t: [game] }
+    - { app: shoploop, text: 你的订单已发货, s: 15, t: [delivery, cart] }
+    - { app: cliptv, text: 为你推荐：5 个你可能喜欢的视频, s: 77, t: [digest, live] }
+    - { app: chirp, text: 妈妈：到家了吗？, s: 2, t: [person] }
+
+enhancers:
+  recall:
+    n: { app: chirp, title: 小林, text: 晚上 7 点老地方见！ }
+    hint: 把这条通知划走试试
+  shh:
+    group: 小组 · 周末出游群
+    messages: ["阿森：谁开车？", "小李：我来！🚗", "安安：我带零食", "阿森：8 点出发", "小李：👍👍", "安安：明天见"]
+    rule: 手机解锁时 · 1 分钟内 3 条
+    muted: 已被智能静音
+    try: 开始群聊
+  captcha:
+    n: { app: messages, title: 云朵, text: 你的验证码是 482913，请勿泄露给他人。 }
+    code: "482913"
+    hide: 锁屏时隐藏
+  webhook:
+    rule: 银行提醒 → 我的服务器
+    url: https://example.com/hook
+    n: { app: bank, title: 消费提醒, text: 街角咖啡消费 ¥42.18 }
+    send: 发送测试
+    ok: "200 OK · 182 毫秒"
+
+analytics:
+  title: 近期一览
+  total: "总计: {n}"
+  summary: "{n} 条通知，已过滤 {f} 次"
+  daily: 日报
+  apps:
+    - { app: shoploop, n: 579, f: 226 }
+    - { app: chirp, n: 412, f: 0 }
+    - { app: newsdrop, n: 267, f: 151 }
+    - { app: crew, n: 241, f: 18 }
+    - { app: kingdom, n: 198, f: 187 }
+    - { app: postbox, n: 156, f: 9 }
+    - { app: cliptv, n: 132, f: 120 }
+    - { app: messages, n: 118, f: 4 }
+    - { app: others, n: 235, f: 143 }
+  others: 其他
+  week: [312, 355, 298, 402, 377, 268, 326]

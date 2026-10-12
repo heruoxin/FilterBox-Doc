@@ -1,0 +1,43 @@
+{%- comment -%}
+Expects: lang, t, L, seo_title, seo_desc, canonical, alts ("code|path;code|path"), x_default (path)
+{%- endcomment -%}
+{%- assign v = site.time | date: '%s' -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ seo_title | escape }}</title>
+<meta name="description" content="{{ seo_desc | strip_html | strip_newlines | escape }}">
+<link rel="canonical" href="{{ canonical }}">
+{%- assign alt_list = alts | split: ';' -%}
+{%- for a in alt_list -%}{%- assign pair = a | split: '|' -%}{%- if pair[1] %}
+<link rel="alternate" hreflang="{{ pair[0] }}" href="{{ site.url }}{{ pair[1] | uri_escape }}">
+{%- endif -%}{%- endfor -%}
+{%- if x_default %}
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ x_default | uri_escape }}">
+{%- endif %}
+<meta name="theme-color" content="#ffd600">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="{{ site.data.site.author }}">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:type" content="{{ og_type | default: 'website' }}">
+<meta property="og:site_name" content="{{ t.brand }}">
+<meta property="og:title" content="{{ seo_title | escape }}">
+<meta property="og:description" content="{{ seo_desc | strip_html | strip_newlines | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:locale" content="{{ L.og }}">
+{%- for l in site.data.site.langs -%}{%- if l.code != lang %}
+<meta property="og:locale:alternate" content="{{ l.og }}">
+{%- endif -%}{%- endfor %}
+<meta property="og:image" content="{{ site.url }}/assets/img/share-{{ lang }}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ t.meta.image_alt | escape }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title | escape }}">
+<meta name="twitter:description" content="{{ seo_desc | strip_html | strip_newlines | escape }}">
+<meta name="twitter:image" content="{{ site.url }}/assets/img/share-{{ lang }}.png">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM index">
+<link rel="stylesheet" href="/assets/css/site.css?v={{ v }}">
