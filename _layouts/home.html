@@ -77,7 +77,7 @@
     <div class="fx reveal" data-rules>
       <ol class="fx-list">
         {%- for a in d.rules.actions %}{% assign fx_key = a[0] %}
-        <li><button type="button" class="fx-item" data-action="{{ fx_key }}" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-{% case fx_key %}{% when 'dismiss' %}dismiss{% when 'mute' %}mute{% when 'snooze' %}snooze{% when 'replace' %}replace{% when 'sound' %}note{% when 'tts' %}speak{% when 'call' %}call{% when 'tap' %}tap{% when 'open' %}open{% else %}webhook{% endcase %}"/></svg><span><b>{{ a[1] }}</b><small>{{ d.rules.descs[fx_key] }}</small></span><i class="fx-progress" aria-hidden="true"><i></i></i></button></li>
+        <li><button type="button" class="fx-item" data-action="{{ fx_key }}" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-{% case fx_key %}{% when 'dismiss' %}dismiss{% when 'mute' %}mute{% when 'snooze' %}snooze{% when 'replace' %}replace{% when 'sound' %}note{% when 'tts' %}speak{% when 'call' %}call{% when 'tap' %}tap{% when 'open' %}open{% else %}webhook{% endcase %}"/></svg><span><b>{{ a[1] }}</b><small>{{ d.rules.descs[fx_key] }}</small></span></button></li>
         {%- endfor %}
       </ol>
       <div class="fx-stage">
@@ -155,7 +155,7 @@
       <p class="eyebrow reveal">{{ h.privacy.eyebrow }}</p>
       <h2 id="privacy-title" class="reveal">{% for line in h.privacy.title %}<span>{{ line }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</h2>
     </div>
-    {%- assign pv_icons = "lock,cloudoff,finger,shield" | split: "," %}
+    {%- assign pv_icons = "lock,cloudoff,finger" | split: "," %}
     <ul class="pv">
       {%- for it in h.privacy.items %}
       <li class="reveal"><svg class="i" aria-hidden="true"><use href="#i-{{ pv_icons[forloop.index0] }}"/></svg><h3>{{ it.title }}</h3><p>{{ it.text }}</p></li>

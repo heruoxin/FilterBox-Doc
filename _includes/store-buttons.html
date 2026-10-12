@@ -1,17 +1,18 @@
-{%- comment -%} Expects: lang, t. include.placement names the UTM medium. {%- endcomment -%}
+{%- comment -%} Expects: lang, t. include.placement names the UTM medium. The first button is the primary one. {%- endcomment -%}
+{%- if lang == 'zh-Hans' -%}{%- assign primary = 'apk' -%}{%- else -%}{%- assign primary = 'play' -%}{%- endif -%}
 {%- capture play -%}
-<a class="store-btn store-btn--play" href="{{ site.data.site.play }}&amp;hl={{ lang | replace: '-Hans', '-CN' | replace: '-Hant', '-TW' }}&amp;utm_source=website&amp;utm_medium={{ include.placement }}" rel="noopener" aria-label="{{ t.ui.play.label }}" data-cta="play">
+<a class="store-btn store-btn--play {% if primary == 'play' %}store-btn--primary{% else %}store-btn--secondary{% endif %}" href="{{ site.data.site.play }}&amp;hl={{ lang | replace: '-Hans', '-CN' | replace: '-Hant', '-TW' }}&amp;utm_source=website&amp;utm_medium={{ include.placement }}" rel="noopener" aria-label="{{ t.ui.play.label }}" data-cta="play">
   <svg class="store-btn-icon" aria-hidden="true"><use href="#i-play"/></svg>
   <span><small>{{ t.ui.play.small }}</small><strong>{{ t.ui.play.big }}</strong></span>
 </a>
 {%- endcapture -%}
 {%- capture apk -%}
-<a class="store-btn store-btn--apk" href="{{ site.data.site.apk }}" download aria-label="{{ t.ui.apk.label }}" data-cta="apk">
+<a class="store-btn store-btn--apk {% if primary == 'apk' %}store-btn--primary{% else %}store-btn--secondary{% endif %}" href="{{ site.data.site.apk }}" download aria-label="{{ t.ui.apk.label }}" data-cta="apk">
   <svg class="i store-btn-icon" aria-hidden="true"><use href="#i-download"/></svg>
   <span><small>{{ t.ui.apk.small }}</small><strong>{{ t.ui.apk.big }}</strong></span>
 </a>
 {%- endcapture -%}
 <div class="store-buttons">
-{%- if lang == 'zh-Hans' -%}{{ apk }}{{ play }}{%- else -%}{{ play }}{{ apk }}{%- endif -%}
+{%- if primary == 'apk' -%}{{ apk }}{{ play }}{%- else -%}{{ play }}{{ apk }}{%- endif -%}
 </div>
 {%- if t.ui.stores != "" %}<p class="store-note">{{ t.ui.stores }}</p>{% endif %}

@@ -179,43 +179,6 @@
     container.addEventListener('pointercancel', end);
   }
 
-  /* Short synthesized sounds and speech, only after a click. */
-  const Sound = {
-    ctx: null,
-    audio() {
-      const AC = window.AudioContext || window.webkitAudioContext;
-      if (!AC) return null;
-      this.ctx ??= new AC();
-      if (this.ctx.state === 'suspended') this.ctx.resume();
-      return this.ctx;
-    },
-    tone(freq, start, length, type = 'sine', gain = .16) {
-      const ctx = this.audio();
-      if (!ctx) return;
-      const t = ctx.currentTime + start, osc = ctx.createOscillator(), amp = ctx.createGain();
-      osc.type = type;
-      osc.frequency.value = freq;
-      amp.gain.setValueAtTime(0, t);
-      amp.gain.linearRampToValueAtTime(gain, t + .012);
-      amp.gain.exponentialRampToValueAtTime(.0001, t + length);
-      osc.connect(amp).connect(ctx.destination);
-      osc.start(t);
-      osc.stop(t + length + .05);
-    },
-    marimba() { [[784, 0], [988, .15], [1175, .3], [1568, .45], [1175, .62]].forEach(([f, s]) => { this.tone(f, s, .5, 'sine', .15); this.tone(f * 4, s, .1, 'sine', .025); }); },
-    ring() { [0, 1.25].forEach(s => { this.tone(440, s, 1, 'sine', .06); this.tone(480, s, 1, 'sine', .06); }); },
-    ding() { this.tone(1319, 0, 1.8, 'sine', .13); this.tone(2637, 0, .9, 'sine', .035); this.tone(1976, .01, 1.2, 'triangle', .025); },
-    speak(text) {
-      if (!('speechSynthesis' in window)) return;
-      speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = { en: 'en-US', 'zh-Hans': 'zh-CN', 'zh-Hant': 'zh-TW', ja: 'ja-JP' }[lang] ?? 'en-US';
-      const voice = speechSynthesis.getVoices().find(v => v.lang.replace('_', '-').toLowerCase() === utter.lang.toLowerCase());
-      if (voice) utter.voice = voice;
-      speechSynthesis.speak(utter);
-    },
-  };
-
   /* Phone screens are decorative for assistive tech; keep their controls out of the tab order. */
   function quiet(screen) {
     const apply = root => root.querySelectorAll?.('button, input, a[href], [tabindex]').forEach(el => el.setAttribute('tabindex', '-1'));
@@ -664,11 +627,10 @@
     })();
   }
 
-  /* ---------- Rules: one effect at a time ---------- */
+  /* ---------- Rules: the effects play one after another ---------- */
   function Rules(root) {
     const R = data.rules;
     const items = [...root.querySelectorAll('[data-action]')];
-    const bars = items.map(b => b.querySelector('.fx-progress i'));
     const screen = root.querySelector('[data-lock]');
     const side = root.querySelector('[data-side]');
     const device = screen.closest('[data-device]');
@@ -677,18 +639,30 @@
     const stack = screen.querySelector('.lock-stack');
     const clock = screen.querySelector('.lock-clock');
     const sb = screen.querySelector('.sb');
-    const gate = new Gate(root, .35);
-    const DURATION = 6500;
-    let token = 0, current = 0, elapsed = 0, raf = 0, last = 0;
+    const gate = new Gate(root, .35, 1500);
+    const [quoteOpen, quoteClose] = { ja: ['「', '」'], 'zh-Hant': ['「', '」'] }[lang] ?? ['“', '”'];
+    const segmenter = 'Segmenter' in Intl ? new Intl.Segmenter(lang, { granularity: 'word' }) : null;
+    let token = 0;
 
-    function reset() {
+    function setClock(text) {
+      clock.getAnimations().forEach(a => a.cancel());
+      if (clock.textContent === text) return Promise.resolve();
+      if (reduced) { clock.textContent = text; return Promise.resolve(); }
+      return clock.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 160, fill: 'forwards' }).finished.then(() => {
+        clock.textContent = text;
+        clock.getAnimations().forEach(a => a.cancel());
+        clock.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: ENTER });
+      }, () => {});
+    }
+    /* Fades out whatever the previous effect left on screen. */
+    async function clear() {
+      const nodes = [...stack.children, ...side.children, ...lock.querySelectorAll('.call, .appview')];
+      if (nodes.length && !reduced) await Promise.all(nodes.map(n => n.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 180, easing: 'ease-in', fill: 'forwards' }).finished.catch(() => {})));
       stack.innerHTML = '';
+      side.innerHTML = '';
       lock.querySelectorAll('.call, .appview').forEach(n => n.remove());
       sb.classList.remove('sb--light');
-      clock.getAnimations().forEach(x => x.cancel());
-      clock.textContent = data.clock;
-      side.innerHTML = '';
-      if ('speechSynthesis' in window) speechSynthesis.cancel();
+      setClock(data.clock);
     }
     function sideItem(icon, extra = '', cls = '') {
       const node = make('div', `side-item${cls ? ` ${cls}` : ''}`, `<span class="disc">${svg(icon)}</span>${extra}`);
@@ -698,50 +672,55 @@
     }
     const eq = () => `<span class="eq">${Array.from({ length: 9 }, (_, i) => `<i style="--n:${i}"></i>`).join('')}</span>`;
     const shake = card => { if (!reduced) card.animate([{ transform: 'none' }, { transform: 'translateX(-4px)' }, { transform: 'translateX(4px)' }, { transform: 'translateX(-2px)' }, { transform: 'none' }], { duration: 380 }); };
+    /* Read-aloud is shown as quoted text that lights up word by word; the page makes no sound. */
+    const words = text => (segmenter ? [...segmenter.segment(text)].map(s => s.segment) : text.match(/[　-鿿＀-￯]|[^\s　-鿿＀-￯]+|\s+/g) ?? [text]).map(w => `<span>${esc(w)}</span>`).join('');
 
-    async function play(action, user) {
-      const my = ++token;
+    async function play(action, my) {
       const alive = () => my === token;
-      const wait = async ms => { await sleep(ms); return alive(); };
+      const wait = async ms => { await sleep(reduced ? Math.min(ms, 80) : ms); return alive(); };
       const sc = R.scenarios[action];
-      reset();
-      if (!await wait(240)) return;
+      await clear();
+      if (!alive()) return;
       const card = ncard(sc.n, ui.now, action === 'tap' ? { actions: sc.buttons.map(esc) } : {});
       stack.append(card);
       arrive(card);
-      if (!await wait(reduced ? 60 : 1000)) return;
+      if (!await wait(850)) return;
       switch (action) {
         case 'dismiss':
+          if (!await wait(150)) return;
           await leave(card);
           card.remove();
+          await wait(450);
           break;
         case 'mute': {
           const node = sideItem('i-mute', '<b class="side-label" data-left>5s</b>');
-          node.querySelector('.disc').insertAdjacentHTML('beforeend', '<svg class="ring" viewBox="0 0 86 86" aria-hidden="true"><circle cx="43" cy="43" r="40"/></svg>');
-          if (!reduced) node.querySelector('.ring circle').animate([{ strokeDashoffset: 0 }, { strokeDashoffset: 251.3 }], { duration: 5000, fill: 'forwards' });
+          const disc = node.querySelector('.disc');
+          disc.insertAdjacentHTML('beforeend', '<svg class="ring" viewBox="0 0 86 86" aria-hidden="true"><circle cx="43" cy="43" r="40"/></svg>');
+          if (!reduced) disc.querySelector('.ring circle').animate([{ strokeDashoffset: 0 }, { strokeDashoffset: 251.3 }], { duration: 2500, fill: 'forwards' });
           const left = node.querySelector('[data-left]');
           for (let s = 4; s >= 0; s--) {
-            if (!await wait(1000)) return;
+            if (!await wait(500)) return;
             left.textContent = `${s}s`;
           }
+          disc.querySelector('use').setAttribute('href', '#i-ring');
+          disc.querySelector('.ring').remove();
+          left.textContent = ' ';
+          if (!reduced) disc.animate([{ transform: 'none' }, { transform: 'scale(1.1)' }, { transform: 'none' }], { duration: 380, easing: 'ease-out' });
+          await wait(800);
           break;
         }
         case 'snooze': {
           sideItem('i-snooze', `<b class="side-label">${esc(sc.until)}</b>`);
           await leave(card, -16);
           card.remove();
-          if (!await wait(1400)) return;
-          const fade = clock.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 180, fill: 'forwards' });
-          await fade.finished;
-          fade.cancel();
-          if (!alive()) return;
-          clock.textContent = sc.until;
-          clock.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: ENTER });
-          if (!await wait(500)) return;
+          if (!await wait(800)) return;
+          await setClock(sc.until);
+          if (!await wait(380)) return;
           const back = ncard(sc.n, sc.until);
           stack.append(back);
           arrive(back);
           shake(back);
+          await wait(1300);
           break;
         }
         case 'replace': {
@@ -760,39 +739,48 @@
           if (!alive()) return;
           title.textContent = sc.replaced.title;
           text.textContent = sc.replaced.text;
+          await wait(1600);
           break;
         }
         case 'sound':
           shake(card);
           sideItem('i-note', eq(), 'wave');
-          if (user) Sound.marimba();
+          await wait(2600);
           break;
-        case 'tts':
-          sideItem('i-speak', eq(), 'wave');
-          if (user) Sound.speak(sc.speech);
+        case 'tts': {
+          const node = sideItem('i-speak', `<p class="side-quote"><i>${esc(quoteOpen)}</i>${words(sc.speech)}<i>${esc(quoteClose)}</i></p>`, 'quote wave');
+          const spans = [...node.querySelectorAll('.side-quote span')];
+          const step = clamp(2600 / Math.max(1, spans.length), 60, 220);
+          for (const span of spans) {
+            if (!await wait(step)) return;
+            span.classList.add('on');
+          }
+          node.classList.remove('wave');
+          await wait(1000);
           break;
+        }
         case 'call': {
           sideItem('i-call', '', 'wave');
           const call = make('div', 'call', `${ico(sc.n.app)}<h4>${esc(sc.n.title)}</h4><p>${esc(sc.n.text)}</p><small>${esc(appName(sc.n.app))}</small><div class="call-btns"><span><i>${svg('i-call')}</i>${esc(sc.decline)}</span><span><i>${svg('i-call')}</i>${esc(sc.answer)}</span></div>`);
           lock.append(call);
           sb.classList.add('sb--light');
           if (!reduced) call.animate([{ transform: 'translateY(100%)' }, { transform: 'none' }], { duration: 480, easing: ENTER });
-          if (user) Sound.ring();
-          if (!await wait(4200)) return;
+          if (!await wait(2900)) return;
           await call.animate([{ transform: 'none' }, { transform: 'translateY(100%)' }], { duration: reduced ? 1 : 300, easing: EXIT, fill: 'forwards' }).finished;
           if (!alive()) return;
           call.remove();
           sb.classList.remove('sb--light');
-          side.innerHTML = '';
+          await wait(300);
           break;
         }
         case 'tap': {
           const target = [...card.querySelectorAll('.ncard-actions span')].find(b => b.textContent === sc.button);
-          if (!await wait(300)) return;
+          if (!await wait(250)) return;
           await ripple(target);
           if (!alive()) return;
           await leave(card);
           card.remove();
+          await wait(450);
           break;
         }
         case 'open': {
@@ -807,14 +795,14 @@
           ], { duration: 460, easing: ENTER });
           if (!await wait(480)) return;
           card.remove();
-          if (!await wait(3600)) return;
-          await view.animate([{ opacity: 1 }, { opacity: 0 }], { duration: reduced ? 1 : 300, fill: 'forwards' }).finished;
+          if (!await wait(2200)) return;
+          await view.animate([{ opacity: 1 }, { opacity: 0 }], { duration: reduced ? 1 : 260, fill: 'forwards' }).finished;
           if (alive()) view.remove();
           break;
         }
         case 'webhook': {
           const node = sideItem('i-server', `<span class="side-label mono">${esc(sc.host)}</span><b class="side-label ok" data-ok>&nbsp;</b>`);
-          if (!await wait(450)) return;
+          if (!await wait(350)) return;
           const s = side.getBoundingClientRect(), d = device.getBoundingClientRect(), c = card.getBoundingClientRect(), disc = node.querySelector('.disc').getBoundingClientRect();
           const ex = disc.left - s.left + disc.width / 2, ey = disc.top - s.top + disc.height / 2;
           const below = s.top >= d.bottom - 1;
@@ -841,33 +829,25 @@
           dot.remove();
           node.querySelector('[data-ok]').textContent = data.enhancers.webhook.ok;
           node.classList.add('done');
+          await wait(1300);
           break;
         }
       }
     }
 
-    function select(i, user) {
-      current = i;
-      elapsed = 0;
+    /* Each effect starts as soon as the previous one has finished. */
+    async function run(i) {
+      const my = ++token;
       items.forEach((b, j) => b.setAttribute('aria-pressed', String(j === i)));
-      bars.forEach(b => { b.style.transform = 'scaleX(0)'; });
-      play(items[i].dataset.action, user);
+      await play(items[i].dataset.action, my);
+      if (my !== token || reduced) return;
+      await gate.ready(200);
+      if (my === token) run((i + 1) % items.length);
     }
-    items.forEach((b, i) => b.addEventListener('click', () => select(i, true)));
-
-    function tick(now) {
-      raf = 0;
-      const dt = Math.min(64, now - last);
-      last = now;
-      if (performance.now() >= gate.hold) elapsed += dt;
-      bars[current].style.transform = `scaleX(${Math.min(1, elapsed / DURATION)})`;
-      if (elapsed >= DURATION) select((current + 1) % items.length, false);
-      if (gate.open) raf = requestAnimationFrame(tick);
-    }
-    const run = () => { if (!raf && gate.open && !reduced) { last = performance.now(); raf = requestAnimationFrame(tick); } };
-    gate.watch(open => open && run());
+    items.forEach((b, i) => b.addEventListener('click', () => run(i)));
     items[0].setAttribute('aria-pressed', 'true');
-    gate.firstSeen.then(() => { select(0, false); run(); });
+    if (reduced) stack.append(ncard(R.scenarios[items[0].dataset.action].n));
+    else gate.firstSeen.then(() => run(0));
   }
 
   /* ---------- AI: the sieve ---------- */
@@ -1543,7 +1523,7 @@
   /* ---------- Closing bell ---------- */
   function Bell(button) {
     const ring = () => { button.classList.remove('ring'); void button.offsetWidth; button.classList.add('ring'); };
-    button.addEventListener('click', () => { ring(); Sound.ding(); });
+    button.addEventListener('click', ring);
     new IntersectionObserver(([entry], io) => { if (entry.isIntersecting) { setTimeout(ring, 400); io.disconnect(); } }, { threshold: .6 }).observe(button);
   }
 

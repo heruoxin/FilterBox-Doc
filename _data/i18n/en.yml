@@ -142,7 +142,5 @@ home:
         text: Scoring and learning run entirely on your phone.
       - title: Fingerprint & face lock
         text: Keep your notification history to yourself.
-      - title: Minimal network use
-        text: Only purchase verification and optional crash reports, which you can turn off.
   closing:
     title: ["Make every", "notification count."]

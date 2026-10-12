@@ -83,19 +83,22 @@ h2 { font-size: clamp(36px, 4.2vw, 60px); line-height: 1.1; font-weight: 720; le
 :lang(zh-Hans) .eyebrow, :lang(zh-Hant) .eyebrow, :lang(ja) .eyebrow { letter-spacing: .08em; }
 
 /* Buttons */
-.store-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
-.store-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 10px 22px 10px 16px; border-radius: 16px; transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .2s; }
-.store-btn span { display: flex; flex-direction: column; line-height: 1.15; }
-.store-btn small { font-size: 11px; font-weight: 600; letter-spacing: .04em; opacity: .82; }
-.store-btn strong { font-size: 21px; font-weight: 650; letter-spacing: -.01em; }
-.store-btn-icon { width: 26px; height: 28px; }
-.store-btn--play { background: #111; color: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, .2), 0 10px 22px -10px rgba(60, 40, 0, .5); }
-.store-btn--play:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(0, 0, 0, .2), 0 16px 28px -12px rgba(60, 40, 0, .55); }
-.store-btn--apk { background: #fff; color: var(--ink); box-shadow: 0 0 0 1px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .06), 0 10px 22px -12px rgba(60, 40, 0, .35); }
-.store-btn--apk .store-btn-icon { color: var(--orange); width: 26px; height: 26px; stroke-width: 2.3; }
-.store-btn--apk:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(0, 0, 0, .06), 0 2px 4px rgba(0, 0, 0, .06), 0 16px 28px -14px rgba(60, 40, 0, .4); }
+/* Two equal-width buttons: each column takes the width of the wider button. */
+.store-buttons { display: inline-grid; grid-template-columns: 1fr 1fr; gap: 12px; vertical-align: top; }
+.store-btn { display: flex; align-items: center; justify-content: center; gap: 14px; height: 62px; padding: 0 24px 0 20px; border-radius: 16px; text-align: left; white-space: nowrap; transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+.store-btn > span { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
+.store-btn small { font-size: 11px; line-height: 1; font-weight: 600; letter-spacing: .07em; opacity: .7; }
+.store-btn strong { font-size: 21px; line-height: 1; font-weight: 650; letter-spacing: -.012em; }
+.store-btn-icon { flex: none; width: 25px; height: 27px; }
+.store-btn--apk .store-btn-icon { width: 26px; height: 26px; stroke-width: 2.4; }
+.store-btn--primary { background: #141413; color: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, .22), 0 12px 24px -12px rgba(60, 40, 0, .55); }
+.store-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(0, 0, 0, .22), 0 18px 30px -14px rgba(60, 40, 0, .6); }
+.store-btn--primary.store-btn--apk .store-btn-icon { color: var(--yellow); }
+.store-btn--secondary { background: #fff; color: var(--ink); box-shadow: 0 0 0 1px rgba(40, 28, 0, .07), 0 1px 2px rgba(40, 28, 0, .07), 0 12px 24px -14px rgba(60, 40, 0, .38); }
+.store-btn--secondary:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(40, 28, 0, .07), 0 2px 4px rgba(40, 28, 0, .07), 0 18px 30px -16px rgba(60, 40, 0, .42); }
+.store-btn--secondary.store-btn--apk .store-btn-icon { color: var(--orange); }
 .store-btn:active { transform: translateY(0) scale(.98); }
-:lang(zh-Hans) .store-btn small, :lang(zh-Hant) .store-btn small, :lang(ja) .store-btn small { letter-spacing: .02em; }
+:lang(zh-Hans) .store-btn small, :lang(zh-Hant) .store-btn small, :lang(ja) .store-btn small { font-size: 11.5px; letter-spacing: .08em; }
 .store-note { margin-top: 14px; font-size: 14px; color: var(--muted); }
 .more-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 650; color: var(--ink); border-bottom: 1.5px solid rgba(20, 20, 19, .25); padding-bottom: 2px; transition: border-color .2s, gap .25s var(--ease); }
 .more-link:hover { border-color: currentColor; gap: 12px; }
@@ -223,7 +226,7 @@ h2 { font-size: clamp(36px, 4.2vw, 60px); line-height: 1.1; font-weight: 720; le
   .lang-picker summary { padding: 8px; }
   .lang-picker summary span, .lang-picker summary .i-sm { display: none; }
   .lead { font-size: 17px; }
-  .store-btn { min-height: 56px; padding: 9px 18px 9px 14px; }
+  .store-btn { height: 56px; padding: 0 18px 0 15px; gap: 12px; }
   .store-btn strong { font-size: 19px; }
   .footer-row { gap: 12px 22px; }
   .prose { font-size: 16px; }
