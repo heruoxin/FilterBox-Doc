@@ -242,7 +242,7 @@
 @keyframes wave-out { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.9); opacity: 0; } }
 .side-item.done .disc { animation: done .5s var(--spring); color: #1f8f4a; }
 @keyframes done { 40% { transform: scale(1.12); } }
-.disc .ring { position: absolute; inset: -5px; width: calc(100% + 10px); height: calc(100% + 10px); transform: rotate(-90deg); }
+.disc .ring { position: absolute; inset: -5px; width: calc(100% + 10px); max-width: none; height: calc(100% + 10px); transform: rotate(-90deg); }
 .disc .ring circle { fill: none; stroke: var(--orange); stroke-width: 2.5; stroke-dasharray: 251.3; }
 .side-label { font-size: 14px; font-weight: 650; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .side-label.mono { font: 500 12.5px/1.3 var(--mono); color: var(--muted); }
